@@ -31,3 +31,8 @@ __pycache__
 
 EIT-Report.pdf
 *.texnicle
+
+*.swp
+*.swo
+
+revision.tex
