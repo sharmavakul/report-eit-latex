@@ -1,4 +1,4 @@
-\documentclass[a4paper]{report}
+\documentclass[a4paper]{article}
 
 
 %%%%%%%%%% EIT PACKAGE INPUTS %%%%%%%%%%%%%
@@ -83,6 +83,7 @@
 % clever references that automatically add Figure, Equation, Table, etc.
 \usepackage[capitalize]{cleveref}
 
+
 %%%%%%%%%% END OF EIT PACKAGE INPUTS %%%%%%%%%%%%%
 
 
@@ -112,12 +113,27 @@
 % correct bad hyphenation here
 \hyphenation{net-works semi-conduc-tor quad-ra-ture mat-ches trans-form meth-od}
 
+% enable glossary generation
 %\makeglossaries
+
+% header and footer
+\usepackage{scrpage2}
+\pagestyle{scrheadings}
+\clearscrheadfoot
 
 %%%%%%%%%% END OF EIT CONTROLS %%%%%%%%%%%%%
 
 
 \begin{document}
+
+% header info here
+\ihead{<head left>}
+\chead{<head center>}
+\ohead{<head right>}
+% footer info here
+\ifoot[<footer left first page>]{<footer left>}
+\cfoot{<footer center>}
+\ofoot[Seite \pagemark]{Seite \pagemark}
 
 % include EIT background image on first page
 \ThisCenterWallPaper{1.0}{images/EIT-Background.png}
@@ -125,7 +141,11 @@
 % title + author
 \title{\todo{<Your Title>}}
 \author{\todo{<Your Name>}}
+\date{\todo{<Date Here>}}
 \maketitle
+
+% new page if you like
+\newpage
 
 % content
 \todo{<put content here>}
