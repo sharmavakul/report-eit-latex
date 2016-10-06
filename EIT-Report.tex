@@ -1,0 +1,137 @@
+\documentclass[a4paper]{report}
+
+
+%%%%%%%%%% EIT PACKAGE INPUTS %%%%%%%%%%%%%
+%
+% Do not remove the following packages!
+%
+% General  instructions / Best Practice Rules:
+% ------------------------------------
+% * Use \cref{<label>} only, no \ref !
+% * For abbreviations, always use the Glossaries package and \gls{<abbrv>} or \glspl{<abbrv>} ! --> ensures that every abbreviation is introduced correctly
+% * Mark open points with \todo{ <Name of assigned person>: ... }
+% * Only commit after checking that it compiles. 
+% * Only one sentence per line!
+% * Use active voice whenever possible! ("we have investigated" instead of "it was investigated")
+% * Use past progressive instead of simple past! ("Banks et al. have shown" instead of "Banks et al. showed")
+
+
+% set up unicode input
+\usepackage[utf8]{inputenc}
+
+% set 8-bit font enconding
+% see: http://tex.stackexchange.com/questions/664/why-should-i-use-usepackaget1fontenc
+\usepackage[T1]{fontenc}
+
+% background image for title page
+\usepackage{wallpaper}
+
+% PTSans - corporate design font of the University of Kaiserslautern
+\usepackage{paratype}
+
+%breaking URLs
+\usepackage{url}
+
+%todo command
+\usepackage{color}
+\definecolor{darkred}{rgb}{.6,0,0}
+\newcommand{\todo}[1]{{\bf \color{darkred}TODO: [{#1}]}}
+
+%% math packages
+\usepackage{amsmath}
+\usepackage{amsfonts, amssymb}
+\usepackage{graphicx}
+
+% get correct links for url in bibliography
+\usepackage[hidelinks]{hyperref}
+
+% balance columns on last page
+\usepackage{flushend}
+
+%% glossaries package for list of abbreviations and list of symbols
+%\usepackage{datatool} % package needed by glossaries
+%\usepackage[acronym]{glossaries} % *after* hyperref
+%\newglossary[symlog]{symbol}{symi}{symo}{Symbols}
+%\makeglossaries
+%\glstoctrue
+%\input{../../paper.library/abbreviations_symbols/abbreviations}
+%\input{../../paper.library/abbreviations_symbols/symbols_finance}
+
+% enable bold math with \pmb{...}
+\usepackage{bm}
+
+% nice subfigures (a) and (b)
+\usepackage[caption=false]{subfig}
+
+% get nice fractions as \nicefrac{1}{4}
+\usepackage{nicefrac}
+ 
+ % get compact lists with compactitem
+\usepackage{paralist}
+
+% get nice tables
+\usepackage{booktabs}
+\usepackage{multirow}
+\newcommand{\minitab}[2][c]{\begin{tabular}{@{}#1@{}}#2\end{tabular}}
+\usepackage{tabularx}
+\newcolumntype{Y}{>{\raggedleft\arraybackslash}X}% raggedleft column X
+\usepackage[detect-all]{siunitx}
+\usepackage{threeparttable} % tables with footnotes
+\usepackage{makecell}
+\usepackage{stfloats} % allow double column table at the bottom
+
+% clever references that automatically add Figure, Equation, Table, etc.
+\usepackage[capitalize]{cleveref}
+
+%%%%%%%%%% END OF EIT PACKAGE INPUTS %%%%%%%%%%%%%
+
+
+
+%%%%%%%%%% EIT CONTROLS %%%%%%%%%%%%%
+
+% Non-breakable hyphen
+\newcommand{\hyph}{\mbox{-}}
+
+% Assert value of reference [when used in images]
+% Usage: \assertRefEqual{label}{expected number}
+\newcommand{\assertRefEqual}[2]{%
+	\begingroup
+		\ifnum \pdfstrcmp{\ref{#1}}{#2\hbox{}} = 0
+			\relax
+		\else
+			\errmessage{Reference #1 expected to be #2, but got \ref{#1}}
+		\fi
+	\endgroup}
+
+% disable ToDos for peer review here!
+%\renewcommand{\todo}[1]{}
+
+% fix line spacings here if necessary
+%\renewcommand{\baselinestretch}{0.96}
+
+% correct bad hyphenation here
+\hyphenation{net-works semi-conduc-tor quad-ra-ture mat-ches trans-form meth-od}
+
+%\makeglossaries
+
+%%%%%%%%%% END OF EIT CONTROLS %%%%%%%%%%%%%
+
+
+\begin{document}
+
+% include EIT background image on first page
+\ThisCenterWallPaper{1.0}{images/EIT-Background.png}
+
+% title + author
+\title{\todo{<Your Title>}}
+\author{\todo{<Your Name>}}
+\maketitle
+
+% content
+\todo{<put content here>}
+	
+
+%\bibliographystyle{plain}
+%\bibliography{<path to your bibliography>}
+
+\end{document}
