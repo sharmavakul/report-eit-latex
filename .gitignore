@@ -27,12 +27,8 @@
 *.tmp
 __pycache__
 *.autosave
-
-
-EIT-Report-en.pdf
 *.texnicle
-
 *.swp
 *.swo
 
-revision.tex
+eit-report.pdf
