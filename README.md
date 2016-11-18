@@ -1,5 +1,5 @@
-# tukl-eit-report
-Report template FB EIT TU Kaiserslautern
+# eit-report
+Report template Department of Electrical and Computer Engineering, University of Kaiserslautern
 
 ### Build
 
