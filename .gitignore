@@ -31,4 +31,5 @@ __pycache__
 *.swp
 *.swo
 
-eit-report.pdf
+revision.tex
+main.pdf

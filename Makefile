@@ -1,5 +1,5 @@
 
-TARGET = EIT-Report
+TARGET = main
 FIGS = images
 
 include Makefile.include
