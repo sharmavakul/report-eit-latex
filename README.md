@@ -1,11 +1,10 @@
-# tukl-eit-report
-Report template FB EIT TU Kaiserslautern
+# eit-report
+Report template Department of Electrical and Computer Engineering, University of Kaiserslautern
 
-### Build
-
+## Build
 Use your favorite LaTeX IDE / editor or optionally open a terminal and use make.
 
-### Known Dependencies
+## Known Dependencies
 * texlive-science
 * texlive-fonts-extra
 
