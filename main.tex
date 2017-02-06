@@ -1,53 +1,18 @@
-\documentclass[a4paper]{article}
+\documentclass[a4paper,11pt]{article}
+\usepackage{EIT}
 
-
-%%%%%%%%%% EIT PACKAGE INPUTS %%%%%%%%%%%%%
-%
-% Do not remove the following packages!
-%
 % General  instructions / Best Practice Rules:
 % ------------------------------------
 % * Use \cref{<label>} only, no \ref !
-% * For abbreviations, always use the Glossaries package and \gls{<abbrv>} or \glspl{<abbrv>} ! --> ensures that every abbreviation is introduced correctly
+% * For abbreviations, always use the Glossaries package and \gls{<abbrv>} or
+%   \glspl{<abbrv>} ! --> ensures that every abbreviation is introduced correctly
 % * Mark open points with \todo{ <Name of assigned person>: ... }
 % * Only commit after checking that it compiles. 
 % * Only one sentence per line!
-% * Use active voice whenever possible! ("we have investigated" instead of "it was investigated")
-% * Use past progressive instead of simple past! ("Banks et al. have shown" instead of "Banks et al. showed")
-
-
-% set up unicode input
-\usepackage[utf8]{inputenc}
-
-% set 8-bit font enconding
-% see: http://tex.stackexchange.com/questions/664/why-should-i-use-usepackaget1fontenc
-\usepackage[T1]{fontenc}
-
-% PTSans - corporate design font of the University of Kaiserslautern
-\usepackage{paratype}
-\renewcommand{\familydefault}{\sfdefault}
-
-% background image for title page
-\usepackage{wallpaper}
-
-%breaking URLs
-\usepackage{url}
-
-%todo command
-\usepackage{color}
-\definecolor{darkred}{rgb}{.6,0,0}
-\newcommand{\todo}[1]{{\bf \color{darkred}TODO: [{#1}]}}
-
-%% math packages
-\usepackage{amsmath}
-\usepackage{amsfonts, amssymb}
-\usepackage{graphicx}
-
-% get correct links for url in bibliography
-\usepackage[hidelinks]{hyperref}
-
-% balance columns on last page
-\usepackage{flushend}
+% * Use active voice whenever possible! ("we have investigated" instead of "it
+%   was investigated")
+% * Use past progressive instead of simple past! ("Banks et al. have shown"
+%   instead of "Banks et al. showed")
 
 %% glossaries package for list of abbreviations and list of symbols
 %\usepackage{datatool} % package needed by glossaries
@@ -58,99 +23,87 @@
 %\input{../../paper.library/abbreviations_symbols/abbreviations}
 %\input{../../paper.library/abbreviations_symbols/symbols_finance}
 
-% enable bold math with \pmb{...}
-\usepackage{bm}
-
-% nice subfigures (a) and (b)
-\usepackage[caption=false]{subfig}
-
-% get nice fractions as \nicefrac{1}{4}
-\usepackage{nicefrac}
- 
- % get compact lists with compactitem
-\usepackage{paralist}
-
-% get nice tables
-\usepackage{booktabs}
-\usepackage{multirow}
-\newcommand{\minitab}[2][c]{\begin{tabular}{@{}#1@{}}#2\end{tabular}}
-\usepackage{tabularx}
-\newcolumntype{Y}{>{\raggedleft\arraybackslash}X}% raggedleft column X
-\usepackage[detect-all]{siunitx}
-\usepackage{threeparttable} % tables with footnotes
-\usepackage{makecell}
-\usepackage{stfloats} % allow double column table at the bottom
-
-% clever references that automatically add Figure, Equation, Table, etc.
-\usepackage[capitalize]{cleveref}
-
-
-%%%%%%%%%% END OF EIT PACKAGE INPUTS %%%%%%%%%%%%%
-
-
-
-%%%%%%%%%% EIT CONTROLS %%%%%%%%%%%%%
-
-% Non-breakable hyphen
-\newcommand{\hyph}{\mbox{-}}
-
-% Assert value of reference [when used in images]
-% Usage: \assertRefEqual{label}{expected number}
-\newcommand{\assertRefEqual}[2]{%
-	\begingroup
-		\ifnum \pdfstrcmp{\ref{#1}}{#2\hbox{}} = 0
-			\relax
-		\else
-			\errmessage{Reference #1 expected to be #2, but got \ref{#1}}
-		\fi
-	\endgroup}
-
-% disable ToDos for peer review here!
-%\renewcommand{\todo}[1]{}
-
-% fix line spacings here if necessary
-%\renewcommand{\baselinestretch}{0.96}
-
 % correct bad hyphenation here
 \hyphenation{net-works semi-conduc-tor quad-ra-ture mat-ches trans-form meth-od}
 
 % enable glossary generation
 %\makeglossaries
 
-% header and footer
-\usepackage{scrpage2}
-\pagestyle{scrheadings}
-\clearscrheadfoot
+% Header info here:
+\ihead{\pt<head left>}
+\chead{\pt<head center>}
+\ohead{\pt<head right>}
 
-%%%%%%%%%% END OF EIT CONTROLS %%%%%%%%%%%%%
-
+% Footer info here:
+\ifoot[\pt<footer left first page>]{\pt<footer left>}
+\cfoot{\pt<footer center>}
+\ofoot[\pt \pagemark/\pageref{LastPage}]{\pt \pagemark/\pageref{LastPage}}
 
 \begin{document}
 
-% header info here
-\ihead{<head left>}
-\chead{<head center>}
-\ohead{<head right>}
-% footer info here
-\ifoot[<footer left first page>]{<footer left>}
-\cfoot[<footer center first page>]{<footer center>}
-\ofoot[Page \pagemark]{Page \pagemark}
+% Title, author and other information:
+\title{<Your Title>}
+\subtitle{<Sub-Title>}
+\author{<Your Name>}
 
-% include EIT background image on first page
-\ThisCenterWallPaper{1.0}{images/background-eit.pdf}
-
-% title + author
-\title{\todo{<Your Title>}}
-\author{\todo{<Your Name>}}
-\date{\todo{<Date Here>}}
 \maketitle
 
-% new page if you like
-\newpage
+% If you want to have serif font please comment the following command: 
+\pt 
 
-% content
-\todo{<put content here>}
-	
+% INSERT YOUR CONTENT HERE:
+
+\noindent This template can be used for reports, minutes, concepts or other texts from the
+department.
+%
+
+\section{Heading 1}
+"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+culpa qui officia deserunt mollit anim id est laborum." "Lorem ipsum dolor sit
+amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+deserunt mollit anim id est laborum." "Lorem ipsum dolor sit amet, consectetur
+adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
+ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim
+id est laborum."
+
+\section{Heading 1}
+"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+culpa qui officia deserunt mollit anim id est laborum."
+
+\subsection{Heading 2}
+"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+culpa qui officia deserunt mollit anim id est laborum."
+
+$$
+\frac{n!}{k!(n-k)!} = \binom{n}{k}
+$$
+
+\subsubsection{Heading 3}
+"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+culpa qui officia deserunt mollit anim id est laborum."
 
 %\bibliographystyle{plain}
 %\bibliography{<path to your bibliography>}
