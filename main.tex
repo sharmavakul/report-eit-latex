@@ -39,15 +39,54 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Header info here:
-\ihead{\pt<head left>}
-\chead{\pt<head center>}
-\ohead{\pt<head right>}
-
+\ihead
+	{\color{tuk-grey} \pt
+		<head left>
+	}
+\chead
+	{\color{tuk-grey} \pt
+		<head center>
+	}
+\ohead
+	{\color{tuk-grey} \pt
+		<head right>
+	}
 % Footer info here:
-\ifoot[\pt<footer left first page>]{\pt<footer left>}
-\cfoot{\pt<footer center>}
-\ofoot[\pt \pagemark/\pageref{LastPage}]{\pt \pagemark/\pageref{LastPage}}
-
+\ifoot
+	% Footer left first page
+	[\color{tuk-grey} \pt
+		<footer left first page>
+	]
+	% Footer left other pages
+	{\color{tuk-grey} \pt
+		<footer left other pages>
+	}
+\cfoot
+	% Footer center first page
+	[\color{tuk-grey} \pt
+		<footer center first page>
+	]
+	% Footer center other pages
+	{\color{tuk-grey} \pt
+		<footer center other pages>
+	}
+\ofoot
+	% Footer right first page
+	[\color{tuk-grey} \pt
+		\iftoggle{isGerman}{
+  			Seite \thepage\ von \pageref{LastPage}
+		}{
+			Page \thepage\ of \pageref{LastPage}
+		}
+	]
+	% Footer right other pages
+	{\color{tuk-grey} \pt
+		\iftoggle{isGerman}{
+  			Seite \thepage\ von \pageref{LastPage}
+		}{
+			Page \thepage\ of \pageref{LastPage}
+		}
+	}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Hyphenation
