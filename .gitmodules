@@ -1,0 +1,3 @@
+[submodule "style-eit-latex"]
+	path = style-eit-latex
+	url = https://github.com/TUK-EIT/style-eit-latex
