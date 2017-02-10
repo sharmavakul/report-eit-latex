@@ -1,4 +1,4 @@
-# eit-report
+# report-eit-latex
 Report template Department of Electrical and Computer Engineering, University of Kaiserslautern
 
 ## Build
