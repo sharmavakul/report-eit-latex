@@ -1,0 +1,88 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Global Document Settings
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Headers & Footers
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% page style for front page
+\fancypagestyle{frontpage}{
+	\fancyhf{}
+	
+	%remove top line
+	\renewcommand{\headrulewidth}{0pt}
+
+	\fancyfoot[L]{
+		\color{tuk-coldgrey} \pt \footnotesize
+		\todo{<footer left first page>}
+	}
+	\fancyfoot[C]{
+		\color{tuk-coldgrey} \pt \footnotesize
+		\todo{<footer center first page>}
+	}
+	\fancyfoot[R]{
+		\color{tuk-coldgrey} \pt \footnotesize
+		\iftoggle{isGerman}{
+  			Seite \thepage\ von \pageref{LastPage}
+		}{
+			Page \thepage\ of \pageref{LastPage}
+		}
+	}
+}
+
+% page style for all other pages
+\fancypagestyle{otherpages}{
+	\fancyhf{}
+
+	%remove top line
+	\renewcommand{\headrulewidth}{0pt}
+
+	\fancyhead[L]{
+		\color{tuk-coldgrey} \pt \footnotesize
+		\todo{<header left other pages>}
+	}
+	\fancyhead[C]{
+		\color{tuk-coldgrey} \pt \footnotesize
+		\todo{<header center other pages>}
+	}
+	\fancyhead[R]{
+		\color{tuk-coldgrey} \pt \footnotesize
+		\todo{<header right other pages>}
+	}
+
+	\fancyfoot[L]{
+		\color{tuk-coldgrey} \pt \footnotesize
+		\todo{<footer left other pages>}
+	}
+	\fancyfoot[C]{
+		\color{tuk-coldgrey} \pt \footnotesize
+		\todo{<footer center other pages>}
+	}
+	\fancyfoot[R]{
+		\color{tuk-coldgrey} \pt \footnotesize
+		\iftoggle{isGerman}{
+  			Seite \thepage\ von \pageref{LastPage}
+		}{
+			Page \thepage\ of \pageref{LastPage}
+		}
+	}
+}
+
+% standard page style except for frontpage
+\pagestyle{otherpages}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Glossaries
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% glossaries package for list of abbreviations and list of symbols
+%\usepackage{datatool} % package needed by glossaries
+%\usepackage[acronym]{glossaries} % *after* hyperref
+%\newglossary[symlog]{symbol}{symi}{symo}{Symbols}
+%\makeglossaries
+%\glstoctrue
+%\input{../../paper.library/abbreviations_symbols/abbreviations}
+%\input{../../paper.library/abbreviations_symbols/symbols_finance}

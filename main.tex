@@ -1,92 +1,42 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Main Document
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \documentclass[a4paper,11pt]{article}
 
 % General  instructions / Best Practice Rules:
 % ------------------------------------
-% * Use \cref{<label>} only, no \ref !
-% * For abbreviations, always use the Glossaries package and \gls{<abbrv>} or
-%   \glspl{<abbrv>} ! --> ensures that every abbreviation is introduced correctly
-% * Mark open points with \todo{ <Name of assigned person>: ... }
-% * Only commit after checking that it compiles. 
 % * Only one sentence per line!
 % * Use active voice whenever possible! ("we have investigated" instead of "it
 %   was investigated")
 % * Use past progressive instead of simple past! ("Banks et al. have shown"
 %   instead of "Banks et al. showed")
-
-%% glossaries package for list of abbreviations and list of symbols
-%\usepackage{datatool} % package needed by glossaries
-%\usepackage[acronym]{glossaries} % *after* hyperref
-%\newglossary[symlog]{symbol}{symi}{symo}{Symbols}
-%\makeglossaries
-%\glstoctrue
-%\input{../../paper.library/abbreviations_symbols/abbreviations}
-%\input{../../paper.library/abbreviations_symbols/symbols_finance}
+% * Mark open points with \todo{ <Name of assigned person>: ... }
+% * Only commit after checking that it compiles. 
+% * Use \cref{<label>} only, no \ref !
+% * For abbreviations, always use the Glossaries package and \gls{<abbrv>} or
+%   \glspl{<abbrv>} ! --> ensures that every abbreviation is introduced correctly
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% EIT Package and Language Settings
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% for English documents (standard)
-\usepackage{style-eit-latex/EIT}
-
+% document with serif font
 % use [de] option for German documents
+%\usepackage{style-eit-latex/EIT}
 %\usepackage[de]{style-eit-latex/EIT}
+
+% use [pt] option for PT Sans without serif
+\usepackage[pt]{style-eit-latex/EIT}
+%\usepackage[pt, de]{style-eit-latex/EIT}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Headers & Footers
+%% Custom Packages
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% Header info here:
-\ihead
-	{\color{tuk-coldgrey} \pt \footnotesize
-		<head left>
-	}
-\chead
-	{\color{tuk-coldgrey} \pt \footnotesize
-		<head center>
-	}
-\ohead
-	{\color{tuk-coldgrey} \pt \footnotesize
-		<head right>
-	}
-% Footer info here:
-\ifoot
-	% Footer left first page
-	[\color{tuk-coldgrey} \pt \footnotesize
-		<footer left first page>
-	]
-	% Footer left other pages
-	{\color{tuk-coldgrey} \pt \footnotesize
-		<footer left other pages>
-	}
-\cfoot
-	% Footer center first page
-	[\color{tuk-coldgrey} \pt \footnotesize
-		<footer center first page>
-	]
-	% Footer center other pages
-	{\color{tuk-coldgrey} \pt \footnotesize
-		<footer center other pages>
-	}
-\ofoot
-	% Footer right first page
-	[\color{tuk-coldgrey} \pt \footnotesize
-		\iftoggle{isGerman}{
-  			Seite \thepage\ von \pageref{LastPage}
-		}{
-			Page \thepage\ of \pageref{LastPage}
-		}
-	]
-	% Footer right other pages
-	{\color{tuk-coldgrey} \pt \footnotesize
-		\iftoggle{isGerman}{
-  			Seite \thepage\ von \pageref{LastPage}
-		}{
-			Page \thepage\ of \pageref{LastPage}
-		}
-	}
+% TODO: add own packages here
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Hyphenation
@@ -97,11 +47,12 @@
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Glossary
+%% Document Configuration
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% import global settings file
+\input{includes/settings}
 
-% enable glossary generation
-%\makeglossaries
+% TODO: add own settings here
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -116,14 +67,6 @@
 \author{<Your Name>}
 
 \maketitle
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Font Selection
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% If you want to have serif font please comment the following command: 
-\pt 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
