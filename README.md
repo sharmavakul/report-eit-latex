@@ -1,5 +1,6 @@
 # report-eit-latex
-Report template Department of Electrical and Computer Engineering, University of Kaiserslautern
+Report template Department of Electrical and Computer Engineering, University of Kaiserslautern (TUK)
+
 
 ## How to use
 This LaTeX report template can be used easily with any TeX distribution by running ```make``` or with any LaTeX IDE. Just start with the file ```main.tex``` and go ahead with your changes. Everything is documented in the file itself.
@@ -10,10 +11,12 @@ This LaTeX report template can be used easily with any TeX distribution by runni
 ## Build
 Use your favorite LaTeX IDE / editor or optionally open a terminal and use make.
 
+
 ## Known Dependencies
 * texlive-science
 * texlive-fonts-extra
 * Git submodule style-eit-latex
+
 
 ## Contributors:
 * Christian De Schryver <schryver@eit.uni-kl.de>
