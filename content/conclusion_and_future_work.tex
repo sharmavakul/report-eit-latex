@@ -1,15 +1,20 @@
 %! Author = vsharma
 %! Date = 25.09.2022
+% !TeX spellcheck = en_EN
 
-% Preamble
-\documentclass[11pt]{article}
+\chapter{Conclusion and Future Work}
 
-% Packages
-\usepackage{amsmath}
+\par This chapter summarizes the thesis work and contribution, the overall evaluation results, and possible aspects of future work.
 
-% Document
-\begin{document}
+\section{Conclusion}
+
+\par Cloud computing is in continual development to make different levels of on-demand services available to customers. It helps companies reduce operating costs while increasing efficiency. With the continued proliferation of AWS (Amazon Web Services), companies are continuing to move their technical assets to the cloud. Despite several advantages offered by cloud computing, it also fosters security concerns that hamper the fast rate of adoption of cloud computing. Enterprises that are implementing cloud computing by expanding their on-premises infrastructure, should be aware of the security challenges faced by cloud computing. While people enjoy the benefits cloud computing brings, security in clouds is a key challenge. Comprehending the security threats and countermeasures will help organizations carry out the cost-benefit analysis and will urge them to shift to the cloud. Security flaws must be identified to provide a better quality of service to cloud users \cite{6}.
+
+\par This research is aimed to identify and expose the security vulnerabilities of popular AWS services and investigate if existing security frameworks provide enough security to minimize these security vulnerabilities. A mapping was created for the simulated security vulnerabilities, deployed in an AWS test environment. In this research work, the security vulnerabilities are examined in clouds for only five AWS services (EC2, S3, IAM, RDS, Lambda). Many cloud vulnerabilities still exist, and hackers continue exploiting these security holes. Several tools and security frameworks exist to aid in the scanning of AWS security vulnerabilities and exploit the potential. The offensive security community has a glaring need for a tool that provides a structured, comprehensive approach to pen-testing AWS vulnerabilities. The existing frameworks do not protect against the discovered attack surface and are therefore not sufficient to provide a secure cloud environment. The CIS AWS Foundations benchmark was found to have too general recommendations and not provide in-depth security measures at the service level. The CIS Three-tier benchmark does provide more in-depth recommendations but is of lesser use due to its focus on the three-tier web architecture. The AWS Foundational Security Best Practices standard gives more in-depth control and proved to give more protection than both CIS benchmarks, but still lacks controls to prevent all simulated attacks.  By complying with such frameworks, companies might assume they are secure and did what was necessary to protect their data. However, those frameworks are not sufficient to secure popular services and the environments are still vulnerable to attacks. New or improved security frameworks must be developed, such as Prowler, that offers more in-depth security for cloud customers.
+
+\section{Future Work}
+
+\par Although this thesis work has explored the efficiency of Prowler in performing the assessment of security vulnerabilities, further studies are needed to confirm the obtained results. More research should be done along with security expecrts from the industry in predicting the prominent security vulnerabilities and attacks in the referred five AWS services and other AWS services. Another topic for additional research would be to better understand the kind of security vulnerabilities and attacks that can lead to compromisation, especially against cloud providers. The dark web as a new platform for attacks and security vulnerabilities, and how to predict them proactively with algorithms and tools, is another research area.
 
 
-
-\end{document}
+\par A future plan could be to explore the other security issues and vulnerabilities in the cloud computing environment and aim to design a security model using some encryption techniques for data concealment in cloud computing. Encryption has been a longstanding way for sensitive information to be protected and ensures the confidentiality, integrity, and security of the data. Companies using Prowler could be questioned about their experience of using Prowler, determine the pros and cons, and identification of the limitations that could be another area for research.

@@ -1,15 +1,96 @@
 %! Author = vsharma
 %! Date = 25.09.2022
+% !TeX spellcheck = en_EN
 
-% Preamble
-\documentclass[11pt]{article}
-
-% Packages
-\usepackage{amsmath}
-
-% Document
-\begin{document}
+\chapter{Introduction}
 
 
+\section{Motivation}
+\par Staying competitive and innovative is important to success. In recent years, cloud computing has become a
+popular subject in computer science and software engineering. With the low maintenance costs, flexibility, ease of deployment, cost-effective scalability, and overall aid in efficiency, businesses and IT leaders all over the world are replacing legacy, classic on-premises data center technology with cloud-based solutions. Due to the beneficial characteristics of cloud computing like on-demand provisioning and billing against the actual consumption of computing resources, enterprises leverage these advantages by migrating their costly and legacy infrastructures such as servers, firewall appliances, databases, or their software and hardware solutions that are not operating at the optimum capability to the cloud such as Amazon Web Services (AWS), Microsoft Azure, Google Cloud Platform (GCP), or other third-party cloud vendors. Cloud migration promises cost benefits and agility and it opens the way for the future. The pandemic fast-tracked the shift to cloud technology by upending how organizations worked and operated. Digital transformation has been a buzzword over the last few years for organizations of varying sizes moving operations to the cloud and adopting online productivity and collaboration services. The lockdown compelled people to work from their homes using conferencing and collaboration services \cite{2}.
 
-\end{document}
+
+\par Cloud computing provides 3 as-a-service offerings namely Infrastructure as a Service (IaaS), Platform as a
+Service (PaaS), and Software as a Service (SaaS). These cloud services help enterprises to scale and adopt powerful cloud offerings such as computing and storage capabilities. The enterprise can access and scale the IT capabilities they need for a predictable cost, without the expense and overhead of purchasing and maintaining everything in their own data center. The term \textit{as a service} in the cloud offerings refers to the way the IT assets are consumed and shows the major difference between traditional IT and cloud computing. In traditional IT, a company consumes IT assets such as system software, hardware, applications, and tools. These IT assets are purchased, installed, managed, and maintained within the company’s on-premises data center. In cloud computing, cloud service providers own, manage, and maintain these IT assets, the enterprise can use only the infrastructure needed to create the development environment, scale the environment up or down as long as they need, and then stop when finished, paying only for the resources used. This helps the enterprises to match the current world demand and reduces expenses \cite{3}.
+
+\par Cloud migration is an equation with many sides. While cloud migration may seem daunting at first, the right preparation will help ensure a smooth migration. While cloud migration brings greater opportunities, it introduces its own challenges. These challenges are associated with security controls that the enterprise built for their on-premises environment. Security control needs to rebuild, making use of the cloud services to replace traditional on-premises security measures. When migrating to the cloud for the first time, the required expertise might not be available within the organization. Another biggest challenge of migrating the application to the cloud is to protect sensitive business data against attacks. The application migration is oriented mainly toward moving the application into the cloud. However, legacy applications need a more sophisticated migration mechanism to find out the most suitable cloud environment and fully leverage the benefits of cloud computing \cite{4}.
+
+\par Compliance and security are shared responsibilities between AWS and the customer. Cloud service providers adhere to a shared security responsibility model, which means the customer’s security team maintains some responsibilities for security as they move data, workloads, applications, and containers to the cloud, while the cloud service provider takes some responsibility, but not all, thus reduces the workload for the customer. However, this notion of shared responsibility can be misunderstood. This misunderstanding can result in the assumption of the cloud workloads, as well as any data, applications, or activity associated with them are fully protected by the cloud provider \cite{5}.
+
+
+
+\par FlexBooker, an online booking software was hacked on December 23, 2021 \cite{6}\cite{7}. The hackers looted approximately 3 million user's personal information such as driver's license data and so on. FlexBooker hosted its application and services in the AWS cloud, using computing and storage instances. The data was exposed due to an improperly configured S3 bucket \cite{8}. Amazon S3 is an object storage service that stores data as objects within buckets. An object is a file and any metadata that describes the file. Amazon S3 buckets, which are similar to file folders, store objects, which consist of data and its descriptive metadata \cite{9}.
+
+
+
+\par  To protect users from such security attacks, several security frameworks exist that aims to strengthen the
+security of users account. These frameworks provide a list of controls and are recommended with different cloud services and
+configurations. But such frameworks do not always provide in-depth security controls for the services. Cloud
+environments assessed through such frameworks might still have gaps and are vulnerable to attacks. The reason for it
+is simple, these frameworks are not derived from vulnerability data or actual exploits \cite{10}.
+
+\par This research work aims at identifying the competency of a security framework named \textit{Prowler}. It runs security checks and performs assessments of the different security vulnerabilities such as misconfiguration,
+server-side request forgery, etc. This research focuses on different AWS services such as Elastic Compute Cloud (EC2), Relational Database Services (RDS), Identity and Access Management (IAM), Lambda, and Simple Storage Service (S3). The framework assesses different vulnerabilities that occur on the mentioned AWS services.
+
+
+
+\section{Goals}
+\par In this regard, the goal of this thesis is to acquaint users with different security vulnerabilities in AWS
+services. These security vulnerabilities are assessed using an assessment tool called \textit{Prowler}. The
+efficiency of assessment done using Prowler is determined using 2 approaches. In the first approach, test scenarios
+are developed to verify the assessment results for each check in Prowler. For the second approach, an open-source
+application is used and an assessment of the security vulnerabilities within the AWS account is done.
+
+\par In the end, the assessment of security vulnerabilities performed using Prowler is compared to the assessment performed by other security assessment tools \textit{ScoutSuite}.
+
+\par For example, if we have an AWS account with a public S3 bucket, it is a security vulnerability and can lead to a data breach. By using Prowler, it is possible to identify such security vulnerabilities and thus limit the risk of security attacks.
+
+\section{Contribution and Thesis Outline}
+\par The thesis contributions are:
+\begin{itemize}
+    \item Identify the security vulnerabilities in AWS services.
+\end{itemize}
+\begin{itemize}
+    \item Perform the security vulnerability assessment using Prowler.
+\end{itemize}
+\begin{itemize}
+    \item Compare the result of the assessment done using Prowler against ScoutSuite.
+\end{itemize}
+\begin{itemize}
+    \item Determine the efficiency of Prowler against the identified security vulnerabilities.
+\end{itemize}
+
+\par This thesis is organized as follows:
+\par \textbf{Chapter 2 (Related Work)}: This chapter briefs about:
+\begin{itemize}
+    \item Cloud computing: The basics of cloud computing, its types and the different types of cloud services namely IaaS, PaaS and SaaS.
+\end{itemize}
+\begin{itemize}
+    \item Amazon Web Services (AWS): A detailed background about Amazon Web Services (AWS) and AWS services such as IAM, EC2, S3, etc.
+\end{itemize}
+\begin{itemize}
+    \item Security framework: Information about security framework basics and an open source security assessment tool, Prowler is described.
+\end{itemize}
+
+\par \textbf{Chapter 3 (Problem Statement)}: In this chapter, different security vulnerabilities identified in five
+AWS services are highlighted. A detailed information about each of the identified security vulnerabilities is also
+provided in this chapter.
+\par \textbf{Chapter 4 (Methodology)}: This chapter describes the approaches to determine the efficiency of prowler.
+\begin{itemize}
+    \item Using Test Driven Approach: The manual approach of developing test cases to determine the efficiency of Prowler.
+\end{itemize}
+\begin{itemize}
+    \item Using Open-Source Application: Evaluate the efficiency of Prowler by deploying an open-source
+    application on AWS.
+\end{itemize}
+\par In the end, another open-source tool ScoutSuite is described and AWS account is assessed using ScoutSuite.
+
+\par \textbf{Chapter 5 (Evaluation)}: This chapter provides
+\begin{itemize}
+    \item The result of the assessment performed using the two approaches mentioned in chapter 4.
+\end{itemize}
+\begin{itemize}
+    \item Comparision between the assessment of the open-source application using Prowler and ScoutSuite.
+\end{itemize}
+\par \textbf{Chapter 6 (Conclusion and Future Work)} concludes this thesis by summarizing the work done, results obtained, open topics, and future work.
+
