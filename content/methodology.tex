@@ -322,34 +322,21 @@ Based on configuration gathered data, it shows security risks and issues present
 Oracle Cloud Infrastructure (alpha). In this research work, ScoutSuite is deployed on an AWS EC2 instance with an
 IAM role configured \cite{73}.
 
-\begin{itemize}
-    \item As an initial step, an EC2 instance is created. Once the ec2 instance state changes to running, the instance is connected. This can be done using EC2 Instance Connect, Session Manager, SSH client example Putty, and EC2 serial console.
-\end{itemize}
-
-\begin{itemize}
-    \item After connecting to the EC2 instance, it needs to be configured. This is done using the command \textit{aws configure}. During configuration, it will prompt for "Access key ID," "Secret Access Key," "Default Zone," and "Output format".
-\end{itemize}
-
-\begin{itemize}
-    \item Once the ec2 instance is configured, it is time to install the virtual environment. Installation of the
-    virtual environment is done by using the command \textit{pip3 install virtualenv}.
-\end{itemize}
-\begin{itemize}
-    \item After installing virtualenv, a virtual environment needs to be created, this is done using the command
-    \textit{virtualenv -p python3 venv}.
-\end{itemize}
-\begin{itemize}
-    \item The next step is to get into the virtual environment and install ScoutSuite. This is done by using the
-    commands \textit{source venv/bin/activate} and \textit{pip3 install scoutsuite}.
-\end{itemize}
-\begin{itemize}
-    \item The final step is to test and run ScoutSuite. Verification of the installation is done by running the
-    command \textit{scout --help}. The tool's usage syntax for different cloud environments is shown using the help
-    command. ScoutSuite is run by executing the command\textit{scout aws}.
-\end{itemize}
-\begin{itemize}
-    \item As soon as the command execution finishes, the HTML report gets generated in the current working directory.
-\end{itemize}
+\par Once the EC2 instance is running, the instance is connected.
+Connection to the EC2 instance is established using EC2 Instance Connect, Session Manager, SSH client example Putty, and EC2 serial console.
+After the EC2 instance is connected, it must be configured.
+Configuring the EC2 instance is done using the command \textit{aws configure}.
+During configuration, it prompts for "Access key ID," "Secret Access Key," "Default Zone," and "Output format".
+Once configured, the virtual environment must be installed.
+Installation of the virtual environment is done by using the command \textit{pip3 install virtualenv}.
+After installing virtualenv, a virtual environment must be created, to do this the command \textit{virtualenv -p python3 venv} is executed.
+The next step is to install ScoutSuite on the virtual environment.
+Installing virtual environment requires running the commands \textit{source venv/bin/activate} and \textit{pip3 install scoutsuite}.
+The final step is to test and run ScoutSuite. Verification of the installation is done by running the command \textit{scout --help}.
+The tool's usage syntax for different cloud environments is shown using the help command.
+ScoutSuite is run by executing the command\textit{scout aws}.
+Once the command execution finishes, the HTML report gets
+generated in the current working directory \cite{72}.
 
 Figure \ref{fig:deployscoutsuite} shows the snippet of the report generated using ScoutSuite.
 
