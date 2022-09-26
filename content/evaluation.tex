@@ -17,32 +17,131 @@ ScoutSuite is also highlighted which showcases the efficiency of each tool indiv
     \label{fig:prowlerefficiency}
 \end{figure}
 
-\par The test-driven approach requires developing the test cases for the possible assessable scenario of a check in Prowler that performs the security assessment of an identified security vulnerability in the AWS service. The individual test cases are developed, and their results are noted.
+\par The test-driven approach requires developing the test cases for the possible assessable scenario of a check in Prowler that performs the security assessment of an identified security vulnerability in the AWS service.
+The individual test cases are developed, and their results are noted.
 
-\par The checks corresponding to the identified security vulnerabilities that can be assessed in Prowler are determined. Upon determination of the possible check in Prowler, the test cases are developed. Once all the test scenarios for the different checks in Prowler are developed and verified, the efficiency of Prowler is calculated against the identified security vulnerabilities for individual AWS services. The efficiency calculation is done programmatically.
+\par The checks in Prowler corresponding to the identified security vulnerabilities are identified manually.
+The functionality of the check is understood and verified if the check can perform the assessment of the identified security vulnerability.
+The verification process includes developing test cases for all assessable scenarios and evaluating the result of the assessment.
+Only if all the scenarios are successfully verified the security vulnerability is marked to be assessed using Prowler.
+Once all the test scenarios for the different checks in Prowler are developed and verified, the efficiency of Prowler is calculated against the identified security vulnerabilities for individual AWS services.
+The efficiency calculation is done programmatically.
 
-\par The process for calculating the efficiency of Prowler begins by determining the count of the security
-vulnerabilities that are identified for an AWS service. After determining the number of security vulnerabilities that
-are identified for the AWS service, the number of security vulnerabilities that are assessed using Prowler for that AWS service is determined. For example, if we consider Amazon RDS, the number of identified security vulnerabilities as seen from the graph \ref{fig:prowlerefficiency} is 4, correspondingly the number of security vulnerabilities that are assessed using Prowler is 3. This process is performed for the 5 AWS services that are chosen for this research work. In the end, it is possible to determine how efficient is Prowler in assessing the security vulnerabilities of each AWS service.
+\begin{longtable}{|p{10cm}|p{2.4cm}|p{2cm}|}
+    \hline
+    \textbf{Security Vulnerabilities} & \textbf{Service} & \textbf{Prowler Check}\\
+    \hline
+    Avoid the use of the root account & IAM & Check11 \\
+    \hline
+    MFA is enabled for all IAM users & IAM & Check12 \\
+    \hline
+    Credentials unused for 90 days or greater are disabled & IAM & Check13 \\
+    \hline
+    Access keys are rotated every 90 days or less & IAM & Check14 \\
+    \hline
+    IAM password policy requires at least one uppercase letter & IAM & Check15 \\
+    \hline
+    IAM password policy requires at least one lowercase letter & IAM & Check16 \\
+    \hline
+    IAM password policy requires at least one symbol & IAM & Check17\\
+    \hline
+    IAM password policy requires at least one number & IAM & Check18\\
+    \hline
+    IAM password policy requires a minimum length of 14 or greater & IAM & Check19\\
+    \hline
+    IAM password policy prevents password reuse & IAM & Check110\\
+    \hline
+    IAM password policy expires passwords within 90 days or less & IAM & Check111\\
+    \hline
+    Password expiration requires an administrator reset & IAM & \\
+    \hline
+    Allow users to change their own password & IAM& \\
+    \hline
+    Insider Threat & IAM & Extra774\\
+    \hline
+    Access key for the root account & IAM & Check112 \\
+    \hline
+    Instances created from Malicious AMI & EC2 & Check76\\
+    \hline
+    User data public exposure & EC2 & Extra741\\
+    \hline
+    Server-Side Request Forgery & EC2 & Extra786\\
+    \hline
+    Denial of Wallet & EC2, Lambda &\\
+    \hline
+    Public exposure of S3 buckets & S3 & Check73\\
+    \hline
+    Unencrypted S3 buckets & S3 & Extra764\\
+    \hline
+    GhostWriter & S3 & Extra771 \\
+    \hline
+    Publicly accessible RDS instances & RDS & Check78\\
+    \hline
+    Unencrypted RDS Instance & RDS & Extra735\\
+    \hline
+    Resources running in an AWS classic resource & RDS & \\
+    \hline
+    Default data retention & RDS & Extra739\\
+    \hline
+    Lambda functions have a public resource-based policy & Lambda & Extra798 \\
+    \hline
+    Publicly accessible AWS account & Lambda & Extra7145 \\
+    \hline
+    Public lambda function URL & Lambda & Extra7179 \\
+    \hline
+    Public lambda function URL Cors & Lambda & Extra7180 \\
+    \hline
+    Insecure Management of Secrets & Lambda & Extra760\\
+    \hline
+    Poisoning the Well & Lambda & \\
+    \hline
+    \caption{Prowler Checks and mapped Security Vulnerabilities}
+    \label{tab:securityvulnerabilitiescheckin prowler}
+\end{longtable}
 
-\par The graph \ref{fig:prowlerefficiency} highlights the total number of security vulnerabilities identified for an AWS service and the number of security vulnerabilities that are assessed using Prowler for the AWS service.
+\par The process for calculating the efficiency of Prowler begins by determining the count of the security vulnerabilities that are identified for an AWS service.
+The table \ref{tab:classificationofsecurityvulnerabilities} shows all the security vulnerabilities that are identified in the five AWS services.
+Additionally, the table also highlights the different checks in Prowler that are identified and verified by developing the test cases that assess these identified security vulnerabilities.
+The count of number of security vulnerabilities that are identified for the AWS service is determined.
+Also, the number of security vulnerabilities that are assessed using Prowler for that AWS service is determined.
+Based on these results the efficiency of Prowler is calculated in assessing an AWS service.
+For example, looking at the table \ref{tab:classificationofsecurityvulnerabilities} and the graph \ref{fig:prowlerefficiency} considering AWS RDS, the number of identified security vulnerabilities is 4, and the number of security vulnerabilities that are assessed using Prowler is 3.
+This process is performed for the 5 AWS services that are chosen for this research work.
+In the end, it is possible to determine how efficient Prowler is in assessing the security vulnerabilities of each AWS service.
 
-\par Starting with IAM, out of the 15 identified security vulnerabilities, 13 of those security vulnerabilities are
-assessed using Prowler. The 2 unassessed security using Prowler part of excessive privileges. Excessive privilege is
-one of the most common security vulnerabilities that can result in severe security issues such as compromission of
-AWS accounts and many more. Excessive privilege can cause an identity to modify its own rights. The identity has all
-the permissions it needs to move throughout the environment e.g. make itself an administrator or one identity can
-modify another identity’s credentials to impersonate it. For example, identity has permission to modify roles in AWS.
-While this identity is unable to read sensitive data itself, it can modify other roles so that it can read that data,
-and then jump into this new role and reach its goal ultimately. Excessive privilege can also occur when an identity
-has permission to change the configuration settings on a resource to allow the identity to perform unintended actions
-on that resource.
 
-\par Like IAM, looking at the graph for EC2 it can be determined that out of the 4 identified security vulnerabilities, 3 of those security vulnerabilities are assessed using Prowler.  The unassessed security vulnerability using Prowler is the Denial of wallet. Most of the time data loss incidents make the news, but the denial of wallet is one of the common ways that can be found out about a compromise through the AWS bill. Such security vulnerability prevents the system from providing services to legitimate users and is used for the personal gain of the attacker, but it is possible that an attacker just wants to bring hurt the organization.
+\par The graph \ref{fig:prowlerefficiency} is drawn between the AWS services considered for this thesis work and the number of security vulnerabilities.
+It highlights the total number of security vulnerabilities identified for an AWS service and the number of security vulnerabilities that are assessed using Prowler for the AWS service.
+
+\par Looking at the graph for IAM, it can be concluded that out of the 15 identified security vulnerabilities, Prowler performs the assessment of 13 security vulnerabilities.
+The 2 security vulnerabilities that cannot be assessed by Prowler are \textit{Password expiration requires administrator reset} and \textit{Allow users to change their own password}.
+These security vulnerabilities are caused due to excessive privilege.
+The Password expiration requires an administrator reset feature prevents the user from updating their password after the account password has expired and thus requires administrative access.
+This causes an issue on the user’s productivity and increases the workload on the administrator but ensures account safety.
+If the account user is given administrative permission, this avoids the impact on the user’s productivity, but at the same time increases the risk that the user can cause.
+This user can reset passwords for another user, revoke or grant unrestricted access to resources, files or directories and can even delete other user resources or accounts.
+The allows users to change their own password feature enables all the users to change their own account password thus ensuring only the user of the account should be able to change the password for his account.
+If the user is granted an administrative role, the user would not just be able to change the password for his own account but would be able to manage other user accounts as well.
+Assigning excessive privilege to a user can lead to 
+deadly sin such as siphoning important information to the
+competitors, data destruction, etc \cite{87}.
+
+\par Like IAM, looking at the graph for EC2 it can be determined that out of the 4 identified security vulnerabilities, 3 of those security vulnerabilities are assessed using Prowler.
+ The unassessed security vulnerability using Prowler is the Denial of wallet.
+ Most of the time data loss incidents make the news, but the denial of wallet is one of the common ways that can be found out about a compromise through the AWS bill.
+ The denial of wallet security vulnerability causes 
+disruption of the target system or flooding the system 
+with traffic as a form of threat, ransom, or revenge thus
+depriving the system usage or leading to downtime 
+resulting in loss of time and money, and reputation \cite{86}.
 
 \par Prowler shows 100 \% efficiency in assessing the security vulnerabilities that are identified in S3 and thus Prowler is highly efficient in performing the security best practices assessments, audits, and incident response for S3.
 
-\par Similar to IAM and EC2, Prowler is able to assess 3 out of the 4 identified security vulnerabilities in RDS. Resources running in an AWS classic resource are not assessable using Prowler. The EC2-Classic platform is retired by Amazon.
+\par Similar to IAM and EC2, out of 4 identified security
+vulnerabilities prowler performs the assessment of 3 security vulnerabilities.
+Prowler does not perform the assessment of security vulnerability that can occur due to RDS instances running on AWS classic resources.
+The EC2-Classic platform is retired by Amazon and disabled on all accounts.
+The EC2-Classic platform is replaced the EC2-VPC \cite{88}.
 
 \par As seen from the graph \ref{fig:prowlerefficiency}, out of the 6 security vulnerabilities identified in AWS lambda, Prowler can perform the assessment of 5 security vulnerabilities. The unassessed security vulnerability ‘Poisoning of well’ can be highly hazardous where the malicious users inject fake training data with the aim of corrupting the learned model and can spread, affecting the products that draw from it.
 

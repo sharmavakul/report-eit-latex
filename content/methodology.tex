@@ -20,75 +20,75 @@ This research work is limited to 5 AWS services namely IAM, EC2, S3, RDS, and La
 Columns 1 and 2 in table \ref{tab:classificationofsecurityvulnerabilities} lists the different security
 vulnerabilities based on literatures, OWASP vulnerability list \cite{43}, CISA \cite{42}, IDC \cite{41}.
 
-\begin{longtable}{|p{10cm}|p{2.4cm}|p{2cm}|}
+\begin{longtable}{|p{12cm}|p{2.4cm}|}
     \hline
-    \textbf{Security Vulnerabilities} & \textbf{Service} & \textbf{Prowler Check}\\
+    \textbf{Security Vulnerabilities} & \textbf{Service} \\
     \hline
-    Avoid the use of the root account & IAM & Check11 \\
+    Avoid the use of the root account & IAM \\
     \hline
-    MFA is enabled for all IAM users & IAM & Check12 \\
+    MFA is enabled for all IAM users & IAM  \\
     \hline
-    Credentials unused for 90 days or greater are disabled & IAM & Check13 \\
+    Credentials unused for 90 days or greater are disabled & IAM  \\
     \hline
-    Access keys are rotated every 90 days or less & IAM & Check14 \\
+    Access keys are rotated every 90 days or less & IAM  \\
     \hline
-    IAM password policy requires at least one uppercase letter & IAM & Check15 \\
+    IAM password policy requires at least one uppercase letter & IAM  \\
     \hline
-    IAM password policy requires at least one lowercase letter & IAM & Check16 \\
+    IAM password policy requires at least one lowercase letter & IAM  \\
     \hline
-    IAM password policy requires at least one symbol & IAM & Check17\\
+    IAM password policy requires at least one symbol & IAM \\
     \hline
-    IAM password policy requires at least one number & IAM & Check18\\
+    IAM password policy requires at least one number & IAM \\
     \hline
-    IAM password policy requires a minimum length of 14 or greater & IAM & Check19\\
+    IAM password policy requires a minimum length of 14 or greater & IAM \\
     \hline
-    IAM password policy prevents password reuse & IAM & Check110\\
+    IAM password policy prevents password reuse & IAM \\
     \hline
-    IAM password policy expires passwords within 90 days or less & IAM & Check111\\
+    IAM password policy expires passwords within 90 days or less & IAM \\
     \hline
-    Password expiration requires an administrator reset & IAM & \\
+    Password expiration requires an administrator reset & IAM \\
     \hline
-    Allow users to change their own password & IAM& \\
+    Allow users to change their own password & IAM \\
     \hline
-    Insider Threat & IAM & Extra774\\
+    Insider Threat & IAM \\
     \hline
-    Access key for the root account & IAM & Check112 \\
+    Access key for the root account & IAM \\
     \hline
-    Instances created from Malicious AMI & EC2 & Check76\\
+    Instances created from Malicious AMI & EC2 \\
     \hline
-    User data public exposure & EC2 & Extra741\\
+    User data public exposure & EC2 \\
     \hline
-    Server-Side Request Forgery & EC2 & Extra786\\
+    Server-Side Request Forgery & EC2 \\
     \hline
-    Denial of Wallet & EC2, Lambda &\\
+    Denial of Wallet & EC2, Lambda \\
     \hline
-    Public exposure of S3 buckets & S3 & Check73\\
+    Public exposure of S3 buckets & S3 \\
     \hline
-    Unencrypted S3 buckets & S3 & Extra764\\
+    Unencrypted S3 buckets & S3 \\
     \hline
-    GhostWriter & S3 & Extra771 \\
+    GhostWriter & S3  \\
     \hline
-    Publicly accessible RDS instances & RDS & Check78\\
+    Publicly accessible RDS instances & RDS \\
     \hline
-    Unencrypted RDS Instance & RDS & Extra735\\
+    Unencrypted RDS Instance & RDS \\
     \hline
-    Resources running in an AWS classic resource & RDS & \\
+    Resources running in an AWS classic resource & RDS \\
     \hline
-    Default data retention & RDS & Extra739\\
+    Default data retention & RDS \\
     \hline
-    Lambda functions have a public resource-based policy & Lambda & Extra798 \\
+    Lambda functions have a public resource-based policy & Lambda \\
     \hline
-    Publicly accessible AWS account & Lambda & Extra7145 \\
+    Publicly accessible AWS account & Lambda \\
     \hline
-    Public lambda function URL & Lambda & Extra7179 \\
+    Public lambda function URL & Lambda \\
     \hline
-    Public lambda function URL Cors & Lambda & Extra7180 \\
+    Public lambda function URL Cors & Lambda \\
     \hline
-    Insecure Management of Secrets & Lambda & Extra760\\
+    Insecure Management of Secrets & Lambda \\
     \hline
-    Poisoning the Well & Lambda & \\
+    Poisoning the Well & Lambda \\
     \hline
-    \caption{Prowler Checks and their mapping for Security Vulnerabilities}
+    \caption{Classification of AWS Security Vulnerabilities}
     \label{tab:classificationofsecurityvulnerabilities}
 \end{longtable}
 
