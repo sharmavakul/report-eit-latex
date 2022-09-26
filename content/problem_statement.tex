@@ -149,10 +149,12 @@ based on literatures, the Open Web Application Security Project (OWASP) vulnerab
     Minimizing data loss and security risks can be
     ensured by checking the database’s instance for restricting unauthorized access and public accessibility \cite{57}.
 
-    The RDS instance is within a virtual private cloud (VPC).
-    A VPC is a virtual network isolated from other virtual networks in the AWS cloud.
-    A VPC provides the possibility to launch AWS resources, for example, the AWS RDS DB instance.
-    The default VPC consists of three subnets used to isolate resources inside the VPC. A subnet within a VPC is a segment of a VPC's IP address range used to group DB instances based on security and operational needs.
+    The RDS instance is within a virtual private cloud.
+    The default VPC consists of three subnets used to 
+    isolate resources inside the VPC. A subnet within a 
+    VPC is a segment of a VPC's IP address range used to 
+    group DB instances based on security and operational 
+    needs \cite{58}.
 
     Subnets are segments of a VPC's IP address range that users designate to group the resources based on operational and security needs. A DB subnet group is a collection of subnets that the user creates in a VPC and is then designated for the DB instances. Each DB subnet group has subnets in at least two Availability Zones in a given AWS Region. When a DB instance is created in a VPC, a DB subnet group for the DB instance is chosen by the user. From the DB subnet group, Amazon RDS chooses a subnet and an IP address within that subnet to associate with the DB instance. The Availability Zone that contains the subnet is used by the DB. The subnets in a DB subnet group can be either private or public and it depends on the configuration that users set for their network ACLs and routing tables. For a DB instance to be publicly accessible, all the subnets in its DB subnet group must be public. If a subnet changes from public to private, it can affect DB instance availability \cite{58}. If an AWS account is Provisioned with public-facing RDS database instances it allows unauthorized access for anyone who establishes a connection to the database, thus introducing security risks \cite{59}.
 \end{itemize}

@@ -232,17 +232,14 @@ Below is a detailed explanation that helps to understand the role of each AWS se
 execution of commands to perform security assessment using Prowler and ScoutSuite \cite{70}.
 
 \par To perform these operations, the user needs to be assigned the required permissions.
-AWS IAM service assigns the
-required permission to the user.
-To create the s3 bucket, the user is assigned \textit{AmazonS3FullAccess} permission.
-To launch the ec2 instance, \textit{AmazonEC2FullAccess} permission is added to the user.
-To create the database,
-\textit{AmazonRDSFullAccess} permission is assigned to the user.
-To create and execute the lambda function,
-\textit{AWSLambda\_FullAccess} is added to the user.
-If the user needs to run Prowler and ScoutSuite, the user is
-assigned \textit{SecurityAudit} and \textit{ViewOnlyAccess}.
-
+Based on the leave privilege principle the user should only be assigned the permission needed to perform the task.
+If a user does not need an access right, then the user must should not be assigned such access right \cite{81}.
+AWS IAM service assigns the required permission to the user.
+To create and write to the s3 bucket, the user is assigned \textit{s3:CreateBucket} and \textit{s3:PutObject} permission \cite{82}.
+To launch the ec2 instance, \textit{ec2:RunInstances} permission is added to the user \cite{83}.
+To create the database, \textit{rds:CreateDBCluster} permission is assigned to the user \cite{85}.
+To create and execute the lambda function, \textit{lambda:CreateFunction} is added to the user \cite{85}.
+\hfill \break
 \par S3
 
 \par The application backend of the employee management application as described above is developed in Spring boot and the frontend is developed in Angular.JS. The developed application is available in version control systems such as GitHub, Bitbucket, etc.
@@ -255,7 +252,7 @@ It helps the developers to make changes to code that are then automatically test
 For the application to be accessed by the HR\/employer, static web hosting is enabled for the bucket containing angular.js application files.
 
 
-
+\hfill \break
 
 \par RDS
 
@@ -264,7 +261,7 @@ The employee management application enables adding, updating, and deleting the e
 This employee information is stored in the database.
 The database details are added to the backend spring boot application which connects to the database to perform the required database operation in response to the request from the frontend angular application by making an API call.
 
-
+\hfill \break
 \par EC2
 
 \par The S3 bucket stores the Java spring boot application jar.
@@ -274,7 +271,7 @@ To do so an EC2 instance is created.
 The backend spring boot application jar is downloaded from the S3 bucket to the ec2 instance.
 Once the Jar is downloaded, it is run on the EC2 instance using the command \textit{java -jar applicationname.jar}.
 
-
+\hfill \break
 \par Lambda
 
 \par Lambda services execute code without provisioning servers.
@@ -293,14 +290,14 @@ Upon successful validation of the database details, the request is made to fetch
 Figure \ref{fig:prowlerassessmentreport} shows the snippet of the assessment report generated using Prowler.
 
 
-
+\hfill \break
 \section{ScoutSuite}
 
 \par Scout Suite is an open source multi-cloud security-auditing tool.
 It is used by external and internal security analysts to assess cloud environments.
 Scout Suite  uses the API exposed by the cloud service provider to collect configuration data from high security risk areas for manual audit by researchers.
 Based on configuration gathered data, it shows security risks and issues present in the infrastructure \cite{72}.
-
+\hfill \break
 \par Features of ScoutSuite
 \begin{itemize}
     \item Persistent monitoring: ScoutSuite is a user-friendly tool that provides the ability to constantly monitor
@@ -317,7 +314,7 @@ Based on configuration gathered data, it shows security risks and issues present
 \end{itemize}
 
 
-
+\hfill \break
 
 \subsection{Deploying ScoutSuite}
 
