@@ -469,12 +469,41 @@ different settings for blocking public access \cite{23}.
 
 \subsection{Prowler}
 
-\par This research aims to introduce a framework called Prowler that can identify the security vulnerabilities or misconfigurations that exist in AWS accounts. The research work focuses on the most popular AWS services, IAM, Elastic Compute Cloud (EC2), Lambda, Simple Storage Service (S3), and RDS. The introduced framework indicates to which security vulnerabilities the user is vulnerable and which security issues must be addressed to resolve the security vulnerability. Prowler contains a set of controls, mapped against known security vulnerabilities, which can determine whether a given AWS cloud setup is vulnerable to these security vulnerabilities. It aims to provide more in-depth security for AWS RDS, EC2, IAM, S3, and Lambda resources and protects them against security vulnerabilities.
+\par This research aims to introduce a framework called Prowler that can identify the security vulnerabilities or misconfigurations that exist in AWS accounts.
+The thesis work focuses on the most popular AWS services,
+IAM,
+EC2, Lambda, S3, and RDS.
+The introduced framework indicates to which security vulnerabilities the application is vulnerable and which security issues must be addressed to resolve the security vulnerability.
+Prowler contains a set of controls, mapped against known security vulnerabilities, which can determine whether a given AWS cloud setup is vulnerable to these security vulnerabilities.
+It aims to provide more in-depth security for AWS RDS,
+EC2, IAM, S3, and Lambda resources and protects them
+against security vulnerabilities.\\
 
-\par Prowler is an open-source Amazon Web Services (AWS) Security Best Practices Assessment, Hardening, Auditing, and Forensics Readiness command line tool. Prowler scans the AWS account to check for potential security vulnerabilities, overly permissive Identity and Access Management (IAM) permissions, and best practice violations. Using Prowler, it is possible to evaluate the AWS security specifically against the CIS Amazon Web Services Foundations Benchmark and has more than 190 additional checks related to HIPAA, GDPR, PCI-DSS, ISO-27001, FFIEC, SOC2, and others. Prowler provides more than 240 checks covering security best practices across all AWS regions and related to AWS services such as Amazon CloudFront, Amazon Redshift, Amazon ElasticCache, Amazon API Gateway, etc. It helps organizations implement practices that ensure having proper protections in place and a secure environment. With Prowler, users get a direct colorful, or monochrome report of the assessment in a JSON, CSV, HTML, JUnit, or JSON ASFF (Security Hub) format. Prowler also supports running a specific check or groups or creating your own. When running the Prowler assessment, prowler supports checking multiple AWS accounts in Parallel or sequentially \cite{90}.
-
-\par Prowler is written in bash using AWS-CLI underneath and it works with multiple operating systems such as Mac OS, Linux, or Windows with Cygwin or virtualization. To use Prowler, though, an EC2 instance with the necessary security permissions can be provisioned, Fargate or any other container, CloudShell, Codebuild, and Cloud9 \cite{30}.
-
+\hfill \break
+\par Prowler is an open-source AWS Security Best Practices Assessment, Hardening, Auditing, and Forensics Readiness command line tool.
+Prowler scans the AWS account to check for potential security vulnerabilities, overly permissive Identity and Access Management (IAM) permissions, and best practice violations.
+Using Prowler, it is possible to evaluate the AWS security specifically against the CIS AWS Foundations Benchmark and has more than 190 additional checks related to HIPAA, GDPR, PCI-DSS, ISO-27001, FFIEC, SOC2, and others \cite{75}.
+Prowler provides more than 240 checks covering security best practices across all AWS regions and related to AWS services such as Amazon CloudFront, Amazon Redshift, Amazon ElasticCache, Amazon API Gateway, etc.
+It helps organizations implement practices that ensure
+having proper security measures in place and a secure
+environment.
+Prowler supports the generation of assessment reports in multiple formats such as JSON, CSV, HTML, JUnit, or JSON ASFF Security Hub.
+The colorful or monochrome report enhances the user’s visibility.
+Prowler also supports running a specific check or groups or creating your own.
+When running the Prowler assessment, prowler supports
+checking multiple AWS accounts in Parallel or
+sequentially \cite{78}.\\
+\hfill \break
+\par Prowler is written in bash, and it uses AWS-CLI
+underneath.
+It works with multiple operating systems such
+as macOS, Linux, or Windows with Cygwin or virtualization.
+To use Prowler, though, an EC2 instance with the necessary security permissions can be provisioned, Fargate or any other container, CloudShell, Codebuild, and Cloud9.
+Prowler can also be deployed directly in AWS using the AWS
+CLI and other components such as Python pip,
+detect-secrets, an open-source tool used to detect secrets by running scans, and jq , a flexible and lightweight command-line JSON processor already installed.
+Detect-secrets is  \cite{78}.
+\hfill \break
 \begin{figure}
     \centering
     \includegraphics[width=\textwidth]{prowlercheckpass.png}
@@ -489,12 +518,8 @@ different settings for blocking public access \cite{23}.
     \label{fig:assessmentreport}
 \end{figure}
 
-\begin{itemize}
-    \item After the prerequisites such as awscli, detect-secrets, and ja, a flexible and lightweight command-line JSON processor is installed the AWS environment is configured using the command \textit{aws configure} \cite{30}.
-\end{itemize}
-\begin{itemize}
-    \item Once the configuration is completed, Prowler is installed using the command \textit{git clone https://github.com/prowler-cloud/prowler} \cite{30}.
-\end{itemize}
-\begin{itemize}
-    \item To start the assessment of the AWS account using prowler, the command \textit{./prowler} is executed \ref{fig:prowlercheckexecution}. When the assessment finishes, the assessment report is generated as shown in the figure \ref{fig:assessmentreport}.
-\end{itemize}
+\par After installing the required tools and packages successfully, the AWS environment must be configured by using the command \textit{aws configure}.
+The user credentials used to configure the AWS environment must be assigned the required permissions namely \textit{SecurityAudit} and \textit{ViewOnlyAccess} to run the Prowler checks.
+Prowler can then be installed directly by cloning the code for the source repository \cite{75} using the command \textit{git clone https://github.com/prowler-cloud/prowler} and does not require any additional setup afterward.
+Once the source code is available, to start the assessment the command \textit{./prowler} is executed \ref{fig:prowlercheckexecution}.
+The figure \ref{fig:assessmentreport} shows the generated assessment report.
