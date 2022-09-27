@@ -4,7 +4,10 @@
 
 \chapter{Evaluation}
 
-\par In this chapter, we evaluate the efficiency of Prowler against security vulnerabilities based on the approaches from the previous chapter. The result of the evaluation of each approach is discussed here.
+\par In this chapter, based on the approaches from the
+previous chapter, the efficiency of
+Prowler is evaluated against security vulnerabilities.
+The result of the evaluation of each approach is discussed here.
 
 \par In the end, a comparison between the assessment of security vulnerabilities performed using Prowler and
 ScoutSuite is also highlighted which showcases the efficiency of each tool individually.
@@ -146,11 +149,12 @@ The EC2-Classic platform is replaced the EC2-VPC \cite{88}.
 \par As seen from the graph \ref{fig:prowlerefficiency}, out of the 6 security vulnerabilities identified in AWS lambda, Prowler can perform the assessment of 5 security vulnerabilities.
 The security vulnerability that is not assessed using Prowler is ‘Poisoning of well’.
 Poisoning of well can be highly hazardous in numerous ways.
-The first scenario could be where the malicious users inject fake training data with the aim of corrupting the learned model and can spread, affecting the products that draw from it.
-The second scenario where poisoning of well could occur would be where an Integrated Development Environment (IDE) plugin hosting the cloud server is controlled by an attacker.
+It can occur when the malicious users inject fake
+training
+data with the aim of corrupting the learned model and can
+spread, affecting the products that draw from it or when
+an Integrated Development Environment (IDE) plugin hosting the cloud server is controlled by an attacker.
 A code backdoor is introduced as the security vulnerability by the attacker into the plugin \cite{89}.
-Another scenario could be the poisoning attack on the Machine Learning dataset.
-Here, in order to control the prediction behavior of the model the attacker manipulates the training dataset \cite{90}.
 
 
 \section{Using Open-Source Application}
@@ -161,6 +165,15 @@ Here, in order to control the prediction behavior of the model the attacker mani
     \caption{Security Vulnerabilities Assessment Graph}
     \label{fig:prowlervsscoutsuite}
 \end{figure}
+
+\par Cloud service providers make tools available to secure the cloud systems, but it is ultimately the user’s responsibility to use them.
+The control needed to define and implement the cloud infrastructure differs greatly from the controls used in on-premises environments.
+Simply transforming the hardware servers to AWS EC2 instances won't make the infrastructure secure by default.
+This is because, while AWS is responsible for the
+security of the cloud, it is the users responsibility
+for the security in the cloud.
+Due to this, many companies suffer from misconfigured and poorly architected cloud infrastructure, leading to embarrassing data leaks \cite{74}.
+This section shows the assessment of security vulnerability performed using two open-source cloud security assessment tools namely Prowler and ScoutSuite which can help strengthen the cloud security posture without breaking the bank.
 
 \par The employee management web application \cite{69} leverages different AWS services namely IAM, EC2, S3, RDS, and Lambda for its deployment on AWS cloud infrastructure as shown in the figure \ref{fig:infrastructure_architecture}.
 Once the application is deployed on the AWS cloud, the application functionality is verified.
@@ -188,7 +201,7 @@ There are 5 security vulnerabilities that could not be assessed using Prowler as
 Similarly, out of the 32 identified security vulnerabilities, ScoutSuite can perform the security assessment of 21 security vulnerabilities.
 There are 11 security vulnerabilities that are not assessed using the rules provided by ScoutSuite.
 
-\begin{longtable}{|p{10cm}|p{2.4cm}|}
+\begin{longtable}{|p{9cm}|p{4.2cm}|}
     \hline
     \textbf{Security Vulnerabilities} & \textbf{Identification Resource}\\
     \hline
@@ -236,161 +249,116 @@ Using this formula, the overall percentage efficiency of Prowler is calculated t
 
 \section{Comparision between Prowler and ScoutSuite}
 
-\par Cloud service providers make tools available to secure the cloud systems, but it is ultimately the user’s responsibility to use them.
-The control needed to define and implement the cloud infrastructure differs greatly from the controls used in on-premises environments.
-Simply transforming the hardware servers to AWS EC2 instances won't make them secure by default.
-This is because, while AWS is responsible for the security of the cloud, users are responsible for the security in the cloud.
-Due to this, many companies suffer from misconfigured and poorly architected cloud infrastructure, leading to embarrassing data leaks \cite{74}.
-
 \par There are a limited number of tools provided by cloud service providers.
-For instance, AWS Security Hub only supports Center for Internet Security (CIS) and Payment Card Industry Data
-Security Standard (PCI DSS) benchmarks.
-Even that is limited since it cannot produce results on "monitoring" related CIS benchmarks (Section 3).
+For example, Only Payment Card Industry Data and Security Standard (PCI DSS) and Center for Internet Security (CIS) benchmarks are supported by AWS Security Hub \cite{74}.
+The monitoring result produced by these tools doesnt comply with CIS benchmarks, thus the usage of these tools is also limited.
 This is where third-party solutions come in handy \cite{74}.
 
-\par This section shows the assessment of security vulnerability performed using two open-source cloud security assessment tools namely Prowler and ScoutSuite which can help strengthen the cloud security posture without breaking the bank.
-In the end, a comparison between the assessment performed using Prowler and ScoutSuite against the different security vulnerabilities identified earlier is highlighted in the table \ref{tab:comparisionresultprowlervsscoutsuite}.
-
-\par This section shows the comparison of the assessment of security vulnerability performed using two open-source cloud security assessment tools namely Prowler and ScoutSuite.
-These tools help strengthen the cloud security posture without breaking the bank.
-The table \ref{tab:comparisionresultprowlervsscoutsuite} highlights the result of the assessment obtained using the two tools.
+\par This section shows the comparison between the assessment performed using Prowler and ScoutSuite against the different security vulnerabilities identified earlier in chapter 3.
+Table \ref{tab:comparisionresultprowlervsscoutsuite} shows the comparison result.
 
 \par Assessmement Process:
 
-
-\par Prowler: Prowler users AWS CLI. Before running Prowler, the AWS CLI must be properly configured with a valid Access Key and Region or declare AWS variables properly.
-This can be done by running the command \textit{aws configure}.
-The credentials configured in the AWS CLI must be associated with a user.
-In order to run all the Prowler checks, managed policies \textit{SecurityAudit} and \textit{ViewOnlyAccess} must be added to the user \cite{75}.
-
-\begin{table}[h!]
-    \begin{center}
-        \caption{Prowler Extra78}
-        \label{tab:prowlerextra}
-        \begin{tabular}{|p{1.4cm}|p{1.7cm}|p{1.5cm}|p{4.0cm}|p{5.0cm}|}
-            \hline
-            \textbf{Result} & \textbf{Severity} & \textbf{CheckID} & \textbf{Check Title} & \textbf{Check Output}\\
-            \hline
-            Pass & Critical & 7.8 & [extra78] Ensure there are no Public Accessible RDS instances &
-            No Publicly Accessible RDS instances found\\
-            \hline
-        \end{tabular}
-    \end{center}
-\end{table}
-
-\par The assessment of security vulnerability using Prowler is performed by executing the command \textit{./prowler}.
-When the command is run, Prowler authenticates the configured environment variable.
-Upon successful authentication, the checks are run over all the AWS regions.
-To limit the assessment to a custom profile and region, the command \textit{./prowler -p custom-profile -r us-east-1} is used.
-Prowler also enables assessing a single security vulnerability by running the command \textit{./prowler -c check78}.
-The check78 is a check id, this check ensures there are no Public Accessible RDS instances (verifies publicly accessible RDS instances).
-Table \ref{tab:prowlerextra} shows the execution result of the assessment performed using Prowler \cite{75}.
-
-\par If the user wants to save the assessment report for later analysis, Prowler enables saving the result in different formats such as CSV, JSON, Html, etc.
-This is achieved by using the command \textit{./prowler -M csv}\cite{75}.
-
-
-\par Scout Suite works on machines used to make AWS API calls, such as AWS CLI, EC2 instances, or any other tool based on AWS official SDKs. Similar to Prowler, before starting the assessment AWS CLI must be configured.
-AWS CLI can be configured by running the \textit{aws configure} command.
-The user credentials configured must be assigned the ReadOnlyAccess and SecurityAudit AWS Managed Policies \cite{76}.
-
-\begin{table}[h!]
-    \begin{center}
-        \caption{ScoutSuite Publicly accessible RDS instances}
-        \label{tab:scoutsuiterule}
-        \begin{tabular}{|p{1.4cm}|p{1.7cm}|p{5.0cm}|p{6.0cm}|}
-            \hline
-            \textbf{Result} & \textbf{Severity} & \textbf{Rule} & \textbf{Rule Title}\\
-            \hline
-            Good & Danger & rds-instance-publicly-accessible & RDS Instance publicly accessible \\
-            \hline
-        \end{tabular}
-    \end{center}
-\end{table}
-
-Once the AWS CLI environment is configured and appropriate credentials are set up, the assessment can be started with ScoutSuite.
-If the user wishes to use Scoutsuite against a specific AWS IAM role, the command \textit{scout aws --profile my-aws-cli-profile} is executed.
-The assessment is started by executing the command \textit{scout aws}.
-ScoutSuite gathers data from APIs, performs the authenticity of the configured environment variable, and pulls info on the cloud services and various resources.
-Once Scout Suite finishes auditing the environment, an HTML report will be generated \cite{77}.
-
-Unlike checks in Prowler, ScoutSuite has rules.
-To verify publicly accessible RDS instances, ScoutSuite uses the rule \textit{rds-instance-publicly-accessible}.
-The result is demonstrated in table \ref{tab:scoutsuiterule} \cite{77}.
-
-
-
-
-
-
-\begin{longtable}{|p{10cm}|p{2.2cm}|p{2.2cm}|}
+\begin{longtable}{|p{8cm}|p{2.4cm}|p{2cm}|p{2cm}|}
     \hline
-    \textbf{Security Vulnerabilities} & \textbf{Prowler} & \textbf{ScoutSuite}\\
+    \textbf{Security Vulnerabilities} & \textbf{Service} & \textbf{Prowler} & \textbf{ScoutSuite}\\
     \hline
-    Avoid the use of the root account & {{\color{green}\checkmark}} & {{\color{green}\checkmark}} \\
+    Avoid the use of the root account & IAM & {{\color{green}\checkmark}} & {{\color{green}\checkmark}} \\
     \hline
-    MFA is enabled for all IAM users & {{\color{green}\checkmark}} & {{\color{green}\checkmark}} \\
+    MFA is enabled for all IAM users & IAM & {{\color{green}\checkmark}} & {{\color{green}\checkmark}}\\
     \hline
-    Credentials unused for 90 days or greater are disabled & {{\color{green}\checkmark}} & {{\color{green}\checkmark}} \\
+    Credentials unused for 90 days or greater are disabled & IAM & {{\color{green}\checkmark}} & {{\color{green}\checkmark}}\\
     \hline
-    Access keys are rotated every 90 days or less & {{\color{green}\checkmark}} & {{\color{green}\checkmark}} \\
+    Access keys are rotated every 90 days or less & IAM & {{\color{green}\checkmark}} & {{\color{green}\checkmark}}\\
     \hline
-    IAM password policy requires at least one uppercase letter & {{\color{green}\checkmark}} & {{\color{green}\checkmark}} \\
+    IAM password policy requires at least one uppercase letter & IAM & {{\color{green}\checkmark}} & {{\color{green}\checkmark}}\\
     \hline
-    IAM password policy requires at least one lowercase letter & {{\color{green}\checkmark}} & {{\color{green}\checkmark}} \\
+    IAM password policy requires at least one lowercase letter & IAM & {{\color{green}\checkmark}} & {{\color{green}\checkmark}}\\
     \hline
-    IAM password policy requires at least one symbol & {{\color{green}\checkmark}} & {{\color{green}\checkmark}} \\
+    IAM password policy requires at least one symbol & IAM & {{\color{green}\checkmark}} & {{\color{green}\checkmark}}\\
     \hline
-    IAM password policy requires at least one number & {{\color{green}\checkmark}} & {{\color{green}\checkmark}} \\
+    IAM password policy requires at least one number & IAM & {{\color{green}\checkmark}} & {{\color{green}\checkmark}}\\
     \hline
-    IAM password policy requires a minimum length of 14 or greater & {{\color{green}\checkmark}} & {{\color{green}\checkmark}} \\
+    IAM password policy requires a minimum length of 14 or greater & IAM & {{\color{green}\checkmark}} & {{\color{green}\checkmark}}\\
     \hline
-    IAM password policy prevents password reuse & {{\color{green}\checkmark}} & {{\color{green}\checkmark}} \\
+    IAM password policy prevents password reuse & IAM & {{\color{green}\checkmark}} & {{\color{green}\checkmark}}\\
     \hline
-    IAM password policy expires passwords within 90 days or less & {{\color{green}\checkmark}} & {{\color{green}\checkmark}} \\
+    IAM password policy expires passwords within 90 days or less & IAM & {{\color{green}\checkmark}} & {{\color{green}\checkmark}}\\
     \hline
-    Password expiration requires an administrator reset &  & \\
+    Password expiration requires an administrator reset & IAM &  &\\
     \hline
-    Allow users to change their own password &  & \\
+    Allow users to change their own password & IAM & &\\
     \hline
-    Insider Threat & {{\color{green}\checkmark}} & {{\color{green}\checkmark}} \\
+    Insider Threat & IAM & {{\color{green}\checkmark}} & {{\color{green}\checkmark}}\\
     \hline
-    Access key for the root account & {{\color{green}\checkmark}} & {{\color{green}\checkmark}} \\
+    Access key for the root account & IAM & {{\color{green}\checkmark}} & {{\color{green}\checkmark}}\\
     \hline
-    Instances created from Malicious AMI & {{\color{green}\checkmark}} & {{\color{green}\checkmark}} \\
+    Instances created from Malicious AMI & EC2 & {{\color{green}\checkmark}} & {{\color{green}\checkmark}}\\
     \hline
-    User data public exposure & {{\color{green}\checkmark}} & {{\color{green}\checkmark}} \\
+    User data public exposure & EC2 & {{\color{green}\checkmark}} & {{\color{green}\checkmark}}\\
     \hline
-    Server-Side Request Forgery & {{\color{green}\checkmark}} &  \\
+    Server-Side Request Forgery & EC2 & {{\color{green}\checkmark}} & \\
     \hline
-    Denial of Wallet &  & \\
+    Denial of Wallet & EC2, Lambda & &\\
     \hline
-    Public exposure of S3 buckets & {{\color{green}\checkmark}} & {{\color{green}\checkmark}} \\
+    Public exposure of S3 buckets & S3 &  {{\color{green}\checkmark}} & {{\color{green}\checkmark}}\\
     \hline
-    Unencrypted S3 buckets & {{\color{green}\checkmark}} & {{\color{green}\checkmark}} \\
+    Unencrypted S3 buckets & S3 & {{\color{green}\checkmark}} & {{\color{green}\checkmark}}\\
     \hline
-    Write access on S3 buckets (Ghostwriter) & {{\color{green}\checkmark}} & {{\color{green}\checkmark}} \\
+    Write access on S3 buckets (Ghostwriter) & S3 & {{\color{green}\checkmark}} & {{\color{green}\checkmark}}\\
     \hline
-    Publicly accessible RDS instances & {{\color{green}\checkmark}} & {{\color{green}\checkmark}} \\
+    Publicly accessible RDS instances & RDS & {{\color{green}\checkmark}} & {{\color{green}\checkmark}}\\
     \hline
-    Unencrypted RDS Instance & {{\color{green}\checkmark}} & {{\color{green}\checkmark}} \\
+    Unencrypted RDS Instance & RDS & {{\color{green}\checkmark}} & {{\color{green}\checkmark}}\\
     \hline
-    Resources running in an AWS classic resource &  &  \\
+    Resources running in an AWS classic resource & RDS & &\\
     \hline
-    Default data retention & {{\color{green}\checkmark}} & {{\color{green}\checkmark}} \\
+    Default data retention & RDS & {{\color{green}\checkmark}} & {{\color{green}\checkmark}}\\
     \hline
-    Lambda functions have a public resource-based policy & {{\color{green}\checkmark}} &  \\
+    Lambda functions have a public resource-based policy & Lambda & {{\color{green}\checkmark}} & \\
     \hline
-    Publicly accessible AWS account & {{\color{green}\checkmark}} &  \\
+    Publicly accessible AWS account & Lambda & {{\color{green}\checkmark}} & \\
     \hline
-    Public lambda function URL & {{\color{green}\checkmark}} &  \\
+    Public lambda function URL & Lambda & {{\color{green}\checkmark}} &\\
     \hline
-    Public lambda function URL Cors & {{\color{green}\checkmark}} &  \\
+    Public lambda function URL Cors & Lambda & {{\color{green}\checkmark}} & \\
     \hline
-    Insecure Management of Secrets & {{\color{green}\checkmark}} &  \\
+    Insecure Management of Secrets & Lambda & {{\color{green}\checkmark}} &\\
     \hline
-    Poisoning the Well &  & \\
+    Poisoning the Well & Lambda & & \\
     \hline
-    \caption{Prowler vs ScoutSuite security vulnerability assessment }
+    \caption{Prowler vs ScoutSuite security vulnerability assessment}
     \label{tab:comparisionresultprowlervsscoutsuite}
 \end{longtable}
+
+
+\par After the assessment of the AWS account using the two assessment tools finishes, the assessment results are recorded.
+Looking at the table it is easy to determine how efficient individual security tools are in performing the security assessment of the security vulnerabilities associated to the different AWS services.
+
+\par From the table, for AWS IAM, it can be inferred that both Prowler and ScoutSuite are equally efficient in performing the assessment of identified security vulnerabilities.
+The security vulnerabilities that are not assessed by both tools arises due to excessive privilege issue.
+Prowler does not contain any check, similarly, ScoutSuite does not provide any rule to perform the assessment of those security vulnerabilities.
+This can cause issues such as compromising the user account, misuse of access credentials, loss of data, etc.
+
+\par Moving on to EC2, it can be seen that Prowler does not contain a check to perform the assessment of Denial of Wallet security vulnerability and on the other hand, there are no rules in ScoutSuite to assess Server-Side Request Forgery and Denial of Wallet security vulnerabilities.
+The SSRF attack can result in access to the configuration that includes files, metadata, etc.
+It scans the organization’s internal network, thus letting the malicious user exploit and identify unsecured services \cite{97}.
+The Denial of Wallet security vulnerability causes high money loss as the attacker restricts access to resources for the privileged user \cite{86}.
+
+\par Both Prowler and ScoutSuite perform the assessment of all the identified security vulnerabilities in S3 and thus no security vulnerability is left unassessed.
+
+\par Based on the assessment performed using Prowler and ScoutSuite for RDS, it can be seen that the RDS instance running on AWS classic resource could not be assessed.
+The AWS classic is retired by AWS and thus no checks or rules are available to perform the assessment \cite{88}.
+
+\par ScoutSuite does not provide rules to access AWS Lambda \cite{72}, thus assessing the Lambda function is not possible using ScoutSuite.
+The checks in Prowler can perform the assessment of identified security vulnerabilities in AWS Lambda.
+From the table \ref{tab:comparisionresultprowlervsscoutsuite}, it can be seen that Poisoning of Well is
+not assessed using Prowler as there are no checks available in Prowler to perform the assessment.
+Poisoning of well could be introduced on the Machine
+Learning
+dataset.
+Here, in order to control the prediction behavior of the model the attacker manipulates the training dataset \cite{90}.
+
+\par The table \ref{tab:comparisionresultprowlervsscoutsuite} provides insight into the different security vulnerabilities and the assessment result using the two tools.
+It helps us to understand the efficiency offered by each tool in assessing the security vulnerabilities in different AWS services.
+Based on the understanding obtained from the comparison, the user can select the tool that meets their business needs and requirements.

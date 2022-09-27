@@ -523,6 +523,42 @@ Detect-secrets is  \cite{78}.
     \label{fig:prowlercheckexecution}
 \end{figure}
 
+\par After installing the required tools and packages
+successfully, the AWS environment need be configured with
+a valid Access Key and Region or by declaring the AWS
+variables.
+This can be done by running the command \textit{aws configure}.
+In order to run all the Prowler checks, managed policies \textit{SecurityAudit} and \textit{ViewOnlyAccess} must be added to the user \cite{75}.
+
+
+
+Prowler can then be installed directly by cloning the code for the source repository \cite{75} using the command \textit{git clone https://github.com/prowler-cloud/prowler} and does not require any additional setup afterward.
+Once the source code is available, the assessment of security vulnerability using Prowler is performed by executing the command \textit{./prowler}.
+Figure \ref{fig:prowlercheckexecution} shows the execution of the check using Prowler.
+When the command is run, Prowler authenticates the configured environment variable.
+Upon successful authentication, the checks are run over all the AWS regions.
+To limit the assessment to a custom profile and region, the command \textit{./prowler -p custom-profile -r us-east-1} is used.
+Prowler also enables assessing a single security vulnerability by running the command \textit{./prowler -c check78}.
+The check78 is a check id, this check ensures there are no Public Accessible RDS instances (verifies publicly accessible RDS instances).
+Table \ref{tab:prowlerextra} shows the execution result of the assessment performed using Prowler \cite{75}.
+\begin{table}[h!]
+    \begin{center}
+        \caption{Prowler check execution result}
+        \label{tab:prowlerextra}
+        \begin{tabular}{|p{1.4cm}|p{1.7cm}|p{1.5cm}|p{4.0cm}|p{5.0cm}|}
+            \hline
+            \textbf{Result} & \textbf{Severity} & \textbf{CheckID} & \textbf{Check Title} & \textbf{Check Output}\\
+            \hline
+            Pass & Critical & 7.8 & [extra78] Ensure there are no Public Accessible RDS instances &
+            No Publicly Accessible RDS instances found\\
+            \hline
+        \end{tabular}
+    \end{center}
+\end{table}
+
+\par If the user wants to save the assessment report for later analysis, Prowler enables saving the result in different formats such as CSV, JSON, Html, etc.
+This is achieved by using the command \textit{./prowler -M csv}\cite{75}.
+
 \begin{figure}
     \centering
     \includegraphics[width=\textwidth]{prowlerassessmentreport.png}
@@ -530,8 +566,6 @@ Detect-secrets is  \cite{78}.
     \label{fig:assessmentreport}
 \end{figure}
 
-\par After installing the required tools and packages successfully, the AWS environment must be configured by using the command \textit{aws configure}.
-The user credentials used to configure the AWS environment must be assigned the required permissions namely \textit{SecurityAudit} and \textit{ViewOnlyAccess} to run the Prowler checks.
-Prowler can then be installed directly by cloning the code for the source repository \cite{75} using the command \textit{git clone https://github.com/prowler-cloud/prowler} and does not require any additional setup afterward.
-Once the source code is available, to start the assessment the command \textit{./prowler} is executed \ref{fig:prowlercheckexecution}.
-The figure \ref{fig:assessmentreport} shows the generated assessment report.
+The figure \ref{fig:assessmentreport} shows the
+assessment report generated after the assessment of AWS
+account using Prowler.
