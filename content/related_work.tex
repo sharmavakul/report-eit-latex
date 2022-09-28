@@ -31,7 +31,7 @@ While deciding on a cloud service provider there are
 several factors that needs to be considered.
 In order to determine the most suitable type of cloud computing on which the cloud services can be implemented, it is better to first identify the type of cloud computing architecture or cloud deployment.
 There are three different cloud offerings to deploy cloud services: a private cloud, a public cloud, or a hybrid cloud \cite{14}.
-
+\hfill \break
 \textbf{Private cloud:}
 Private cloud refers to computing resources that are used by a particular organization or a single business.
 In this,
@@ -43,13 +43,13 @@ services
 and
 the
 infrastructure are maintained by a private network \cite{14}.
-
+\hfill \break
 \textbf{Public cloud:}
 This type of cloud usually offers B2C (Business to Consumer) type of interactions. Public clouds are operated and
 owned by a third-party cloud service provider which delivers these resources over the internet. AWS is an example of
 a public cloud where the cloud service provider owns and manages all the software, hardware, and other supporting
 services \cite{14}.
-
+\hfill \break
 \textbf{Hybrid cloud:}
 A hybrid cloud refers to the mixed storage, services, and computing environment comprises of a public cloud such as
 AWS and an on-premises infrastructure, a private cloud. The hybrid cloud approach is the most widely used infrastructure configuration these days as it enables the organization
@@ -87,18 +87,59 @@ IaaS benefits businesses by reducing operating costs, and by spending less on so
 \begin{figure}
     \centering
     \includegraphics[width=\textwidth]{iaaspaassaas.jpg}
-    \caption{Cloud computing models}
+    \caption{Cloud computing models}{\cite{99}}
     \label{fig:iaaspaassaas}
 \end{figure}
 
 \clearpage
 \textbf{Platform as a service (PaaS)}
-\par PaaS is a cloud computing service that provides an on-demand environment for developing, testing, and managing software applications. PaaS is a cloud computing model that provides customers with a complete cloud platform—hardware, software, and infrastructure—for developing, running, and managing applications without the cost, inflexibility, and complexity that often come with building and maintaining that platform on-premises. It allows the developers to develop web and mobile applications without worrying about managing or setting up the underlying infrastructure for storage, servers, databases, and networks that are needed for deployment \cite{15}.
+\par PaaS is a model that provides cloud-based services
+enabling the developers and businesses to build software
+and applications at a faster speed that could not be
+achieved in on-premises solutions.
+It is an on-demand service providing companies with a
+complete set of software, hardware, and infrastructure for
+developing, running, testing, and managing software
+applications and eliminates the complexity and expense of
+buying, evaluating, configuring, and managing all the
+required software and hardware needed for applications.
+It provides the organization with a cost-effective,
+complete, and flexible platform.
+It allows programmers to develop web and mobile
+applications without worrying about managing or setting up the underlying infrastructure for storage, servers, databases, and networks that are needed for deployment \cite{15}.
 
-\par With PaaS, the organization avoids the complexity and expense of buying the software licenses, the underlying infrastructure, container orchestrators, development tools, and middleware or other resources. The organization only manages the application developed by them and cloud service providers such as Amazon AWS manage everything else \cite{9}.
+
+\par With PaaS, the organization avoids the complexity and expense of buying the software licenses, the underlying infrastructure, container orchestrators, development tools, and middleware or other resources.
+The organization only manages the application developed
+by them and cloud service providers such as Amazon AWS
+manage everything else \cite{15}.\\
+
+\hfill \break
 
 \textbf{Software as a service (SaaS)}
-\par Software-as-a-service (SaaS), also known as cloud application services, is the most comprehensive form of cloud computing services, delivering an entire application that is managed by a provider, via a web browser. Common examples are calendaring, email, and office tools (such as Microsoft Office 365). It is a distribution model in which the applications are hosted by cloud service providers or vendors to users across the globe. It is a software solution that can be purchased on a pay-as-you-go basis from a cloud service provider. In SaaS, all the application software, middleware, application data, and infrastructure are in the cloud service provider’s data center. The cloud service provider manages the software and hardware and ensures the security and availability of applications and data. It enables bringing up the organization’s application and running quickly and at a minimal upfront cost \cite{15}.
+\par Software as a service (or SaaS) is a method of delivering software and application to the end user over the internet.
+These applications can be accessed via the
+mobile application, internet browser, or desktop app.
+Common examples of SaaS are calendaring, email, and office tools (such as Microsoft Office 365).
+It is a distribution model in which the applications are hosted by cloud service providers or vendors to users across the globe.
+The another name given to these applications are
+on-demand
+software, Web-based software, or hosted software and run
+on the provider's servers.
+The provider takes all the responsibilities of managing the application that includes performance, availability and security.
+SaaS offers a subscription-based model
+which
+means users pay recurring monthly or annual fees for
+using the product, the user don’t need to worry
+about the huge
+upfront cost.
+In SaaS, all the
+application software, middleware, application data, and infrastructure are in the cloud service provider’s data center.
+The software and hardware are managed by the cloud
+service provider.
+The cloud service provider also ensures the security and availability of applications and data.
+It enables bringing up the organization’s application and
+running quickly and at a minimal upfront cost \cite{15}.
 
 \par Figure \ref{fig:iaaspaassaas} describes the responsibilities of each deployment model compared to the on-premises setup.
 
@@ -107,9 +148,19 @@ IaaS benefits businesses by reducing operating costs, and by spending less on so
 
 \subsection{General AWS background}
 
-\par Amazon web services is an evolving cloud computing subsidiary of Amazon. Amazon Web Services portfolio comprises more than 200+ services including database, compute, application development, security, infrastructure management, analytics, migration, etc. that help the organization to scale and grow. For example, AWS provides a wide range of databases that are designed specifically for specific applications. AWS  is a comprehensive, evolving cloud computing platform that includes a mixture of infrastructure as a service (IaaS), platform as a service (PaaS), and packaged software as a service (SaaS) offerings \cite{16}.
-\par AWS was launched in 2006 and was one of the first cloud service providers to introduce a pay-as-you-go cloud computing model. It offers various tools and solutions for developers \cite{17}.
+\par Amazon web services is an evolving cloud computing subsidiary of Amazon.
+Amazon Web
+Services portfolio comprises more than 200+ services including database, compute, application
+development, security, infrastructure management, analytics, migration, etc.
+that help the
+organization to scale and grow.
+For example, AWS provides a wide range of databases that are
+designed specifically for specific applications.
+AWS combines the offerings of the three cloud services 
+namely PaaS, IaaS, and SaaS \cite{16}.
 
+\par AWS was launched in 2006 and was one of the first cloud service providers to introduce a pay-as-you-go cloud computing model. It offers various tools and solutions for developers \cite{17}.
+\\
 \par AWS cloud infrastructure is a highly secure, reliable, and extensive cloud platform \cite{18}. Whether it is required to deploy the application workloads globally with just one click, or to develop and deploy specific applications closer to the end user with latency in the single-digit millisecond range, AWS offers the right cloud infrastructure anywhere, anytime \cite{19}.
 
 \begin{itemize}
@@ -121,14 +172,20 @@ IaaS benefits businesses by reducing operating costs, and by spending less on so
 \begin{figure}
     \centering
     \includegraphics[width=\textwidth]{geographicalcomponents.png}
-    \caption{AWS Geographical Components}
+    \caption{AWS Geographical Components}{\cite{19}}
     \label{fig:identities}
 \end{figure}
 
 \par When designing and architecting the cloud infrastructure it is very important to know where the instances, services are data are located. This is a fundamental criterion to implement a highly available and scalable network that offers low latency \cite{19}.
 
+
 \textbf{Region}
-\par Regions are geographical locations to operate and run cloud services. These regions are spread globally and reduce the latency incurred by the customer when accessing the resource. Each AWS region contains availability zones. Within each of these regions, there are a minimum of 2 Availability Zones and a maximum of 6 Availability Zones, however typically 3 or more are usually found. The regions are connected to one another via a high-speed fiber network and are isolated from each other \cite{20}
+\par Regions are geographical locations to operate and run cloud services.
+These regions are spread globally and reduce the latency incurred by the customer when accessing the resource.
+Each AWS region contains availability zones.
+For each AWS region, there are a minimum of 2 Availability
+Zones and a
+maximum of 6 Availability Zones, however typically 3 or more are usually found. The regions are connected to one another via a high-speed fiber network and are isolated from each other \cite{20}
 
 
 \textbf{Availability zones}
@@ -136,7 +193,10 @@ IaaS benefits businesses by reducing operating costs, and by spending less on so
 
 \textbf{Edge Location}
 \par In order to reduce the latency for the traffic, edge locations are deployed at multiple locations across the
-world. Edge locations limit to building a new data center if the customers are in different cities or a different
+world. Edge locations limit to building a new data center
+if the customers are in different cities, a different
+state, a different
+country or a different
 part of the world. Edge locations can be understood as servers that are placed geographically close to the clients.
 If we consider an example, an organization has many clients in Tokyo accessing the information which is deployed in a
 region in Mumbai. In such cases, instead of clients sending requests constantly to Mumbai region for accessing the
@@ -148,13 +208,20 @@ communication with customers \cite{22}.
 
 \textbf{AWS Identity and Access Management (IAM)}
 
-\par Amazon Identity and Access Management (IAM) is a web service that helps to securely control access for the users to Amazon Web Services resources and services. Using IAM enables creating and managing Amazon Web Services groups and users and uses permissions to allow and deny their permissions to AWS resources. IAM enables organizations to create and control services for user authentication or limit access to a certain set of people who use their AWS resources \cite{23}.
+\par Amazon Identity and Access Management (IAM) is a web service that helps to securely control access for the users to Amazon Web Services resources and services.
+Using IAM enables creating and managing Amazon Web Services groups and users and uses permissions to allow and deny their permissions to AWS resources.
+IAM enables organizations to create and control services for user authentication or limit access to a certain set of people who use their AWS resources \cite{23}.
 
 
-\par IAM is a global service. When an AWS account is created, it begins with one sign-in identity. This identity has
-complete access to all AWS resources and services in the account and is called the \textit{root user}. The AWS account root
-user is accessed by signing in with the email address and password that you used to create the account. As
+\par When an AWS account is created, it begins with one
+sign-in identity.
+This identity has
+complete access to all AWS resources and services in the account and is called the \textit{root user}.
+The AWS account root
+user is accessed by signing in with the email address and password that you used to create the account.
+As
 recommended, the usage of root users must be avoided for everyday tasks \cite{24}.
+
 
 \begin{figure}
     \centering
@@ -165,32 +232,31 @@ recommended, the usage of root users must be avoided for everyday tasks \cite{24
 
 \textbf{IAM Users}
 
-\par An IAM user is an identity within your AWS account that has specific permissions for a single person or application. Users have their own set of authentication parameters such as access key, secret key, or password that is required to access the AWS account through CLI or AWS console. An IAM user does not always represent an actual individual. Each IAM user is associated with only one AWS account \cite{25}.
-
+\par An IAM user represents an entity within the AWS account.
+This entity corresponds to an application or a person and has specific permissions.
+Users have their own set of authentication parameters such as access key, secret key, or password that is required to access the AWS account through CLI or AWS console.
+An IAM user does not always represent an actual individual.
+Each IAM user is associated with only one AWS account \cite{25}.
+\hfill \break
 
 \textbf{IAM Group}
-\par An IAM group is an identity that specifies a collection of IAM users as show in the figure \ref{fig:groupusers}. The user
-groups help in specifying the permissions for multiple users, thus making it easier to manage the permissions for the
-users. For example, the organization could have a user group called Admins and give that user group typical
-administrator permissions. Any user within a user group automatically has the permissions that are assigned to the
-user group.
-If a new user joins the organization and should have administrator privileges, the user can be assigned the
-appropriate permissions by adding the user to that user group. Similarly, if a user changes a job role within the
-organization, instead of editing that user's permissions, it is possible to simply remove them from the old user groups
-and add them to the new user groups \cite{25}.
-
+\par An IAM group is an identity that specifies a collection of IAM users as shown in figure 2.3. The user groups help in specifying the permissions for multiple users, thus making it easier to manage the permissions for the users. For example, there could be a user group in an organization called Admins that provides all users administrator permissions who belong to that user group. A user belonging to a user group gets assigned all the permissions that are assigned to the user group automatically. If a new user joins the organization and should have administrator privileges, just by adding the new user to the admin user group, the user can be assigned the required permissions. Similarly, if a user changes a job role within the organization, instead of editing that user’s permissions, it is possible to simply remove them from the old user groups and add them to the new user groups \cite{25}.
+\hfill \break
 
 
 \textbf{Roles}
-\par An IAM role is an identity within the AWS account that has specific permissions. An IAM role is similar to an IAM user but is not associated with a specific person. It is possible to temporarily assume an IAM role in the AWS Management Console by switching roles. Also, a role can be assumed by calling an AWS CLI or AWS API operation or by using a custom URL. However, a role is intended to be assumable by anyone who needs it instead of being uniquely associated with one person. Also, a role does not have standard long-term credentials such as access keys or passwords associated with it. Instead, when a role is assumed, it provides temporary security credentials for the role session. It is possible to use roles to delegate access to users, services, or applications that don't have access to your AWS resources. For example, it is required to grant users within an AWS account access to resources the users usually don’t have or grant users in one AWS account access to resources in another account \cite{25}.
+\par An IAM role is not associated with a specific person,
+but it is similar to an IAM user. A role can be assumed
+temporarily by switching the roles in the management
+console of AWS. It is also possible to assume a role
+through the AWS API operation or by calling the AWS CLI
+or by using a custom URL. However, a role is intended to be assumable by anyone who needs it instead of being uniquely associated with one person. There are no standard long-term credentials such as passwords or access keys associated with a role. Instead, when a role is assumed, it provides temporary security credentials for the role session. It is possible to use roles to delegate access to users, services, or applications that don't have access to your AWS resources. For example, it is required to grant users within an AWS account access to resources the users usually don’t have or grant users in one AWS account access to resources in another account \cite{25}. \\
 
+\hfill \break
 \textbf{Policy}
 
-\par An IAM policy is an IAM entity that sets permission and controls access to AWS resources. The IAM policies are
-attached to AWS resources or IAM identities (users, groups, or roles) and define their permission. These policies are
-evaluated when a principal such as a role or a user makes a request. Most policies in AWS are stored as JSON
-documents. IAM policies define permissions which specify who has access to the resources and what operation they can
-perform regardless of the method that is used to perform the operation. For example, if there exists a policy that allows the GetUser action, then a user with that policy can get user information from the AWS API or the AWS Management Console, or the AWS CLI. \cite{14}.
+\par An IAM policy is an IAM entity that sets permission and controls access to AWS resources. The IAM policies are attached to AWS resources or IAM identities (users, groups, or roles) and define their permission.
+These policies are evaluated when a principal such as a role or a user makes a request. Most policies in AWS are stored as JSON documents. IAM policies define permissions which specify who has access to the resources and what operation they can perform. For example, if there exists a policy that allows the GetUser action, then if this policy is assigned to the user, the user would be able to fetch the information either by using the AWS API or the AWS CLI or the AWS Management Console \cite{14}.
 
 \par AWS provides six types of policies:
 
@@ -209,25 +275,34 @@ perform regardless of the method that is used to perform the operation. For exam
 \end{itemize}
 
 \begin{itemize}
-    \item \textbf{Resource-based policies:} Resource-based policies are JSON policy documents that are attached to a
-    resource
-    such as an Amazon S3 bucket. These are inline policies and grant the specified permission to perform specific actions on a resource \cite{25}.
+    \item \textbf{Resource-based policies:} Policy document attached to a resource such as an Amazon S3 bucket is known as Resource-based policies.
+    These are inline policies and grant the specified permission to perform specific actions on a resource \cite{25}.
 \end{itemize}
 \begin{itemize}
-    \item \textbf{IAM permissions boundaries:} A permissions boundary is used to set the maximum permissions that an
-    identity-based policy can grant to an IAM entity. When the permissions boundary for an entity is set, the entity can perform only the actions that are allowed by both its permissions boundaries and its identity-based policies. Resource-based policies that specify the user or role as the principal are not limited by the permissions boundary \cite{25}.
+    \item \textbf{IAM permissions boundaries:} A permissions' boundary sets the maximum permissions that can be granted to an IAM entity by an identity-based policy.
+     When the permissions boundary for an entity is set, the entity can perform only the actions that are allowed by both its permissions boundaries and its identity-based policies.
+     Permissions boundary does not limit the
+    resource-based policies that specify the user or role as the principal \cite{25}.
 \end{itemize}
 \begin{itemize}
-    \item \textbf{Organizations Service control policies (SCPs):} Amazon Organizations is a service for grouping and centrally managing the Amazon accounts that the business owns. It helps to centrally manage and govern the environment as the organization grows and scales its AWS resources. Amazon Organizations is used to define the maximum permissions for account members of an organization or organizational unit (OU). AWS Organizations service control policy (SCP) limits permissions that identity-based policies or resource-based policies grant to entities (users or roles) within the account, but do not grant permissions \cite{25}.
+    \item \textbf{Organizations Service control policies (SCPs):} Amazon Organizations is a service for grouping and centrally managing the Amazon accounts that the business owns.
+    It helps to centrally manage and govern the environment as the organization grows and scales its AWS resources.
+    The maximun permission for account members of an organizational unit (OU) is defined using Amazon Organizations.
+    AWS OSCP limits the permissions granted to entities i
+    .e. users or roles within the account by the
+    identity-based policies or resource-based policies,
+    but it does not grant permissions \cite{25}.
+
 \end{itemize}
 \begin{itemize}
-    \item \textbf{Access control lists (ACLs):} ACLs is used to control which principals in other accounts can access
-    the
-    resource to which the ACL is attached. ACLs are like resource-based policies, although they are the only policy type that does not use the JSON policy document structure. ACLs are cross-account permissions policies that grant permissions to the specified principal. ACLs cannot grant permissions to entities within the same account \cite{25}.
+    \item \textbf{Access control lists (ACLs):} ACL is a service policy that allows to control the access to a resource by the principals in another account.
+    ACLs are the only policy types that does not uses the JSON policy structure and are similar to resource-based policies.
+    ACLs are used to grant permissions to the specified principal since they are cross-account permissions policies.
+    Using ACL it is not possible to control the access within the same account \cite{25}.
 \end{itemize}
 \begin{itemize}
-    \item \textbf{Session policies:} Session policies are advanced policies that are passed as a parameter for
-    programmatically creating a temporary session for a role or federated user. The permissions for a session are the intersection of the identity-based policies for the IAM entity (user or role) used to create the session and the session policies \cite{25}.
+    \item \textbf{Session policies:} Session policies are
+    policies used for programmatically creating a temporary session for a federated user or role by passing them as parameters.The intersection of session policies and identity-based policies for the IAM user or role represents the permissions for a session \cite{25}.
 \end{itemize}
 
 Figure \ref{fig:iamidentities} shows the overview of AWS IAM concepts in AWS infrastructure.
@@ -241,13 +316,13 @@ Figure \ref{fig:iamidentities} shows the overview of AWS IAM concepts in AWS inf
 \end{figure}
 
 
+\hfill \break
 
 \textbf{Features of IAM}
 
 \begin{itemize}
     \item \textbf{Granular permissions:} Based on the usage, permissions can be granted to different people to access
-    different resources. For example, some users are granted complete access to Amazon Simple Storage Service (Amazon
-    S3), Amazon Elastic Compute Cloud (Amazon EC2), Amazon DynamoDB, and other AWS services while other users are only
+    different resources. For example, some users are granted complete access to Amazon DynamoDB ,Amazon S3, Amazon EC2, and other AWS services while other users are only
     provide permissions to administer some EC2 instances, read-only access to some S3 buckets but no other services \cite{25}.
 \end{itemize}
 \begin{itemize}
@@ -256,7 +331,14 @@ Figure \ref{fig:iamidentities} shows the overview of AWS IAM concepts in AWS inf
     two-factor authentication to the root account as well as to the individual users’ account. This ensures the AWS user along with providing the username and password for the account also provides a code from a configured device \cite{25}.
 \end{itemize}
 \begin{itemize}
-    \item \textbf{Identity federation:} Identity federation is a system of trust between two parties for the purpose of authenticating users and conveying the information needed to authorize their access to resources. Identity federation allows users to log in to the AWS console who have their password in the Active directory or elsewhere such as in the internet identity provider or in the organization's corporate network. An Active Directory uses a structured data store as the basis for a logical, hierarchical organization of directory information. It provides methods for storing directory data and making this data available to network users and administrators. For example, active directory stores information about user accounts, such as names, passwords, phone numbers, and so on, and enables other authorized users on the same network to access this information \cite{26}. For example, if a user has logged in to his Google account and would like to use the AWS account, then identity federation helps AWS IAM to trust the authentication method. This authentication enables temporary access to the user’s AWS account \cite{25}.
+    \item \textbf{Identity federation:} Identity federation is a system of trust between two parties used for the purpose of authenticating the users and sharing the information that is required for granting access to the resources.
+    Users who have their password in the organization's
+    corporate network or elsewhere such as in the
+    internet identity provider are allowed to log in to the AWS console by the identity federation.
+    For example, if there is a user who has logged into his
+    google account and would like to use the AWS account,
+    then identity federation helps AWS IAM to trust the authentication method.
+    This authentication enables temporary access to the user’s AWS account \cite{25}.
 \end{itemize}
 \begin{itemize}
     \item \textbf{Password policy:} Password is used to authenticate a user’s account and a strict password policy
@@ -268,30 +350,37 @@ Figure \ref{fig:iamidentities} shows the overview of AWS IAM concepts in AWS inf
 
 \textbf{Amazon Elastic Compute Cloud (EC2)}
 
-\par Amazon elastic Compute cloud EC2 is one of the core services offered by AWS which provides scalable computing
-capacity in the Amazon Web Services (AWS) Cloud. Amazon EC2 avoids upfront hardware setup investment, enabling faster
-development and deployment of applications. Amazon EC2 enables launching as few or as many virtual servers as needed,
-managing storage, and configuring security and networking. With Amazon EC2 it is possible to scale up or down to
-handle changes in requirements or reduce the need to forecast traffic, and spikes in popularity \cite{27}.
+\par Amazon Elastic Compute cloud EC2 is one of the core services offered by AWS which allows to rent virtual machine to run computer applications. Amazon EC2 avoids upfront hardware setup investment, enabling faster development and deployment of applications. Amazon EC2 enables launching as few or as many virtual servers as needed, managing storage, and configuring security and networking. Amazon EC2 enables scaling uo or down based on the changes in the requirements or reduction in the need to forecast traffic, and spikes in popularity \cite{27}.
 
-\par Amazon EC2 offers a virtual computing environment called \textit{instances} which comes in different configurations of CPU, memory, storage, and networking resources to suit user needs. EC2 instances can be used for any computing task, for example as a web server. An AWS user can create, launch, and terminate an instance based on the need, paying by the second for active servers and hence the term elastic. Amazon EC2 provides users with control over the geographical location of instances that allows for latency optimization and high levels of redundancy. Placing all of the instances into the same AZ will likely give us the best latency between them. When an EC2 instance is provisioned, by default each instance is assigned automatically a DNS name and a public and private IPV4 address \cite{28}.
+\par Amazon EC2 provides virtual server that are used for running applications on the AWS infrastructure. This virtual server is called an EC2 instance and they come in different configurations of storage, memory, CPU, and networking resources to suit user needs. EC2 instances can be used for any computing task, for example as a web server. An AWS user can create, launch, and terminate an instance based on the need, paying by the second for active servers and hence the term elastic. In order to provide high level of redundancy and optimize latency, Amazon EC2 provides users with control over the geographical location of instances. Placing all of the instances into the same AZ will likely give us the best latency between them. When an EC2 instance is provisioned, by default each instance is assigned automatically a DNS name and a public and private IPV4 address \cite{28}.
+
 
 \textbf{Features of EC2}
 \begin{itemize}
-    \item \textbf{Elastic Web-Scale Computing:} Amazon EC2 enables users to expand the capacity as per their needs within the minutes, not hours or days. It is possible for the user to commission one, hundreds, or even thousands of server instances simultaneously. Many servers can be run in parallel with these instances. These services give the user a choice to increase or decrease the automation as per their needs \cite{29}.
+    \item \textbf{Elastic Web-Scale Computing:} Amazon EC2 enables users to expand the capacity as per their needs within minutes, not hours or days.
+    Users can simultaneously commission one, hundreds, or even thousands of server instances.
+    It is possible to run many servers in
+    parallel
+    with these instances.
+    Amazon EC2, user can decrease or increase the automation as per their needs \cite{29}.
 \end{itemize}
 
 \begin{itemize}
-    \item \textbf{Versatile cloud hosting services:} Amazon EC2 gives users the choice to select from a variety of instance types, operating systems, and software packages. Amazon EC2 allows selecting a configuration of memory, instance storage, CPU, and boot partition size that is optimal for your choice of operating system and application. For example, the operating system options include a variety of Linux variants as well as Microsoft Windows Server \cite{29}.
+    \item \textbf{Versatile cloud hosting services:} Amazon EC2 gives users the choice to select from a variety of instance types, operating systems, and software packages.
+    Amazon EC2 allows selecting a configuration of memory, instance storage, CPU, and boot partition size that is optimal for your choice of operating system and application. For example, the operating system options include a variety of Linux variants as well as Microsoft Windows Server \cite{29}.
 \end{itemize}
 
 \begin{itemize}
-    \item \textbf{Security:} Cloud security is the highest priority at AWS. Amazon works with the Amazon VPC to provide additional security, isolating resources, and robust networking for the compute resources. The compute instances in AWS are located in the VPC in the specific IP range. Further, the user decides which instances are exposed to the internet and which remain private \cite{29}.
+    \item \textbf{Security:} Cloud security is the highest priority at AWS. Amazon works with the Amazon VPC to provide additional security, isolating resources, and robust networking for the compute resources.
+    The compute instances in AWS are located in the VPC in the specific IP range.
+    Further, the user decides which instances are exposed to the internet and which remain private \cite{29}.
 \end{itemize}
 
 \begin{itemize}
-    \item \textbf{Intended for use in conjunction with other Amazon web services:} Amazon EC2 collaborates with most
-    AWS services such as Amazon Relational Database Service (Amazon RDS), Amazon Virtual Private Cloud (Amazon VPC), Amazon Simple Queue Service (Amazon SQS), and Amazon Simple Storage Service (Amazon S3) to provide a complete, secure, comprehensive solution for computation, query processing, and cloud storage across a wide range of applications \cite{29}.
+    \item \textbf{Conjunction with other Amazon web
+    services:} Amazon EC2 collaborates with most AWS
+    services such as Amazon RDS, Amazon VPC, Amazon SQS, and Amazon S3 to provide a complete, secure, comprehensive solution for
+    computation, query processing, and cloud storage across a wide range of applications \cite{29}.
 \end{itemize}
 
 \begin{itemize}
@@ -311,20 +400,24 @@ handle changes in requirements or reduce the need to forecast traffic, and spike
 
 \par An AMI includes \cite{30}:
 \begin{itemize}
-    \item One or more Amazon EBS (Amazon Elastic Block Store) snapshots, or, for instance-store-backed AMIs, a template for the root volume of the instance (for example, an application server, an operating system, and applications).
+    \item One or multiple Amazon Elastic Block Store (Amazon EBS) snapshots or a template for the root volume of the instance, for instance-store-backed AMIs (for example, an application server, an operating system, and applications).
 \end{itemize}
 \begin{itemize}
-    \item Launch permissions that control which AWS accounts can use the AMI to launch instances.
+    \item Launch permission in order to control which AWS accounts can use the AMI to launch instances.
 \end{itemize}
 \begin{itemize}
-    \item A block device mapping that specifies the volumes to attach to the instance when it's launched.
+    \item A block device mapping that specifies to which instance the volumes must be attached when it’s launched.
 \end{itemize}
 
 
 
-\par Figure \ref{fig:ami} shows the lifecycle of AMI. Once the Amazon Machine Image (AMI) is created, it is stored in
-an Amazon S3 bucket. This image is then registered and can then be used to launch a new instance. An AMI can be
-copied to the same as well as to different AWS regions. If the AMI is not required any longer, it can be deregistered. Once deregistered the AMI cannot be used to launch new instances, but the existing instances using AMI will not be affected \cite{30}.
+\par Figure \ref{fig:ami} shows the lifecycle of AMI. The
+Amazon Machine Image (AMI) is stored in an Amazon S3
+bucket after it is created. This image is then registered and can then be used to launch a new instance. An AMI can be
+copied to the same as well as to different AWS regions.
+The AMI can be deregistered, if it is no longer required.
+Upon deregistration a new instances cannot be launched
+using the AMI, but the existing instances using AMI will not be affected \cite{30}.
 
 \par It is possible to launch an instance using an existing AMI. If the instance is customized, for example, the
 software is installed on the image, this customized AMI can be saved with the updated configuration. Launching an
