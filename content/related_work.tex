@@ -435,11 +435,21 @@ groups. Instance metadata service contains information about the running EC2 ins
 
 \par Instance metadata can be used to access user data that is specified when launching the instance. For example, it
 is possible to specify parameters for configuring the instance or include a simple script. It is also possible to
-build generic AMIs and use user data to modify the configuration files supplied at launch time. When more than one instance is launched at the same time, the user data is available to all instances. Each instance has a unique number called the ami-launch-index number. This number allows for writing code that controls what to do. For example, the first host might elect itself as the original node in a cluster \cite{33}.
+build generic AMIs and use user data to modify the configuration files supplied at launch time.
+When more than one instance is launched at the same time, the user data is available to all instances. Each instance has a unique number called the ami-launch-index number. This number allows for writing code that controls what to do. For example, the first host might elect itself as the original node in a cluster \cite{33}.
 
 \textbf{Amazon Relational Database Service (RDS)}
 
-\par Amazon Relational Database Service (RDS) is a set of managed services that make it easy to set up, operate, and scale databases in the Amazon Web Services Cloud. Amazon RDS supports an array of database engines to organize and store data. It also helps with relational database management tasks, such as data backup, patching, recovery and migration. Amazon RDS provides its users access to the functionality of a familiar MariaDB, MySQL, SQL Server, Oracle, or PostgreSQL database. It facilitates the deployment and maintenance of relational databases in the cloud. The figure \ref{fig:rds} shows the different database services offered by Amazon RDS. Amazon RDS manages common database administration tasks and provides cost-efficient, resizable capacity for an industry-standard relational database. It provides an opportunity to choose an instance type for various database use cases. The database instance varies with respect to the memory, CPU, network capacity, and storage, thus providing flexibility in choosing the ideal combination of resources for your database \cite{34}.
+\par Amazon Relational Database Service (RDS) is a set of managed services that make it easy to set up, operate, and scale databases in the Amazon Web Services Cloud.
+Amazon RDS supports an array of database engines to organize and store data.
+It also helps with relational database management tasks,
+such as data backup, patching, recovery, and migration.
+Amazon RDS provides its users access to the functionality of a familiar MariaDB, MySQL, SQL Server, Oracle, or PostgreSQL database.
+It facilitates the deployment and maintenance of relational databases in the cloud.
+Figure \ref{fig:rds} shows the different database
+services offered by Amazon RDS. Amazon RDS manages common database administration tasks and provides cost-efficient, resizable capacity for an industry-standard relational database.
+Based of various database use cases, Amazon RDS provides users an opportunity to choose an instance type that meets their needs.
+The database instance varies with respect to the memory, CPU, network capacity, and storage, thus providing flexibility in choosing the ideal combination of resources for your database \cite{34}.
 \begin{figure}
     \centering
     \includegraphics[width=\textwidth]{rds.png}
@@ -447,13 +457,30 @@ build generic AMIs and use user data to modify the configuration files supplied 
     \label{fig:rds}
 \end{figure}
 
-\par The pricing of Amazon Relational Database Service is based on usage. There are no upfront or minimum fees. The cost is dependent on various parameters such as instance hours, the number of input and output transactions, storage capacity, size of backup storage, or amount of Internet data transfer. Different applications use different instance types. The database instance is a fundamental element of the Amazon RDS. A database engine works in each database instance with function parameters and specific properties that determine and control the properties of the databases. Database instances can be created, configured, and deleted using the AWS CLI, AWS management console, or RDS API. Computing and storage and capacity, database engine, and other parameters such as backup, version and update settings, or master user access data must be specified for each database instance. Depending on the type of database engine the number of databases per instance varies for example, with Microsoft SQL Server, up to 100 databases are possible, Oracle allows one database per instance, MySQL, MariaDB, Amazon Aurora, and PostgreSQL have no software limitations on the maximum number of databases \cite{35}.
+\par The pricing of Amazon Relational Database Service is based on usage.
+The cost is dependent on various parameters such as instance hours, the number of input and output transactions, storage capacity, size of backup storage, or amount of Internet data transfer.
+Different applications use different instance types.
+The database instance is a fundamental element of the Amazon RDS. A database engine works in each database instance with function parameters and specific properties that determine and control the properties of the databases. Database instances can be created, configured, and deleted using the AWS CLI, AWS management console, or RDS API. Computing and storage and capacity, database engine, and other parameters such as backup, version and update settings, or master user access data must be specified for each database instance. Depending on the type of database engine the number of databases per instance varies for example, with Microsoft SQL Server, up to 100 databases are possible, Oracle allows one database per instance, MySQL, MariaDB, Amazon Aurora, and PostgreSQL have no software limitations on the maximum number of databases \cite{35}.
 
-\par Security of Amazon RDS and the stored or transmitted data is implemented at various levels. AWS IAM controls which application or which user has access to which database resources and functions. Depending on the requirements, groups and users are created and specific access rights are assigned. Database instances are in a protected Amazon Virtual Private Cloud (VPC). VPC security groups control the access that traffic has in and out of a DB instance. By default, network access is turned off for a DB instance. Users can specify rules in a security group that allows access from an IP address range, port, or security group. After rules are configured, the same rules apply to all DB instances that are associated with that security group. It is possible to specify up to 20 rules in a security group. VPC security groups define which devices or instances can connect to a database instance. The connections are encrypted and secured using Transport Layer Security (TLS) / Secure Sockets Layer (SSL) or IPsec VPNs. Amazon RDS firewall settings control network access. Database data at rest can be encrypted and database events can be logged \cite{71}.
+\par Security of Amazon RDS and the stored or transmitted data is implemented at various levels.
+AWS IAM controls which application or which user has access to which database resources and functions.
+Depending on the requirements, groups and users are created and specific access rights are assigned.
+Database instances are in a protected Amazon Virtual Private Cloud (VPC).
+The access to the traffic that flows in and out of a DB instance is controlled by the VPC security groups.
+The access to the DB instance is turned off by default.
+In order to improvise security, access to the DB instance can be restricted to a specific IP address range, port or security group.
+This can be achieved by specifying rules in a security group.
+A total of 20 rules can be specified in a security group.
+Once the rules are configured, every DB instance associated with that security group follows the same rules.
+VPC security groups define which devices or instances can connect to a database instance.
+The connections are encrypted and secured using Transport Layer Security (TLS) / Secure Sockets Layer (SSL) or IPsec VPNs. Amazon RDS firewall settings control network access. Database data at rest can be encrypted and database events can be logged \cite{71}.
 
         {\textbf{Features of RDS Instances}
 \begin{itemize}
-    \item \textbf{Amazon RDS Resources Encryption:} Data that is encrypted includes the underlying storage for DB instances, its automated backups, snapshots, and read replicas. Amazon RDS encrypted DB instances use the industry standard AES-256 encryption algorithm to encrypt the data on the server that hosts the Amazon RDS DB instances. After enabling data encryption, Amazon RDS handles authentication of access and decryption of the data transparently with a minimal impact on performance. The database client doesn’t need any modification to use encryption \cite{35}.
+    \item \textbf{Amazon RDS Resources Encryption:} Data that is encrypted includes the underlying storage for DB instances, its automated backups, snapshots, and read replicas.
+    The industry standard AES-256 encryption algorithm is used by the Amazon RDS encrypted DB instances to encrypt the data that is stored on the DB instances.
+    After the data encryption is enabled, with minimal impact on the performance Amazon RDS handles decryption of data and authentication of access transparently.
+    There is no modification needed in the database client to use encryption \cite{35}.
 \end{itemize}
 \begin{itemize}
     \item \textbf{Automatic backups:} Amazon RDS provisions creation and saving automatic backups of RDS DB instance.
@@ -462,11 +489,10 @@ build generic AMIs and use user data to modify the configuration files supplied 
     Users can also take snapshots of instances manually and these snapshots remains until manually deleted \cite{71}.
 \end{itemize}
 \begin{itemize}
-    \item \textbf{Replication:} Amazon RDS uses the MariaDB, Microsoft SQL Server, MySQL, Oracle, and PostgreSQL DB engines' built-in replication functionality to create a special type of DB instance called a read replica from a source DB instance.\         It is a read-only copy
-    of the
-    actual database instance used by the application.\         It is possible to enable automatic fail over across availability
-    zones with synchronous data replication and through RDS Multi-AZ deployment.
-    Figure \ref{fig:readreplicasworking} provides a pictorial view of the working of read replica \cite{35}.
+    \item \textbf{Replication:} Amazon RDS uses built-in
+    replication functionality of Microsoft SQL Server, Oracle, MariaDB, and PostgreSQL DB engines to create a read replica, which is a special type of DB instance, from the source DB instance.
+    A read replica represents a copy of the actual instance that reflects changes to the actual in almost real time and under normal circumstances.
+    Figure \ref{fig:readreplicasworking} shows a pictorial view of the working of read replica \cite{35}.
 \end{itemize}
 \begin{figure}
     \centering
@@ -484,12 +510,21 @@ build generic AMIs and use user data to modify the configuration files supplied 
 
 \textbf{Amazon Simple Storage Service (S3)}
 
-\par Amazon Simple Storage Service (Amazon S3) is an object storage service that offers industry-leading scalability, security, performance and data availability. Amazon S3 enables backup and archiving of data and applications in AWS. It can store any type of object, which allows uses like storage for Internet applications, data archives, backups, disaster recovery, hybrid cloud storage, IoT devices, and data lakes for analytics \cite{36}.
+\par Amazon Simple Storage Service (Amazon S3) is a high-speed, scalable, object storage service in cloud that offers data availability, security and high performance.
+Amazon S3 enables backup and archiving of data and applications in AWS. It can store any type of object, which allows uses like storage for Internet applications, data archives, backups, disaster recovery, hybrid cloud storage, IoT devices, and data lakes for analytics \cite{36}.
 
-\par Storing, organizing, and retrieving data in Amazon S3 primarily focuses on two key components: objects and buckets that work together to create the storage system. The Amazon S3 object storage data model is a flat structure. A bucket is created and the bucket stores objects. There is no real hierarchy of sub buckets or subfolders but a logical hierarchy can be inferred using key name prefixes and delimiters. The objects are data files which include photos, documents, and videos. Each object in the S3 environment is identified by a unique key that differentiates it from other objects. The buckets serve as the fundamental storage containers for objects. While creating the bucket AWS provides users the ability to choose the AWS region. Even though a bucket is associated with a specified region, the name of the bucket acts as a global identifier, thus the name of the bucket must be unique among all the buckets across the world. The figure \ref{fig:s3} show Amazon S3, buckets and objects \cite{37}.
+\par Storing, organizing, and retrieving data in Amazon S3 primarily focuses on two key components: objects and buckets that work together to create the storage system.
+The Amazon S3 object storage data model is a flat structure.
+The bucket stores the objects, once the bucket is created.
+There is no real hierarchy of sub buckets or subfolders but a logical hierarchy can be inferred using key name prefixes and delimiters.
+The objects are data files which include photos, documents, and videos. Each object in the S3 environment is identified by a unique key that differentiates it from other objects. The buckets serve as the fundamental storage containers for objects. While creating the bucket AWS provides users the ability to choose the AWS region. Even though a bucket is associated with a specified region, the name of the bucket acts as a global identifier, thus the name of the bucket must be unique among all the buckets across the world. The figure \ref{fig:s3} show Amazon S3, buckets and objects \cite{37}.
 
 \par Amazon S3 offers features to organize and manage data to operate cost-effectively, support specific use cases,
-increase security, and meet compliance requirements. With S3 Versioning, it is possible to keep multiple variants of an object in the same bucket. S3 Versioning helps to preserve, retrieve, and restore every version of every object stored in the buckets. Upon enabling S3 versioning in a bucket, Amazon S3 generates a unique version ID for each object added to the bucket. Objects that already existed in the bucket at the time versioning is enabled, such objects get assigned with a version ID of \textit{null}. If an object is modified, such as \textit{CopyObject} and \textit{PutObject}, the new objects get a unique version ID \cite{72}.
+increase security, and meet compliance requirements.
+With S3 Versioning, it is possible to keep multiple variants of an object in the same bucket.
+S3 Versioning helps to preserve, retrieve, and restore every version of every object stored in the buckets.
+Amazon S3 generates a unique version ID once the S3 versioning in a bucket is enabled for each object added to the bucket.
+Objects that already existed in the bucket at the time versioning is enabled, such objects get assigned with a version ID of \textit{null}. If an object is modified, such as \textit{CopyObject} and \textit{PutObject}, the new objects get a unique version ID \cite{72}.
 
 \begin{figure}
     \centering
@@ -497,11 +532,27 @@ increase security, and meet compliance requirements. With S3 Versioning, it is p
     \caption{Amazon Simple Storage Service}
     \label{fig:s3}
 \end{figure}
-\par Access to S3 objects is managed using the Identity and access management service (IAM), bucket policies, S3 access points, and Access Control Lists (ACLs). With the Identity and access management service (IAM), it is possible to manage the access on the user or group level, it is also possible to delegate permissions to the S3 bucket to other AWS customer accounts. A resource-based AWS Identity and Access Management (IAM) policy called a bucket policy is used to grant access permissions to the bucket and the objects. Only the bucket owner can associate a policy with a bucket. Bucket policies use JSON-based access policy language. The bucket policies can be used to add or deny permissions for the objects in a bucket. The permissions attached to the bucket apply to all the objects in the bucket. Bucket policies allow or deny requests based on the elements in the policy, this includes the requester, S3 actions, resources, and aspects or conditions of the request, for example, request an IP address. Amazon S3 Access Points describe how data can be accessed using that endpoint. Access Points are attached to buckets that is used to perform S3 object operations, such as \textit{GetObject} and \textit{PutObject}. Each S3 access point has its own access point policy. Access control lists (ACLs) grants read and write permissions to authorized users for individual buckets and objects. Each bucket and object have an ACL attached to it as a sub resource. The ACL defines which AWS groups or accounts are granted access and the type of access to which the access is granted. Amazon S3 Block Public Access feature provides settings for buckets, access points, and accounts to help you manage public access to Amazon S3 resources. By default, public access is not allowed on access points, new buckets, and objects, however, users can modify the access point policies, bucket policies, or object-related permissions to allow public access \cite{36}.
+\par Access to S3 objects is managed using the Identity and access management service (IAM), bucket policies, S3 access points, and Access Control Lists (ACLs).
+With the Identity and access management service (IAM), it is possible to manage the access on the user or group level, it is also possible to delegate permissions to the S3 bucket to other AWS customer accounts.
+To grant access permissions to the bucket and the objects, a resource-based AWS IAM policy called a bucket policy is used.
+Associating a policy with a bucket can only be done by
+the bucket owner.
+JSON-based access policy language is used to create Bucket policies.
+The bucket policies can be used to add or deny permissions for the objects in a bucket.
+Amazon S3 Access Points describe how data can be accessed using that endpoint.
+To perform S3 object operations such as
+\textit{PutObject} and \textit{GetObject}, access points are
+attached to buckets are used, .
+Each S3 access point has its own access point policy.
+To authorized users for individual objects and buckets, ACLs grants read and write permissions.
+ACL are attached as a sub resource to each bucket and objects.
+The ACL defines which AWS groups or accounts are granted access and the type of access to which the access is granted.
+The Block Public Access feature in Amazon S3 provides settings for accounts, access points, and buckets to help user manage public access to resources.
+By default, public access is not allowed on access points, new buckets, and objects, however, users can modify the access point policies, bucket policies, or object-related permissions to allow public access \cite{36}.
 
-\par S3 Block Public Access provides four settings. It is possible to apply these settings in any combination to
-individual buckets, access points, or entire AWS accounts. If the setting is applied to an account, it applies to all
-buckets and access points that are owned by that account. Similarly, if the setting is applied to a bucket, it
+\par There are four settings provided by S3 Block Public
+Access.
+These settings can be applied in combination to individual buckets, access points, or entire AWS accounts. Upon applying a setting to an account, the setting is applied to all the access points and buckets that are owned by that account. Similarly, if the setting is applied to a bucket, it
 applies to all access points associated with that bucket. Table \ref{tab:blockpublicaccesssettings} highlights
 different settings for blocking public access \cite{23}.
 
@@ -521,18 +572,19 @@ different settings for blocking public access \cite{23}.
     \end{itemize}
 
     \begin{itemize}
-        \item If this setting is applied to an account, then PUT Bucket calls fail if the request includes a public ACL.
+        \item On applying this setting to the AWS account, then PUT bucket call fails in a situation where public ACL is included in the request.
     \end{itemize}
     \par When BlockPublicAcls is set to TRUE, the above specified operations fail, however, existing policies and ACLs for buckets and objects are not modified. This setting enables protecting against public access while allowing to audit, refine, or otherwise alter the existing policies and ACLs for buckets and objects \cite{23}.
     \\
     \hline
-    \textit{IgnorePublicAcls} & Setting IgnorePublicAcls to TRUE causes Amazon S3 to ignore all public ACLs on a bucket and any objects it contains. This enables to safely block public access granted by ACLs while still allowing PUT Object calls that include a public ACL. Enabling IgnorePublicAcls doesn't affect the persistence of any existing ACLs and doesn't prevent new public ACLs from being set \cite{23}.  \\
+    \textit{IgnorePublicAcls} & Setting IgnorePublicAcls to TRUE causes Amazon S3 to ignore all public ACLs on a bucket and any objects it contains.
+    This ensures the public access granted by ACLs will be blocked, while the PUT object calls that include a public ACL will still be allowed.
+    The persistence of any existing ACLs does not get affected by enabling IgnorePublicAcls, and also it doesn't prevent new public ACLs from being set. \cite{23}.  \\
     \hline
     \textit{BlockPublicPolicy} & When BlockPublicPolicy is set to TRUE for a bucket, Amazon S3 rejects calls to PUT Bucket policy if the BlockPublicPolicy allows public access. When BlockPublicPolicy is set to TRUE for an access point, Amazon S3 rejects calls to PUT access point policy and PUT Bucket policy that are made through the access point if BlockPublicPolicy (for either the access point or the underlying bucket) is public \cite{23}.  \\
     \hline
-    \textit{RestrictPublicBuckets} & Setting RestrictPublicBuckets to TRUE restricts access to an access point or bucket with a public policy to only AWS service principals and authorized users within the bucket owner's account.  RestrictPublicBuckets blocks all cross-account access to the access point or bucket (except by AWS service principals), while still allowing users within the account to manage the access point or bucket.
-
-    Enabling RestrictPublicBuckets doesn't affect existing access point or bucket policies, except that Amazon S3 blocks public and cross-account access derived from any public access point or bucket policy, including non-public delegation to specific accounts \cite{23}.  \\
+    \textit{RestrictPublicBuckets} & The access to a bucket or access point with a public policy to authorized users and principals within the bucket owner's account will be restricted on setting RestrictPublicBuckets to TRUE.
+    All cross account access to the bucket or access point are blocked by RestrictPublicBuckets, while it will still be possible for the users within the account to manage the bucket or access point \cite{23}.  \\
     \hline
     \caption{Block public access settings}
     \label{tab:blockpublicaccesssettings}
@@ -542,7 +594,8 @@ different settings for blocking public access \cite{23}.
 
 
 \textbf{Lambda:}
-\par AWS Lambda is a serverless computing service that lets the users run code without provisioning or managing servers. Lambda runs the code on a highly available compute infrastructure and performs all the administrative tasks of the compute resources, including server and operating system maintenance, capacity provisioning and automatic scaling, code monitoring, and logging \cite{38}.
+\par AWS Lambda is a serverless computing service that lets the users run code without provisioning or managing servers.
+Lambda runs the code on a highly available compute infrastructure and performs all the administrative tasks of the compute resources, including server and operating system maintenance, capacity provisioning and automatic scaling, code monitoring, and logging \cite{38}.
 
 \par With Lambda, it is possible to run code for virtually any type of application or backend service by supplying the code in one of the languages that Lambda supports. The code is organized into Lambda functions. Lambda runs the function only when needed and scales automatically, from a few requests per day to thousands per second. Lambda can run functions in response to events from other AWS services or can be invoked using the Lambda API. Users pay only for the compute time that Lambda consumes, there is no charge when the code is not running \cite{27}.
 
