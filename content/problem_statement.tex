@@ -16,7 +16,7 @@
 \section{Identification of Security Vulnerabilities}
 
 \par This section lists the several security vulnerabilities and misconfigurations identified in five AWS services
-based on literatures, the Open Web Application Security Project (OWASP) vulnerability list \cite{43}, Cybersecurity
+based on literature, the Open Web Application Security Project (OWASP) vulnerability list \cite{43}, Cybersecurity
 \& Infrastructure Security Agency (CISA) \cite{42}, International Data Corporation (IDC) \cite{41}.
 
 
@@ -77,10 +77,7 @@ based on literatures, the Open Web Application Security Project (OWASP) vulnerab
     \begin{itemize}
         \item Launch permissions ensuring the authorized accounts can use the AMI to launch instances.
     \end{itemize}
-    In 2018, Summit Route investigated an instance where an Ubuntu AMI had a Monero miner malware embedded in the AMI
-    .
-    The malicious code attempted to exploit vulnerabilities associated with Hadoop, Redis and ActiveMQ on the
-    server \cite{47}.
+    An instance was investigated by Summit Route in 2018 where a Monero miner malware was embedded in an Ubuntu AMI \cite{47}.
     Similarly, in 2020, researchers at Mitiga during the assessment of an organization’s AWS environment found an
     active crypto miner on an EC2 instance, later during the review, it was revealed that the crypto miner was
     embedded in the AMI used by the organization \cite{48}.
@@ -97,8 +94,7 @@ based on literatures, the Open Web Application Security Project (OWASP) vulnerab
     significant place where secrets can be unnecessarily exposed.
     For example, if password need to be used as part of
     a script we might be tempted to store it as plaintext in the script that we input to the user data.
-    Doing so will
-    expose the secrets to anyone with the ec2:DescribeInstanceAttribute permission \cite{50}.
+    If the secrets are stored as plain text, then any user with ec2:DescribeInstanceAttribute permission will be able to view the secrets \cite{50}.
 
     Another example is when an instance pulls an application from a private Git repository.
     As the repository is
@@ -156,7 +152,10 @@ based on literatures, the Open Web Application Security Project (OWASP) vulnerab
     group DB instances based on security and operational 
     needs \cite{58}.
 
-    Subnets are segments of a VPC's IP address range that users designate to group the resources based on operational and security needs. A DB subnet group is a collection of subnets that the user creates in a VPC and is then designated for the DB instances. Each DB subnet group has subnets in at least two Availability Zones in a given AWS Region. When a DB instance is created in a VPC, a DB subnet group for the DB instance is chosen by the user. From the DB subnet group, Amazon RDS chooses a subnet and an IP address within that subnet to associate with the DB instance. The Availability Zone that contains the subnet is used by the DB. The subnets in a DB subnet group can be either private or public and it depends on the configuration that users set for their network ACLs and routing tables. For a DB instance to be publicly accessible, all the subnets in its DB subnet group must be public. If a subnet changes from public to private, it can affect DB instance availability \cite{58}. If an AWS account is Provisioned with public-facing RDS database instances it allows unauthorized access for anyone who establishes a connection to the database, thus introducing security risks \cite{59}.
+    Subnets are segments of a VPC's IP address range that users designate to group the resources based on operational and security needs.
+    A collection of subnets created by the user and is then designated for the DB instances is called a DB subnet group.
+    Each DB subnet group has subnets in at least two Availability Zones in a given AWS Region.
+    When a DB instance is created in a VPC, a DB subnet group for the DB instance is chosen by the user. From the DB subnet group, Amazon RDS chooses a subnet and an IP address within that subnet to associate with the DB instance. The Availability Zone that contains the subnet is used by the DB. The subnets in a DB subnet group can be either private or public and it depends on the configuration that users set for their network ACLs and routing tables. For a DB instance to be publicly accessible, all the subnets in its DB subnet group must be public. If a subnet changes from public to private, it can affect DB instance availability \cite{58}. If an AWS account is Provisioned with public-facing RDS database instances it allows unauthorized access for anyone who establishes a connection to the database, thus introducing security risks \cite{59}.
 \end{itemize}
 
 \begin{itemize}
@@ -170,7 +169,7 @@ based on literatures, the Open Web Application Security Project (OWASP) vulnerab
 \begin{itemize}
     \item \textbf{Default data retention:} Amazon RDS provides a feature to create and save automated backups of your DB
     instance.
-    RDS creates a storage volume snapshot of the DB instance, thus backing up the entire DB instance.
+    RDS backs up the entire DB instance by creating a storage volume snapshot of the DB instance.
     This
     backup is saved according to the retention period specified.
     AWS has a default RDS backup retention for the
@@ -189,7 +188,11 @@ based on literatures, the Open Web Application Security Project (OWASP) vulnerab
 \end{itemize}
 
 \begin{itemize}
-    \item \textbf{Insecure Management of Secrets:} \par Secrets management refers to the methods and tools for managing digital authentication credentials, such as passwords, tokens, and APIs keys for use in applications, privileged accounts, services, and other sensitive parts of the IT ecosystem. The terms “secrets” and “secrets management” are referred to more commonly in IT with regard to DevOps environments, processes, and tools. DevOps is a set of practices that works to integrate and automate the processes between IT teams and software development, so they can build, test, and release software faster and more reliably. This explains the increasing popularity of DevOps as a go-to model for rapid application delivery. As the demand for software delivery increases, developers feel the pressure to meet demand, and often inadvertently in their haste leave behind sensitive pieces of code embedded in applications, files, and code repositories, ending up compromising enterprise security, for example, Identity and Access Management (IAM) permissions, database credentials, API keys, etc \cite{61}.
+    \item \textbf{Insecure Management of Secrets:} \par Secrets management refers to the methods and tools for managing digital authentication credentials, such as passwords, tokens, and APIs keys for use in applications, privileged accounts, services, and other sensitive parts of the IT ecosystem.
+    The terms secrets management and secrets are more commonly referred in IT with regard to DevOps processes, environments, and tools.
+    DevOps is a set of practices that works to integrate and automate the processes between IT teams and software development, so they can build, test, and release software faster and more reliably.
+    This show how DevOps is gaining more popularity and considered as a go-to model for rapid application delivery.
+    As the demand for software delivery increases, developers feel the pressure to meet demand, and often inadvertently in their haste leave behind sensitive pieces of code embedded in applications, files, and code repositories, ending up compromising enterprise security, for example, Identity and Access Management (IAM) permissions, database credentials, API keys, etc \cite{61}.
 
     Unlike insider threats, where the attacker intentionally misuses his privilege due to a personal grudge or some
     other issue, the secrets are sometimes hardcoded within the source code in plaintext littered throughout configuration management tools and configuration files.
