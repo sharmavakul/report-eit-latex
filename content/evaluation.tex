@@ -264,7 +264,7 @@ to the cloud finishes, the organization plans to start using the cloud infrastru
 Before starting to use the cloud infrastructure, a Security Engineer in the organization in a meeting advised performing a complete scan of the cloud infrastructure to avoid any security vulnerabilities that would have been introduced during the migration activity.
 Considering the point made by the Security Engineer the company plans to perform a thorough scan of its cloud infrastructure.
 \\
-\par To begin this process, the cloud administrator creates a user account called audit-user.
+\par To begin this process, the cloud administrator creates a user account called \textit{audit-user}.
 The audit-user is used to audit AWS cloud infrastructure.
 During this process, the cloud infrastructure is assessed to identify any security vulnerability that would have been introduced while migrating the organization’s workloads to the cloud.
 The cloud administrator plans to provide limited privileges to the audit-user to perform the assessment and verify different AWS services.
@@ -295,7 +295,8 @@ To perform the assessment using Prowler and ScoutSuite additional managed polici
 
 \par Before starting the assessment using the assessment tools, the audit-user plans to look at the different AWS services used for managing the organization’s workload.
 During this process, the audit-user identifies a misconfiguration that was introduced while setting up the audit account.
-The audit-user account was granted read-only permission for EC2, Lambda, and RDS, but the audit-user was given AmazonS3FullAccess to the S3 bucket.
+The audit-user account was granted read-only permission
+for EC2, Lambda, and RDS, but the audit-user was given \textit{AmazonS3FullAccess} to the S3 bucket.
 Assigning full access to the S3 bucket for the audit-user account led to the deviation from the least privilege principle.
 This permission grants the user full access to the S3 buckets.
 The user can change the block public access setting, disable encryption of the bucket, and perform several other hazardous operations on the S3 buckets using this permission.
