@@ -253,11 +253,81 @@ Using this formula, the overall percentage efficiency of Prowler is calculated t
 For example, Only Payment Card Industry Data and Security Standard (PCI DSS) and Center for Internet Security (CIS) benchmarks are supported by AWS Security Hub \cite{74}.
 The monitoring result produced by these tools doesnt comply with CIS benchmarks, thus the usage of these tools is also limited.
 This is where third-party solutions come in handy \cite{74}.
+\\
+\par In this section, a situation was considered where an organization migrates its workload, data, and application from its on-premises data center setup to the AWS cloud infrastructure.
+The organization’s workload employs different AWS services during migration.
+After the migration activity finishes, the organization wanted to get the AWS cloud infrastructure scanned to identify any security vulnerability that could have been introduced during the migration of workload.
+To perform the assessment of the organization’s AWS cloud infrastructure two security assessment tools namely Prowler and ScoutSuite are considered.
+The two security tools perform the assessment of the cloud infrastructure and generate the assessment report.
+\\
+\begin{longtable}{|p{6cm}|p{8cm}|}
+    \hline
+    \textbf{AWS Service} & \textbf{Managed Policy}\\
+    \hline
+    EC2 & AmazonEC2ReadOnlyAccess \\
+    \hline
+    S3 & AmazonS3FullAccess \\
+    \hline
+    Lambda & AWSLambdaBasicExecutionRole,
+    AWSLambdaReadOnlyAccess \\
+    \hline
+    RDS & AmazonRDSReadOnlyAccess \\
+    \hline
+    Prowler, ScoutSuite & SecurityAudit, ViewOnlyAccess \\
+    \hline
+    \caption{AWS account configuration}
+    \label{tab:accountconfiguration}
+\end{longtable}
 
-\par This section shows the comparison between the assessment performed using Prowler and ScoutSuite against the different security vulnerabilities identified earlier in chapter 3.
-Table \ref{tab:comparisionresultprowlervsscoutsuite} shows the comparison result.
+\par The cloud administrator creates a user account to 
+audit the AWS account against security vulnerabilities 
+with the configuration as shown in the table \ref{tab:accountconfiguration}.
+The user configures the AWS cloud environment before starting the assessment.
+Once the environment is configured, the user
+starts the assessment of the AWS cloud environment using the two security assessment tools.
 
-\par Assessmement Process:
+\par Once the assessment finished the assessment
+report is generated.
+Apart from the security
+vulnerabilities listed
+in the table
+\ref{tab:comparisionresultprowlervsscoutsuite} showing
+the comparison of the assessment performed using the two
+tools several other findings were observed.
+There was a misconfiguration in setting up the audit user’s account.
+It can be seen from the table \ref{tab:accountconfiguration} that the user is granted
+full S3 access.
+This policy when added to a user’s grants full access to the Amazon S3 bucket.
+The AmazonS3FullAccess grants the user too much access than needed to perform the assessment.
+Using this policy the user can change the block public
+access setting, disable encryption of the bucket, and
+perform several other hazardous operations.
+
+
+\par Along with the misconfiguration in setting
+up the user account, there were several other critical
+security vulnerabilities that were identified.
+There were EC2 security groups that had their ports open to
+all source addresses.
+The ports should not be open to the
+public.
+Also, there were two S3 buckets created in the cloud infrastructure to store files.
+In both buckets, the logging was disabled.
+Server logging is helpful as it provides a detailed
+description of all the calls that were made to the bucket.
+Also, it was found that multi-factor authentication was not set for deleting the S3 bucket.
+Enabling MFA protects against unauthorized or accidental deletion of the S3 bucket.
+
+
+\par It was also found that the RDS instance
+provisioned for storing the organizations data had a single
+AZ configured.
+Hence in case of loss of availability, the fail over to
+another instance is not possible and can lead to loss of
+data.
+
+\par Along with the listed misconfiguration and security vulnerabilities, the table \ref{tab:comparisionresultprowlervsscoutsuite} highlights the comparison between the assessment performed using Prowler and ScoutSuite against the different security vulnerabilities identified earlier in chapter 3.
+
 
 \begin{longtable}{|p{8cm}|p{2.4cm}|p{2cm}|p{2cm}|}
     \hline
