@@ -595,15 +595,28 @@ different settings for blocking public access \cite{23}.
 
 \textbf{Lambda:}
 \par AWS Lambda is a serverless computing service that lets the users run code without provisioning or managing servers.
-Lambda runs the code on a highly available compute infrastructure and performs all the administrative tasks of the compute resources, including server and operating system maintenance, capacity provisioning and automatic scaling, code monitoring, and logging \cite{38}.
+Lambda runs the code on a highly available compute infrastructure and performs all the administrative tasks of the compute resources, including capacity provisioning, code monitoring, server and operating system maintenance, automatic scaling, and logging \cite{38}.
 
-\par With Lambda, it is possible to run code for virtually any type of application or backend service by supplying the code in one of the languages that Lambda supports. The code is organized into Lambda functions. Lambda runs the function only when needed and scales automatically, from a few requests per day to thousands per second. Lambda can run functions in response to events from other AWS services or can be invoked using the Lambda API. Users pay only for the compute time that Lambda consumes, there is no charge when the code is not running \cite{27}.
+\par With Lambda, it is possible to run code for virtually any type of application or backend service by supplying the code in one of the languages that Lambda supports.
+The code is organized into Lambda functions.
+Lambda runs the function only when needed and scales automatically, from a few requests per day to thousands per second.
+Lambda functions are invoked using the Lambda API or as a response to an event from other AWS services.
+There is no charge when the code is not running, users pay only for the compute time that Lambda consumes \cite{27}.
 
-\par Lambda is an ideal compute service for many application scenarios, as long as the user can run the application code using the Lambda standard runtime environment and within the resources that Lambda provides. When using Lambda, users are responsible only for their code. Lambda manages the compute fleet of resources that offers a balance of memory, CPU, network, and other resources to run the code. Because these resources are managed by Lambda, users cannot customize the operating system or login to compute instances on provided runtimes. Lambda performs administrative and operational activities on behalf of users, including managing capacity, monitoring, and logging the Lambda functions. AWS manages the entire infrastructure layer of AWS Lambda and thus saves user time on operational tasks. AWS Lambda provides a distinctive architectural property by enabling many instances of the same function, or of different functions from the same AWS account, to execute concurrently. This makes AWS Lambda a good fit for deploying highly scalable cloud computing solutions \cite{39}.
+\par Lambda is an ideal compute service for many application scenarios, as long as the user can run the application code using the Lambda standard runtime environment and within the resources that Lambda provides.
+When using Lambda, users are responsible only for their code.
+Lambda manages the compute fleet of resources that offers a balance of memory, CPU, network, and other resources to run the code.
+Because these resources are managed by Lambda, users cannot customize the operating system or login to compute instances on provided runtimes.
+Lambda performs administrative and operational activities on behalf of users, including managing capacity, monitoring, and logging the Lambda functions.
+AWS manages the entire infrastructure layer of AWS Lambda and thus saves user time on operational tasks. AWS Lambda provides a distinctive architectural property by enabling many instances of the same function, or of different functions from the same AWS account, to execute concurrently. This makes AWS Lambda a good fit for deploying highly scalable cloud computing solutions \cite{39}.
 
-\par AWS Lambda invokes the function in an execution environment. The execution environment provides an isolated and secure runtime environment and manages the resources required to run the function. The execution environment also provides lifecycle support for the function's runtime and any external extensions associated with the function. The runtime of function and each external extension are processes that run within the execution environment \cite{27}.
+\par AWS Lambda invokes the function in an execution environment.
+The execution environment provides an isolated and secure runtime environment and manages the resources required to run the function.
+The support for any external extensions associated with the function or function's runtime is provided by execution environment.
+The runtime of function and each external extension are processes that run within the execution environment \cite{27}.
 
-\par The lifecycle of the execution environment includes the following phases:
+\par The following phases are included in the execution
+environment:
 \begin{itemize}
     \item \textbf{Init phase}: In the init phase, Lambda unfreezes or creates an execution environment with the configured
     resources, downloads the code for the function and all layers, initializes the runtime, initializes any
@@ -615,8 +628,8 @@ Lambda runs the code on a highly available compute infrastructure and performs a
 \end{itemize}
 \begin{itemize}
     \item \textbf{Shutdown phase}: The shutdown phase is triggered if the Lambda function does not receive any invocations
-    for a period of time. In the shutdown phase, Lambda shuts down the runtime, alerts the extensions to let them
-    stop cleanly, and then removes the environment. Lambda sends a Shutdown event to each extension, which tells the extension that the environment is about to be shut down \cite{27}.
+    for a period of time.
+    During the shutdown  phase, the runtime is shutdown by Lambda, it send an alert to each extension for stopping cleanly, and finally removed the environment \cite{27}.
 \end{itemize}
 
 
@@ -629,20 +642,16 @@ Lambda runs the code on a highly available compute infrastructure and performs a
     \label{fig:securitychallenges}
 \end{figure}
 
-\par Cloud service providers (CSP) leverage virtualization technologies combined with self-service capabilities for computing resources via the Internet.
-In these service provider environments, virtual machines from multiple organizations have to be co-located on the same physical server in order to maximize the efficiencies of virtualization.
-CSP must learn from the managed service provider (MSP) and ensure that their customer’s data and applications are secure if CSP hopes to retain its customer base and competitiveness.
-In a survey conducted by International Data Corporation
-(IDC) as seen in the figure \ref{fig:securitychallenges},
-of 263 IT executives and their line-of-business
-colleagues to gauge their opinions and understand their companies’ use of IT cloud services, security is ranked first as the greatest issue or challenge of cloud computing \cite{79}.
+\par Cloud service providers (CSP) leverage
+virtualization technologies combined with self-service capabilities for computing resources via the Internet.
+In these service provider environments, in order to maximize the efficiencies of virtualization, virtual machines must be located on the same physical server.
+Based on a survey conducted by IDC as seen in the figure \ref{fig:securitychallenges}, of 263 IT executives and their line-of-business, security is ranked first as the greatest issue or challenge of cloud computing \cite{79}.
 
-\par In a world where digital transformation increases compliance burdens, understanding how to best secure on-premises, cloud, and hybrid IT stacks becomes more crucial than ever.
-Information security management encompasses many areas from encryption and perimeter protection to application security and disaster recovery.
+\par Information security management encompasses many areas from encryption and perimeter protection to application security and disaster recovery.
 Security in IT is made more complex by compliance regulations, such as PCI, DSS, HIPAA, Sarbanes-Oxley, and global standards, such as GDPR. While most compliance experts and CEOs understand the value of cybersecurity measures, IT standards and security frameworks can make safeguarding organizations feel daunting.
 Knowledge of standards, regulations, and frameworks is essential for all infosec and cybersecurity professionals \cite{80}.
 
-\par A security framework is a compilation of state-mandated and international cybersecurity procedures and policies for maintaining and establishing security controls to protect critical infrastructure from cybersecurity risks.
+\par A security framework is a compilation of international cybersecurity procedures and policies and state-mandated for maintaining and establishing security controls to protect critical infrastructure from cybersecurity risks.
 These security frameworks are a blueprint for reducing vulnerabilities and managing risk by helping IT security professionals keep their organizations compliant and insulated from cyber threats.
 The frameworks are used by Information security professionals to prioritize and define the tasks required to manage enterprise security.
 It is possible for organizations to customize frameworks to solve specific information security problems, such as industry-specific requirements or different regulatory compliance goals \cite{80}.
@@ -725,7 +734,10 @@ Table \ref{tab:prowlerextra} shows the execution result of the assessment perfor
 \end{table}
 
 \par If the user wants to save the assessment report for later analysis, Prowler enables saving the result in different formats such as CSV, JSON, Html, etc.
-This is achieved by using the command \textit{./prowler -M csv}\cite{75}.
+The command to generate the assessment report in CSV
+format is
+\textit{./prowler
+-M csv} \cite{75}.
 
 \begin{figure}
     \centering
