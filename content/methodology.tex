@@ -5,8 +5,11 @@
 \chapter{Methodology}
 
 \par AWS enables organizations to dynamically scale their applications and infrastructure.
-However, continuously adding new tools and services introduces new security challenges.
-According to reports, around 70 percent of organizations IT leaders are concerned about how secure they are in the cloud and 61 percent of small- to medium-sized businesses (SMBs) believe their cloud data is at risk \cite{65}. Although AWS is responsible for securing the infrastructure, it makes it clear to the users to ensure AWS services are properly configured according to best practices to avoid security vulnerabilities.
+However, due to the continuously addition of new services
+and tools, new security challenges are
+introduced.
+Based on a report, 61 percent of SMBs believe their cloud data is at risk and around 70 percent of organizations IT leaders are concerned about how secure they are in the cloud \cite{65}.
+Although AWS is responsible for securing the infrastructure, it makes it clear to the users to ensure AWS services are properly configured according to best practices to avoid security vulnerabilities.
 
 \par This research emphasizes identifying the efficiency of the open-source security assessment tool, Prowler.
 To do so, different approaches are identified. This chapter explains the used approaches.
@@ -93,7 +96,9 @@ vulnerabilities based on literatures, OWASP vulnerability list \cite{43}, CISA \
 
 \section{Prowlers Validation}
 
-\par Prowler scans the AWS account to check for overly permissive IAM permissions, potential vulnerabilities, and best practice violations. Prowler runs 49 checks against the Center for Internet Security (CIS) AWS Foundations Benchmark and over 40 checks related to HIPAA and GDPR compliance. Prowler constantly checks the AWS accounts against the CIS benchmarks for the AWS Cloud. Thus, ensuring that the organization is operating in accordance with guidelines developed by industry consultants, audit and compliance organizations, software developers, operations specialists, security research organizations, government agencies, and legal experts \cite{66}.
+\par Prowler scans the AWS account to check for overly permissive IAM permissions, potential vulnerabilities, and best practice violations.
+Prowler executes over 40 checks related to HIPAA and GDPR compliance and 49 checks against the CIS AWS Foundations Benchmark.
+Prowler constantly checks the AWS accounts against the CIS benchmarks for the AWS Cloud. Thus, ensuring that the organization is operating in accordance with guidelines developed by industry consultants, audit and compliance organizations, software developers, operations specialists, security research organizations, government agencies, and legal experts \cite{66}.
 
 \par To determine the efficiency of Prowler against security vulnerabilities two approaches are identified.
 The first approach is a test-driven approach, it’s a manual approach and the second approach uses an open-source application to evaluate the efficiency of Prowler against the identified security vulnerabilities \cite{37}.
@@ -202,7 +207,7 @@ The open-source software application is an application that is distributed with 
 for use, modification, enhancement, and distribution with its original rights \cite{68}.
 
 \par \par In this approach, an open-source web application developed in Angular.js, and Java Spring boot are used \cite{69}.
-Every organization whether government or private uses an information system to store data of their staff.
+An information system to store data of their employees is used by every organisation regardless it is private or government.
 The employee management system is intended to organize Human Resources (HR) and other departments' work processes.
 It is an application-based system that is used by employers to monitor and manage employees from different work locations.
 The employee management system provides features that include the ability to add, update, and delete employee information.
@@ -244,7 +249,6 @@ To create and execute the lambda function, \textit{lambda:CreateFunction} is add
 \par The application backend of the employee management application as described above is developed in Spring boot and the frontend is developed in Angular.JS. The developed application is available in version control systems such as GitHub, Bitbucket, etc.
 With the help of CI/CD, the application code is deployed in the AWS cloud.
 CI/CD combines the practices of continuous integration and continuous delivery.
-It automates the manual human intervention traditionally needed to get new code from a commit into production such as build, test, and deploy, as well as infrastructure provisioning.
 It helps the developers to make changes to code that are then automatically tested and pushed out for delivery and deployment \cite{71}.
 
 \par The required application package, Jar in case of spring boot application, and modules in case of angular.js application are stored in S3 buckets.
@@ -292,23 +296,24 @@ Figure \ref{fig:prowlerassessmentreport} shows the snippet of the assessment rep
 \hfill \break
 \section{ScoutSuite}
 
-\par Scout Suite is an open source multi-cloud security-auditing tool.
+\par ScoutSuite is open-source tools used by external and
+internal security analysts to perform the assessment of cloud environments.
 It is used by external and internal security analysts to assess cloud environments.
-Scout Suite  uses the API exposed by the cloud service provider to collect configuration data from high security risk areas for manual audit by researchers.
+To collect configuration data from high security risk areas for manual audit by researchers Scout Suite uses the API exposed by the cloud service provider.
 Based on configuration gathered data, it shows security risks and issues present in the infrastructure \cite{72}.
 \hfill \break
 \par Features of ScoutSuite
 \begin{itemize}
     \item Persistent monitoring: ScoutSuite is a user-friendly tool that provides the ability to constantly monitor
     the public cloud accounts.
-    Persistent monitoring helps to review computing resources for workflow optimization while ensuring ceaseless service availability and high performance.
+    It helps to review computing resources in order to optimize the workflow by ensuring high performance and ceaseless service availability.
     It ensures tracking of the issues as they occur.
-    It also aids in the evaluation of resource availability, program speed, and resource levels, to further help predict vulnerability attacks before their occurrence \cite{73}.
+    Persistent monitoring also helps in the evaluation of program speed, resource availability, and resource levels, to help predict the security attack before it occurs \cite{73}.
 \end{itemize}
 \begin{itemize}
     \item Agnostic platform: Agnostic Platform refers to tools or applications that are compatible with any cloud
     infrastructure and can be moved without any operational issues to and from different cloud environments.
-    An agnostic platform can be compared favorably to cloud-native tools that tend to be platform-specific and that can create visibility issues for businesses operating in a multi-cloud or hybrid cloud environment.
+    An agnostic platform is similar to cloud-native tools which are platform specific and creates visibility issues businesses operating in a hybrid cloud or multi-cloud environment.
     Using cloud-agnostic tools such as ScoutSuite benefits from greater visibility across their cloud environment and gives them more clarity about how their ecosystem works, leading to better-informed decision making \cite{73}.
 \end{itemize}
 
@@ -327,7 +332,8 @@ Connection to the EC2 instance is established using EC2 Instance Connect, Sessio
 After the EC2 instance is connected, it must be configured.
 Configuring the environment can be done by running the
 \textit{aws configure} command.
-During configuration, it prompts for "Access key ID," "Secret Access Key," "Default Zone," and "Output format".
+During configuration, it prompts for users access-key,
+secret.key, output format and the region.
 The user used to configure the environment must
 be assigned the
 ReadOnlyAccess and SecurityAudit AWS Managed Policies \cite{76}.
