@@ -8,22 +8,39 @@
 
 \section{Conclusion}
 
-\par This research was aimed to identify and expose the security vulnerabilities of popular AWS services and investigate if existing security frameworks provide enough security to minimize these security vulnerabilities.
-A table was created that highlights the security vulnerability and maps the corresponding AWS service.
-In this research work, the security vulnerabilities were examined in clouds for only five AWS services (EC2, S3, IAM, RDS, Lambda).
-Several tools and security frameworks exist to aid in the scanning of AWS security vulnerabilities and exploit the potential.
-The existing frameworks do not protect against the discovered attack surface and are therefore not sufficient to provide a secure cloud environment.
-Based on the report by Secura \cite{98}, the CIS Benchmark does not completely secure the AWS environment but provides the required base level of security before implementing other in-depth measures.
-To improve the AWS environment security, an improved security framework called Prowler was considered in this research work.
-Prowler offers more in-depth security for cloud customers.
-Prowler includes the predefined AWS CIS benchmark guidelines and additionally provides checks related to HIPAA, GDPR, PCI-DSS, and others \cite{75}.
+\par This research was aimed to identify and expose the security vulnerabilities of popular AWS Services.
+It also aimed at investigating the efficiency of a security framework called Prowler in performing the assessment of security vulnerabilities.
+
+
+\par A table highlighting the different security vulnerabilities that existed in AWS cloud infrastructure was created.
+The AWS service mapping to each security vulnerability
+was added in the table.
+The AWS cloud environment was assessed using Prowler to
+perform the assessment of these security vulnerabilities.
+
+\par A table highlighting the different security vulnerabilities that existed in AWS cloud infrastructure was created.
+The AWS service mapping to each security vulnerability was shown in the table.
+After the security vulnerabilities were identified, the AWS cloud environment was assessed using Prowler to perform the assessment of these security vulnerabilities.
+
 
 \par As part of this research work, the efficiency of Prowler was determined using two approaches.
 The first approach was a test-driven manual approach, and the second approach used an open-source web application to determine the efficiency of Prowler.
-Based on the security vulnerabilities assessed using the two approaches the efficiency of Prowler was calculated.
-Later, another open-source assessment tool called ScoutSuite was introduced.
-The result of the assessment performed using Prowler was compared to the assessment performed using ScoutSuite.
-In the end, the efficiency of Prowler in assessing the security vulnerabilities was determined to be higher than the assessment performed using ScoutSuite.
+Based on the number of security vulnerabilities assessed using Prowler, the efficiency of Prowler was calculated.
+In both approaches, the efficiency of Prowler was
+calculated to be greater than 80 \% with respect to the identified security vulnerabilities.
+
+
+\par Apart from these two approaches, a real-life example of an organization migrating its workload from an on-premises data center to an AWS cloud infrastructure was considered.
+During the assessment of the newly set up cloud infrastructure using Prowler, several new security vulnerabilities and misconfigurations assessed using Prowler that were introduced during the migration to the AWS cloud were highlighted.
+
+\par Later, another security assessment tool called ScoutSuite was introduced.
+The assessment of the cloud infrastructure was performed using ScoutSuite.
+In the end, the assessment performed using Prowler and ScoutSuite was compared.
+Based on the comparison result, it was easy to identify that Prowler was able to assess more security vulnerabilities compared to ScoutSuite.
+Thus, it can be easily concluded that Prowler is more
+efficient than ScoutSuite in performing the security assessment of the AWS cloud against security vulnerabilities.
+
+
 
 
 \section{Future Work}
