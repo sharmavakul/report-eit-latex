@@ -26,7 +26,11 @@ When considering the services offered by these clouds,
 Google Cloud offers up to 60+ services, whereas Azure
 offers around 100+ services.
 AWS, on the other hand, offers around 200+ services.
-In terms of the availability zones, AWS has 66 availability zones, Azure has 54 regions worldwide and is available in 140 countries all around the world, and Google Cloud Platform has been made available in 20 regions around the world \cite{13}.
+In terms of the availability zones, AWS has 66
+availability zones, Azure has 54 regions worldwide and is
+available in 140 countries all around the world, and
+\gls{gcp} has been made available in
+20 regions around the world \cite{13}.
 While deciding on a cloud service provider there are
 several factors that needs to be considered.
 In order to determine the most suitable type of cloud computing on which the cloud services can be implemented, it is better to first identify the type of cloud computing architecture or cloud deployment.
@@ -93,7 +97,8 @@ IaaS benefits businesses by reducing operating costs, and by spending less on so
 
 \clearpage
 \textbf{Platform as a service (PaaS)}
-\par PaaS is a model that provides cloud-based services
+\par \gls{paas} is a model that provides cloud-based
+services
 enabling the developers and businesses to build software
 and applications at a faster speed that could not be
 achieved in on-premises solutions.
@@ -117,7 +122,9 @@ manage everything else \cite{15}.\\
 \hfill \break
 
 \textbf{Software as a service (SaaS)}
-\par Software as a service (or SaaS) is a method of delivering software and application to the end user over the internet.
+\par \gls{saas} is a method of delivering software and
+application
+to the end user over the internet.
 These applications can be accessed via the
 mobile application, internet browser, or desktop app.
 Common examples of SaaS are calendaring, email, and office tools (such as Microsoft Office 365).
@@ -208,7 +215,9 @@ communication with customers \cite{22}.
 
 \textbf{AWS Identity and Access Management (IAM)}
 
-\par Amazon Identity and Access Management (IAM) is a web service that helps to securely control access for the users to Amazon Web Services resources and services.
+\par Amazon \gls{iam} is a web service that helps to
+securely
+control access for the users to Amazon Web Services resources and services.
 Using IAM enables creating and managing Amazon Web Services groups and users and uses permissions to allow and deny their permissions to AWS resources.
 IAM enables organizations to create and control services for user authentication or limit access to a certain set of people who use their AWS resources \cite{23}.
 
@@ -251,7 +260,8 @@ groups help in specifying the permissions for multiple users, thus making it eas
 but it is similar to an IAM user. A role can be assumed
 temporarily by switching the roles in the management
 console of AWS. It is also possible to assume a role
-through the AWS API operation or by calling the AWS CLI
+through the AWS API operation or by calling the AWS
+\gls{cli}
 or by using a custom URL. However, a role is intended to be assumable by anyone who needs it instead of being uniquely associated with one person. There are no standard long-term credentials such as passwords or access keys associated with a role. Instead, when a role is assumed, it provides temporary security credentials for the role session. It is possible to use roles to delegate access to users, services, or applications that don't have access to your AWS resources. For example, it is required to grant users within an AWS account access to resources the users usually don’t have or grant users in one AWS account access to resources in another account \cite{25}. \\
 
 \hfill \break
@@ -287,9 +297,14 @@ These policies are evaluated when a principal such as a role or a user makes a r
     resource-based policies that specify the user or role as the principal \cite{25}.
 \end{itemize}
 \begin{itemize}
-    \item \textbf{Organizations Service control policies (SCPs):} Amazon Organizations is a service for grouping and centrally managing the Amazon accounts that the business owns.
+    \item \textbf{Organizations \gls{scp}:} Amazon
+    Organizations
+    is a service for grouping and centrally managing the Amazon accounts that the business owns.
     It helps to centrally manage and govern the environment as the organization grows and scales its AWS resources.
-    The maximun permission for account members of an organizational unit (OU) is defined using Amazon Organizations.
+    The maximun permission for account members of an
+    \gls{ou} is defined using
+    Amazon
+    Organizations.
     AWS OSCP limits the permissions granted to entities i
     .e. users or roles within the account by the
     identity-based policies or resource-based policies,
@@ -352,7 +367,10 @@ Figure \ref{fig:iamidentities} shows the overview of AWS IAM concepts in AWS inf
 
 \textbf{Amazon Elastic Compute Cloud (EC2)}
 
-\par Amazon Elastic Compute cloud EC2 is one of the core services offered by AWS which allows to rent virtual machine to run computer applications. Amazon EC2 avoids upfront hardware setup investment, enabling faster development and deployment of applications. Amazon EC2 enables launching as few or as many virtual servers as needed, managing storage, and configuring security and networking. Amazon EC2 enables scaling uo or down based on the changes in the requirements or reduction in the need to forecast traffic, and spikes in popularity \cite{27}.
+\par Amazon \gls{ec2} is one of the core services offered by
+AWS
+which
+allows to rent virtual machine to run computer applications. Amazon EC2 avoids upfront hardware setup investment, enabling faster development and deployment of applications. Amazon EC2 enables launching as few or as many virtual servers as needed, managing storage, and configuring security and networking. Amazon EC2 enables scaling uo or down based on the changes in the requirements or reduction in the need to forecast traffic, and spikes in popularity \cite{27}.
 
 \par Amazon EC2 provides virtual server that are used for running applications on the AWS infrastructure. This virtual server is called an EC2 instance and they come in different configurations of storage, memory, CPU, and networking resources to suit user needs. EC2 instances can be used for any computing task, for example as a web server. An AWS user can create, launch, and terminate an instance based on the need, paying by the second for active servers and hence the term elastic. In order to provide high level of redundancy and optimize latency, Amazon EC2 provides users with control over the geographical location of instances. Placing all of the instances into the same AZ will likely give us the best latency between them. When an EC2 instance is provisioned, by default each instance is assigned automatically a DNS name and a public and private IPV4 address \cite{28}.
 
@@ -402,7 +420,8 @@ Figure \ref{fig:iamidentities} shows the overview of AWS IAM concepts in AWS inf
 
 \par An AMI includes \cite{30}:
 \begin{itemize}
-    \item One or multiple Amazon Elastic Block Store (Amazon EBS) snapshots or a template for the root volume of the instance, for instance-store-backed AMIs (for example, an application server, an operating system, and applications).
+    \item One or multiple Amazon \gls{ebs} snapshots or a
+    template for the root volume of the instance, for instance-store-backed AMIs (for example, an application server, an operating system, and applications).
 \end{itemize}
 \begin{itemize}
     \item Launch permission in order to control which AWS accounts can use the AMI to launch instances.
@@ -442,7 +461,11 @@ When more than one instance is launched at the same time, the user data is avail
 
 \textbf{Amazon Relational Database Service (RDS)}
 
-\par Amazon Relational Database Service (RDS) is a set of managed services that make it easy to set up, operate, and scale databases in the Amazon Web Services Cloud.
+\par Amazon \gls{rds} is a set of managed services that
+make it
+easy
+to
+set up, operate, and scale databases in the Amazon Web Services Cloud.
 Amazon RDS supports an array of database engines to organize and store data.
 It also helps with relational database management tasks,
 such as data backup, patching, recovery, and migration.
@@ -467,7 +490,7 @@ The database instance is a fundamental element of the Amazon RDS. A database eng
 \par Security of Amazon RDS and the stored or transmitted data is implemented at various levels.
 AWS IAM controls which application or which user has access to which database resources and functions.
 Depending on the requirements, groups and users are created and specific access rights are assigned.
-Database instances are in a protected Amazon Virtual Private Cloud (VPC).
+Database instances are in a protected Amazon \gls{vpc}.
 The access to the traffic that flows in and out of a DB instance is controlled by the VPC security groups.
 The access to the DB instance is turned off by default.
 In order to improvise security, access to the DB instance can be restricted to a specific IP address range, port or security group.
@@ -512,7 +535,10 @@ The connections are encrypted and secured using Transport Layer Security (TLS) /
 
 \textbf{Amazon Simple Storage Service (S3)}
 
-\par Amazon Simple Storage Service (Amazon S3) is a high-speed, scalable, object storage service in cloud that offers data availability, security and high performance.
+\par Amazon \gls{s3} is a high-speed, scalable, object
+storage
+service
+in cloud that offers data availability, security and high performance.
 Amazon S3 enables backup and archiving of data and applications in AWS. It can store any type of object, which allows uses like storage for Internet applications, data archives, backups, disaster recovery, hybrid cloud storage, IoT devices, and data lakes for analytics \cite{36}.
 
 \par Storing, organizing, and retrieving data in Amazon S3 primarily focuses on two key components: objects and buckets that work together to create the storage system.
@@ -534,7 +560,9 @@ Objects that already existed in the bucket at the time versioning is enabled, su
     \caption{Amazon Simple Storage Service}{\cite{104}}
     \label{fig:s3}
 \end{figure}
-\par Access to S3 objects is managed using the Identity and access management service (IAM), bucket policies, S3 access points, and Access Control Lists (ACLs).
+\par Access to S3 objects is managed using the Identity
+and access management service (IAM), bucket policies, S3
+access points, and \gls{acl}.
 With the Identity and access management service (IAM), it is possible to manage the access on the user or group level, it is also possible to delegate permissions to the S3 bucket to other AWS customer accounts.
 To grant access permissions to the bucket and the objects, a resource-based AWS IAM policy called a bucket policy is used.
 Associating a policy with a bucket can only be done by
@@ -645,7 +673,7 @@ environment:
     \label{fig:securitychallenges}
 \end{figure}
 
-\par Cloud service providers (CSP) leverage
+\par \gls{csp} leverage
 virtualization technologies combined with self-service capabilities for computing resources via the Internet.
 In these service provider environments, in order to maximize the efficiencies of virtualization, virtual machines must be located on the same physical server.
 Based on a survey conducted by IDC as seen in the figure \ref{fig:securitychallenges}, of 263 IT executives and their line-of-business, security is ranked first as the greatest issue or challenge of cloud computing \cite{79}.
@@ -674,7 +702,13 @@ against security vulnerabilities.\\
 \hfill \break
 \par Prowler is an open-source AWS Security Best Practices Assessment, Hardening, Auditing, and Forensics Readiness command line tool.
 Prowler scans the AWS account to check for potential security vulnerabilities, overly permissive Identity and Access Management (IAM) permissions, and best practice violations.
-Using Prowler, it is possible to evaluate the AWS security specifically against the CIS AWS Foundations Benchmark and has more than 190 additional checks related to HIPAA, GDPR, PCI-DSS, ISO-27001, FFIEC, SOC2, and others \cite{75}.
+Using Prowler, it is possible to evaluate the AWS
+security specifically against the CIS AWS Foundations
+Benchmark and has more than 190 additional checks related
+to \gls{hippa}, \gls{gdpr}, \gls{pci-dss},
+ISO-27001, FFIEC, SOC2,
+and
+others \cite{75}.
 Prowler provides more than 240 checks covering security best practices across all AWS regions and related to AWS services such as Amazon CloudFront, Amazon Redshift, Amazon ElasticCache, Amazon API Gateway, etc.
 It helps organizations implement practices that ensure
 having proper security measures in place and a secure
