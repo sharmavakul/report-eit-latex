@@ -172,7 +172,7 @@ namely PaaS, IaaS, and SaaS \cite{16}.
 \begin{figure}
     \centering
     \includegraphics[width=\textwidth]{geographicalcomponents.png}
-    \caption{AWS Geographical Components}{\cite{19}}
+    \caption{AWS Geographical Components}{\cite{99}}
     \label{fig:identities}
 \end{figure}
 
@@ -226,7 +226,7 @@ recommended, the usage of root users must be avoided for everyday tasks \cite{24
 \begin{figure}
     \centering
     \includegraphics[width=\textwidth]{groupusers.png}
-    \caption{IAM users and groups}
+    \caption{IAM users and groups}{\cite{100}}
     \label{fig:groupusers}
 \end{figure}
 
@@ -240,7 +240,9 @@ Each IAM user is associated with only one AWS account \cite{25}.
 \hfill \break
 
 \textbf{IAM Group}
-\par An IAM group is an identity that specifies a collection of IAM users as shown in figure 2.3. The user groups help in specifying the permissions for multiple users, thus making it easier to manage the permissions for the users. For example, there could be a user group in an organization called Admins that provides all users administrator permissions who belong to that user group. A user belonging to a user group gets assigned all the permissions that are assigned to the user group automatically. If a new user joins the organization and should have administrator privileges, just by adding the new user to the admin user group, the user can be assigned the required permissions. Similarly, if a user changes a job role within the organization, instead of editing that user’s permissions, it is possible to simply remove them from the old user groups and add them to the new user groups \cite{25}.
+\par An IAM group is an identity that specifies a 
+collection of IAM users as shown in figure \ref{fig:groupusers}. The user
+groups help in specifying the permissions for multiple users, thus making it easier to manage the permissions for the users. For example, there could be a user group in an organization called Admins that provides all users administrator permissions who belong to that user group. A user belonging to a user group gets assigned all the permissions that are assigned to the user group automatically. If a new user joins the organization and should have administrator privileges, just by adding the new user to the admin user group, the user can be assigned the required permissions. Similarly, if a user changes a job role within the organization, instead of editing that user’s permissions, it is possible to simply remove them from the old user groups and add them to the new user groups \cite{25}.
 \hfill \break
 
 
@@ -311,7 +313,7 @@ Figure \ref{fig:iamidentities} shows the overview of AWS IAM concepts in AWS inf
 \begin{figure}
     \centering
     \includegraphics[width=\textwidth]{iaminfrastructure.png}
-    \caption{Overview of AWS IAM concepts}
+    \caption{Overview of AWS IAM concepts}{\cite{101}}
     \label{fig:iamidentities}
 \end{figure}
 
@@ -394,7 +396,7 @@ Figure \ref{fig:iamidentities} shows the overview of AWS IAM concepts in AWS inf
 \begin{figure}
     \centering
     \includegraphics[width=\textwidth]{ami.png}
-    \caption{Amazon Machine Image}
+    \caption{Amazon Machine Image}{\cite{30}}
     \label{fig:ami}
 \end{figure}
 
@@ -453,7 +455,7 @@ The database instance varies with respect to the memory, CPU, network capacity, 
 \begin{figure}
     \centering
     \includegraphics[width=\textwidth]{rds.png}
-    \caption{Relational Database Service}
+    \caption{Relational Database Service}{\cite{102}}
     \label{fig:rds}
 \end{figure}
 
@@ -475,7 +477,7 @@ Once the rules are configured, every DB instance associated with that security g
 VPC security groups define which devices or instances can connect to a database instance.
 The connections are encrypted and secured using Transport Layer Security (TLS) / Secure Sockets Layer (SSL) or IPsec VPNs. Amazon RDS firewall settings control network access. Database data at rest can be encrypted and database events can be logged \cite{71}.
 
-        {\textbf{Features of RDS Instances}
+\textbf{Features of RDS Instances}
 \begin{itemize}
     \item \textbf{Amazon RDS Resources Encryption:} Data that is encrypted includes the underlying storage for DB instances, its automated backups, snapshots, and read replicas.
     The industry standard AES-256 encryption algorithm is used by the Amazon RDS encrypted DB instances to encrypt the data that is stored on the DB instances.
@@ -497,7 +499,7 @@ The connections are encrypted and secured using Transport Layer Security (TLS) /
 \begin{figure}
     \centering
     \includegraphics[width=\textwidth]{readreplicasworking.png}
-    \caption{AWS RDS DB Instance Replication}
+    \caption{AWS RDS DB Instance Replication}{\cite{103}}
     \label{fig:readreplicasworking}
 \end{figure}
 \begin{itemize}
@@ -529,7 +531,7 @@ Objects that already existed in the bucket at the time versioning is enabled, su
 \begin{figure}
     \centering
     \includegraphics[width=\textwidth]{s3.png}
-    \caption{Amazon Simple Storage Service}
+    \caption{Amazon Simple Storage Service}{\cite{104}}
     \label{fig:s3}
 \end{figure}
 \par Access to S3 objects is managed using the Identity and access management service (IAM), bucket policies, S3 access points, and Access Control Lists (ACLs).
@@ -638,7 +640,8 @@ environment:
 \begin{figure}
     \centering
     \includegraphics[width=\textwidth]{securitychallenges.png}
-    \caption{Results of IDC ranking security challenges}
+    \caption{Results of IDC ranking security
+    challenges}{\cite{41}}
     \label{fig:securitychallenges}
 \end{figure}
 
