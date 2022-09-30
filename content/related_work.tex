@@ -7,9 +7,13 @@
 \section{Cloud Background}
 
 \subsection{Cloud Computing}
-Cloud computing in simple terms is defined as the delivery of computing services and resources. These include
-storage, databases, servers, software, and networking over the internet. Cloud computing is a combination of two
-words “cloud” which means “internet” and computing involves the systems and infrastructures that enable a computer to run and build, deploy, or interact with information. Cloud computing is a very common phrase that people hear nowadays but might not actually understand. It is because cloud computing encompasses several different services and systems thus making it ambiguous or confusing. In simple words, cloud computing can be defined as the delivery of computing services, these include databases, storage, servers, etc. over the internet \cite{11}.
+Cloud computing in simple terms is defined as the delivery of computing services and resources.
+These include
+storage, databases, servers, software, and networking over the internet.
+Cloud computing is a combination of two
+words “cloud” which means “internet” and computing involves the systems and infrastructures that enable a computer to run and build, deploy, or interact with information.
+Cloud computing is a very common phrase that people hear nowadays but might not actually understand.
+It is because cloud computing encompasses several different services and systems thus making it ambiguous or confusing. In simple words, cloud computing can be defined as the delivery of computing services, these include databases, storage, servers, etc. over the internet \cite{11}.
 
 Cloud computing enables the use of off-site systems which helps the computers to store, manage, process, and
 communicate information.
@@ -91,7 +95,7 @@ IaaS benefits businesses by reducing operating costs, and by spending less on so
 \begin{figure}
     \centering
     \includegraphics[width=\textwidth]{iaaspaassaas.jpg}
-    \caption{Cloud computing models}{\cite{99}}
+    \caption{Cloud computing models}{\cite{16}}
     \label{fig:iaaspaassaas}
 \end{figure}
 
@@ -164,11 +168,15 @@ organization to scale and grow.
 For example, AWS provides a wide range of databases that are
 designed specifically for specific applications.
 AWS combines the offerings of the three cloud services 
-namely PaaS, IaaS, and SaaS \cite{16}.
+namely PaaS, IaaS, and SaaS \cite{17}.
 
-\par AWS was launched in 2006 and was one of the first cloud service providers to introduce a pay-as-you-go cloud computing model. It offers various tools and solutions for developers \cite{17}.
-\\
-\par AWS cloud infrastructure is a highly secure, reliable, and extensive cloud platform \cite{18}. Whether it is required to deploy the application workloads globally with just one click, or to develop and deploy specific applications closer to the end user with latency in the single-digit millisecond range, AWS offers the right cloud infrastructure anywhere, anytime \cite{19}.
+\par AWS was launched in 2006 and was one of the first
+cloud service providers to introduce a pay-as-you-go cloud computing model. It offers various tools and solutions for developers \cite{18}.
+
+\par AWS cloud infrastructure is a highly secure,
+reliable, and extensive cloud platform \cite{19}. Whether
+it is required to deploy the application workloads
+globally with just one click, or to develop and deploy specific applications closer to the end user with latency in the single-digit millisecond range, AWS offers the right cloud infrastructure anywhere, anytime \cite{20}.
 
 \begin{itemize}
     \item AWS Regions
@@ -179,11 +187,14 @@ namely PaaS, IaaS, and SaaS \cite{16}.
 \begin{figure}
     \centering
     \includegraphics[width=\textwidth]{geographicalcomponents.png}
-    \caption{AWS Geographical Components}{\cite{99}}
+    \caption{AWS Geographical Components}{\cite{16}}
     \label{fig:identities}
 \end{figure}
 
-\par When designing and architecting the cloud infrastructure it is very important to know where the instances, services are data are located. This is a fundamental criterion to implement a highly available and scalable network that offers low latency \cite{19}.
+\par When designing and architecting the cloud infrastructure it is very important to know where the instances, services are data are located.
+This is a fundamental criterion to implement a highly
+available and scalable network that offers low latency
+\cite{20}.
 
 
 \textbf{Region}
@@ -192,11 +203,18 @@ These regions are spread globally and reduce the latency incurred by the custome
 Each AWS region contains availability zones.
 For each AWS region, there are a minimum of 2 Availability
 Zones and a
-maximum of 6 Availability Zones, however typically 3 or more are usually found. The regions are connected to one another via a high-speed fiber network and are isolated from each other \cite{20}
+maximum of 6 Availability Zones, however typically 3 or more are usually found.
+The regions are connected to one another via a high-speed
+fiber network and are isolated from each other \cite{21}
 
 
 \textbf{Availability zones}
-\par Each region is made of a logical building block known as \textit{AWS Availability Zone (AZ)} and is isolated from the failures of other availability zones. The AWS regions operate independently and are isolated from other regions, but the availability zone within a region provides low-latency network connectivity to other Availability Zones within the same AWS Region. There is no explicit cost incurred for the network connectivity between two Availability Zones within the same AWS Region. Depending on the service used, in case of a failure, if an Availability Zone goes down, it is possible to ensure high availability by shifting the workload to another Availability Zone within the same region, this capability is known as \textit{Multi-AZ} redundancy. The figure \ref{fig:identities} shows 2 different AWS regions which are isolated from each other and each region consists of AWS Availability Zones \cite{21}.
+\par Each region is made of a logical building block known as \textit{AWS Availability Zone (AZ)} and is isolated from the failures of other availability zones.
+The AWS regions operate independently and are isolated from other regions, but the availability zone within a region provides low-latency network connectivity to other Availability Zones within the same AWS Region.
+There is no explicit cost incurred for the network connectivity between two Availability Zones within the same AWS Region.
+Depending on the service used, in case of a failure, if an Availability Zone goes down, it is possible to ensure high availability by shifting the workload to another Availability Zone within the same region, this capability is known as \textit{Multi-AZ} redundancy.
+The figure \ref{fig:identities} shows 2 different AWS
+regions which are isolated from each other and each region consists of AWS Availability Zones \cite{22}.
 
 \textbf{Edge Location}
 \par In order to reduce the latency for the traffic, edge locations are deployed at multiple locations across the
@@ -209,7 +227,7 @@ If we consider an example, an organization has many clients in Tokyo accessing t
 region in Mumbai. In such cases, instead of clients sending requests constantly to Mumbai region for accessing the
 information, we can cache a copy of the relevant information in Tokyo. Amazon CloudFront allows delivering video,
 information, APIs to clients, or applications across the world. AWS CloudFront uses edge locations for accelerating
-communication with customers \cite{22}.
+communication with customers \cite{23}.
 
 \subsection{Services}
 
@@ -219,7 +237,8 @@ communication with customers \cite{22}.
 securely
 control access for the users to Amazon Web Services resources and services.
 Using IAM enables creating and managing Amazon Web Services groups and users and uses permissions to allow and deny their permissions to AWS resources.
-IAM enables organizations to create and control services for user authentication or limit access to a certain set of people who use their AWS resources \cite{23}.
+IAM enables organizations to create and control services
+for user authentication or limit access to a certain set of people who use their AWS resources \cite{24}.
 
 
 \par When an AWS account is created, it begins with one
@@ -229,13 +248,14 @@ complete access to all AWS resources and services in the account and is called t
 The AWS account root
 user is accessed by signing in with the email address and password that you used to create the account.
 As
-recommended, the usage of root users must be avoided for everyday tasks \cite{24}.
+recommended, the usage of root users must be avoided for
+everyday tasks \cite{25}.
 
 
 \begin{figure}
     \centering
     \includegraphics[width=\textwidth]{groupusers.png}
-    \caption{IAM users and groups}{\cite{100}}
+    \caption{IAM users and groups}{\cite{26}}
     \label{fig:groupusers}
 \end{figure}
 
@@ -245,29 +265,38 @@ recommended, the usage of root users must be avoided for everyday tasks \cite{24
 This entity corresponds to an application or a person and has specific permissions.
 Users have their own set of authentication parameters such as access key, secret key, or password that is required to access the AWS account through CLI or AWS console.
 An IAM user does not always represent an actual individual.
-Each IAM user is associated with only one AWS account \cite{25}.
+Each IAM user is associated with only one AWS account
+\cite{27}.
 \hfill \break
 
 \textbf{IAM Group}
 \par An IAM group is an identity that specifies a 
-collection of IAM users as shown in figure \ref{fig:groupusers}. The user
-groups help in specifying the permissions for multiple users, thus making it easier to manage the permissions for the users. For example, there could be a user group in an organization called Admins that provides all users administrator permissions who belong to that user group. A user belonging to a user group gets assigned all the permissions that are assigned to the user group automatically. If a new user joins the organization and should have administrator privileges, just by adding the new user to the admin user group, the user can be assigned the required permissions. Similarly, if a user changes a job role within the organization, instead of editing that user’s permissions, it is possible to simply remove them from the old user groups and add them to the new user groups \cite{25}.
+collection of IAM users as shown in figure \ref{fig:groupusers}.
+The user
+groups help in specifying the permissions for multiple users, thus making it easier to manage the permissions for the users.
+For example, there could be a user group in an organization called Admins that provides all users administrator permissions who belong to that user group.
+A user belonging to a user group gets assigned all the permissions that are assigned to the user group automatically.
+If a new user joins the organization and should have administrator privileges, just by adding the new user to the admin user group, the user can be assigned the required permissions.
+Similarly, if a user changes a job role within the organization, instead of editing that user’s permissions, it is possible to simply remove them from the old user groups and add them to the new user groups \cite{27}.
 \hfill \break
 
 
 \textbf{Roles}
 \par An IAM role is not associated with a specific person,
-but it is similar to an IAM user. A role can be assumed
+but it is similar to an IAM user.
+A role can be assumed
 temporarily by switching the roles in the management
 console of AWS. It is also possible to assume a role
 through the AWS API operation or by calling the AWS
 \gls{cli}
-or by using a custom URL. However, a role is intended to be assumable by anyone who needs it instead of being uniquely associated with one person. There are no standard long-term credentials such as passwords or access keys associated with a role. Instead, when a role is assumed, it provides temporary security credentials for the role session. It is possible to use roles to delegate access to users, services, or applications that don't have access to your AWS resources. For example, it is required to grant users within an AWS account access to resources the users usually don’t have or grant users in one AWS account access to resources in another account \cite{25}. \\
+or by using a custom URL. However, a role is intended to be assumable by anyone who needs it instead of being uniquely associated with one person.
+There are no standard long-term credentials such as passwords or access keys associated with a role. Instead, when a role is assumed, it provides temporary security credentials for the role session. It is possible to use roles to delegate access to users, services, or applications that don't have access to your AWS resources. For example, it is required to grant users within an AWS account access to resources the users usually don’t have or grant users in one AWS account access to resources in another account \cite{27}.
 
 \hfill \break
 \textbf{Policy}
 
-\par An IAM policy is an IAM entity that sets permission and controls access to AWS resources. The IAM policies are attached to AWS resources or IAM identities (users, groups, or roles) and define their permission.
+\par An IAM policy is an IAM entity that sets permission and controls access to AWS resources.
+The IAM policies are attached to AWS resources or IAM identities (users, groups, or roles) and define their permission.
 These policies are evaluated when a principal such as a role or a user makes a request. Most policies in AWS are stored as JSON documents. IAM policies define permissions which specify who has access to the resources and what operation they can perform. For example, if there exists a policy that allows the GetUser action, then if this policy is assigned to the user, the user would be able to fetch the information either by using the AWS API or the AWS CLI or the AWS Management Console \cite{14}.
 
 \par AWS provides six types of policies:
@@ -275,26 +304,26 @@ These policies are evaluated when a principal such as a role or a user makes a r
 \begin{itemize}
     \item \textbf{Identity-based policies:} Identity-based policies are JSON documents that control what actions an
     identity
-    (users, groups, and roles) can perform, under what conditions, and on which resources \cite{25}. The Identity-based policies can be further categorized as:
+    (users, groups, and roles) can perform, under what conditions, and on which resources \cite{27}. The Identity-based policies can be further categorized as:
     \begin{itemize}
         \item Managed policies: Standalone identity-based policies that are attached to multiple users, groups, and
-        roles in an AWS account \cite{25}.
+        roles in an AWS account \cite{27}.
     \end{itemize}
     \begin{itemize}
         \item Inline policies:  Policies that are added directly to a single identity such as user, group, or role.
-        Inline policies maintain a strict one-to-one relationship between an identity and a policy and are deleted when the identity is deleted \cite{25}.
+        Inline policies maintain a strict one-to-one relationship between an identity and a policy and are deleted when the identity is deleted \cite{27}.
     \end{itemize}
 \end{itemize}
 
 \begin{itemize}
     \item \textbf{Resource-based policies:} Policy document attached to a resource such as an Amazon S3 bucket is known as Resource-based policies.
-    These are inline policies and grant the specified permission to perform specific actions on a resource \cite{25}.
+    These are inline policies and grant the specified permission to perform specific actions on a resource \cite{27}.
 \end{itemize}
 \begin{itemize}
     \item \textbf{IAM permissions boundaries:} A permissions' boundary sets the maximum permissions that can be granted to an IAM entity by an identity-based policy.
      When the permissions boundary for an entity is set, the entity can perform only the actions that are allowed by both its permissions boundaries and its identity-based policies.
      Permissions boundary does not limit the
-    resource-based policies that specify the user or role as the principal \cite{25}.
+    resource-based policies that specify the user or role as the principal \cite{27}.
 \end{itemize}
 \begin{itemize}
     \item \textbf{Organizations \gls{scp}:} Amazon
@@ -308,18 +337,18 @@ These policies are evaluated when a principal such as a role or a user makes a r
     AWS OSCP limits the permissions granted to entities i
     .e. users or roles within the account by the
     identity-based policies or resource-based policies,
-    but it does not grant permissions \cite{25}.
+    but it does not grant permissions \cite{27}.
 
 \end{itemize}
 \begin{itemize}
     \item \textbf{Access control lists (ACLs):} ACL is a service policy that allows to control the access to a resource by the principals in another account.
     ACLs are the only policy types that does not uses the JSON policy structure and are similar to resource-based policies.
     ACLs are used to grant permissions to the specified principal since they are cross-account permissions policies.
-    Using ACL it is not possible to control the access within the same account \cite{25}.
+    Using ACL it is not possible to control the access within the same account \cite{27}.
 \end{itemize}
 \begin{itemize}
     \item \textbf{Session policies:} Session policies are
-    policies used for programmatically creating a temporary session for a federated user or role by passing them as parameters.The intersection of session policies and identity-based policies for the IAM user or role represents the permissions for a session \cite{25}.
+    policies used for programmatically creating a temporary session for a federated user or role by passing them as parameters.The intersection of session policies and identity-based policies for the IAM user or role represents the permissions for a session \cite{27}.
 \end{itemize}
 
 Figure \ref{fig:iamidentities} shows the overview of AWS IAM concepts in AWS infrastructure.
@@ -328,7 +357,7 @@ Figure \ref{fig:iamidentities} shows the overview of AWS IAM concepts in AWS inf
 \begin{figure}
     \centering
     \includegraphics[width=\textwidth]{iaminfrastructure.png}
-    \caption{Overview of AWS IAM concepts}{\cite{101}}
+    \caption{Overview of AWS IAM concepts}{\cite{28}}
     \label{fig:iamidentities}
 \end{figure}
 
@@ -340,12 +369,12 @@ Figure \ref{fig:iamidentities} shows the overview of AWS IAM concepts in AWS inf
 \begin{itemize}
     \item \textbf{Granular permissions:} Based on the usage, permissions can be granted to different people to access
     different resources. For example, some users are granted complete access to Amazon DynamoDB ,Amazon S3, Amazon EC2, and other AWS services while other users are only
-    provide permissions to administer some EC2 instances, read-only access to some S3 buckets but no other services \cite{25}.
+    provide permissions to administer some EC2 instances, read-only access to some S3 buckets but no other services \cite{27}.
 \end{itemize}
 \begin{itemize}
     \item \textbf{Multi-factor authentication (MFA):} To enable enhanced security of the AWS account, it is possible
     to enable
-    two-factor authentication to the root account as well as to the individual users’ account. This ensures the AWS user along with providing the username and password for the account also provides a code from a configured device \cite{25}.
+    two-factor authentication to the root account as well as to the individual users’ account. This ensures the AWS user along with providing the username and password for the account also provides a code from a configured device \cite{27}.
 \end{itemize}
 \begin{itemize}
     \item \textbf{Identity federation:} Identity federation is a system of trust between two parties used for the purpose of authenticating the users and sharing the information that is required for granting access to the resources.
@@ -355,13 +384,13 @@ Figure \ref{fig:iamidentities} shows the overview of AWS IAM concepts in AWS inf
     For example, if there is a user who has logged into his
     google account and would like to use the AWS account,
     then identity federation helps AWS IAM to trust the authentication method.
-    This authentication enables temporary access to the user’s AWS account \cite{25}.
+    This authentication enables temporary access to the user’s AWS account \cite{27}.
 \end{itemize}
 \begin{itemize}
     \item \textbf{Password policy:} Password is used to authenticate a user’s account and a strict password policy
     can make it
     even more secure. IAM password policy allows for password rotation and resetting the password remotely. It is
-    possible to set rules such as a password must contain a number, special characters, or special symbols \cite{25}.
+    possible to set rules such as a password must contain a number, special characters, or special symbols \cite{27}.
 \end{itemize}
 
 
@@ -370,9 +399,12 @@ Figure \ref{fig:iamidentities} shows the overview of AWS IAM concepts in AWS inf
 \par Amazon \gls{ec2} is one of the core services offered by
 AWS
 which
-allows to rent virtual machine to run computer applications. Amazon EC2 avoids upfront hardware setup investment, enabling faster development and deployment of applications. Amazon EC2 enables launching as few or as many virtual servers as needed, managing storage, and configuring security and networking. Amazon EC2 enables scaling uo or down based on the changes in the requirements or reduction in the need to forecast traffic, and spikes in popularity \cite{27}.
+allows to rent virtual machine to run computer
+applications. Amazon EC2 avoids upfront hardware setup investment, enabling faster development and deployment of applications. Amazon EC2 enables launching as few or as many virtual servers as needed, managing storage, and configuring security and networking. Amazon EC2 enables scaling uo or down based on the changes in the requirements or reduction in the need to forecast traffic, and spikes in popularity \cite{29}.
 
-\par Amazon EC2 provides virtual server that are used for running applications on the AWS infrastructure. This virtual server is called an EC2 instance and they come in different configurations of storage, memory, CPU, and networking resources to suit user needs. EC2 instances can be used for any computing task, for example as a web server. An AWS user can create, launch, and terminate an instance based on the need, paying by the second for active servers and hence the term elastic. In order to provide high level of redundancy and optimize latency, Amazon EC2 provides users with control over the geographical location of instances. Placing all of the instances into the same AZ will likely give us the best latency between them. When an EC2 instance is provisioned, by default each instance is assigned automatically a DNS name and a public and private IPV4 address \cite{28}.
+\par Amazon EC2 provides virtual server that are used for
+running applications on the AWS infrastructure. This
+virtual server is called an EC2 instance and they come in different configurations of storage, memory, CPU, and networking resources to suit user needs. EC2 instances can be used for any computing task, for example as a web server. An AWS user can create, launch, and terminate an instance based on the need, paying by the second for active servers and hence the term elastic. In order to provide high level of redundancy and optimize latency, Amazon EC2 provides users with control over the geographical location of instances. Placing all of the instances into the same AZ will likely give us the best latency between them. When an EC2 instance is provisioned, by default each instance is assigned automatically a DNS name and a public and private IPV4 address \cite{30}.
 
 
 \textbf{Features of EC2}
@@ -382,7 +414,8 @@ allows to rent virtual machine to run computer applications. Amazon EC2 avoids u
     It is possible to run many servers in
     parallel
     with these instances.
-    Amazon EC2, user can decrease or increase the automation as per their needs \cite{29}.
+    Amazon EC2, user can decrease or increase the
+    automation as per their needs \cite{31}.
 \end{itemize}
 
 \begin{itemize}
@@ -393,32 +426,37 @@ allows to rent virtual machine to run computer applications. Amazon EC2 avoids u
 \begin{itemize}
     \item \textbf{Security:} Cloud security is the highest priority at AWS. Amazon works with the Amazon VPC to provide additional security, isolating resources, and robust networking for the compute resources.
     The compute instances in AWS are located in the VPC in the specific IP range.
-    Further, the user decides which instances are exposed to the internet and which remain private \cite{29}.
+    Further, the user decides which instances are exposed
+    to the internet and which remain private \cite{31}.
 \end{itemize}
 
 \begin{itemize}
     \item \textbf{Conjunction with other Amazon web
     services:} Amazon EC2 collaborates with most AWS
     services such as Amazon RDS, Amazon VPC, Amazon SQS, and Amazon S3 to provide a complete, secure, comprehensive solution for
-    computation, query processing, and cloud storage across a wide range of applications \cite{29}.
+    computation, query processing, and cloud storage
+    across a wide range of applications \cite{31}.
 \end{itemize}
 
 \begin{itemize}
-    \item \textbf{Completely controlled:} Users have complete control over the instances including root access and the ability to interact with instances just like any other system. Users can stop the instance while keeping the data on the boot partition, and then restart it using web service APIs. Using web service APIs makes it possible to reboot the instances remotely \cite{29}.
+    \item \textbf{Completely controlled:} Users have
+    complete control over the instances including root
+    access and the ability to interact with instances just like any other system. Users can stop the instance while keeping the data on the boot partition, and then restart it using web service APIs. Using web service APIs makes it possible to reboot the instances remotely \cite{31}.
 \end{itemize}
 
 \textbf{Amazon Machine Image (AMI)}
 
-\par An Amazon Machine Image (AMI) is a maintained and supported image provided by AWS. An AMI provides the necessary information required for launching an instance. An AMI must be specified while launching an instance. It is possible to launch multiple instances of the same configuration from a single AMI. When instances of different configurations need to be launched, different AMI must be used \cite{30}.
+\par An Amazon Machine Image (AMI) is a maintained and
+supported image provided by AWS. An AMI provides the necessary information required for launching an instance. An AMI must be specified while launching an instance. It is possible to launch multiple instances of the same configuration from a single AMI. When instances of different configurations need to be launched, different AMI must be used \cite{32}.
 
 \begin{figure}
     \centering
     \includegraphics[width=\textwidth]{ami.png}
-    \caption{Amazon Machine Image}{\cite{30}}
+    \caption{Amazon Machine Image}{\cite{32}}
     \label{fig:ami}
 \end{figure}
 
-\par An AMI includes \cite{30}:
+\par An AMI includes \cite{32}:
 \begin{itemize}
     \item One or multiple Amazon \gls{ebs} snapshots or a
     template for the root volume of the instance, for instance-store-backed AMIs (for example, an application server, an operating system, and applications).
@@ -438,26 +476,37 @@ bucket after it is created. This image is then registered and can then be used t
 copied to the same as well as to different AWS regions.
 The AMI can be deregistered, if it is no longer required.
 Upon deregistration a new instances cannot be launched
-using the AMI, but the existing instances using AMI will not be affected \cite{30}.
+using the AMI, but the existing instances using AMI will
+not be affected \cite{32}.
 
 \par It is possible to launch an instance using an existing AMI. If the instance is customized, for example, the
 software is installed on the image, this customized AMI can be saved with the updated configuration. Launching an
 instance from this customized image contains customizations that were made earlier. To restrict the availability of
-an AMI it can be made private, alternatively, the AMI is made public when the access doesn’t need to be restricted \cite{31}.
+an AMI it can be made private, alternatively, the AMI is
+made public when the access doesn’t need to be restricted \cite{33}.
 
 
-
+\hfill \break
 
 \textbf{Instance metadata and user data}
 \par Instance metadata is the data associated with your EC2 instance that can be used to manage or configure the
 running instance using the Instance metadata service (IMDS). Each EC2 instance has access to the Instance metadata
 service (IMDS). The instance metadata is divided into different categories such as events, hostnames, and security
-groups. Instance metadata service contains information about the running EC2 instance and can be used to capture the temporary API credentials for accessing the AWS APIs \cite{32}.
+groups. Instance metadata service contains information
+about the running EC2 instance and can be used to capture the temporary API credentials for accessing the AWS APIs \cite{34}.
 
 \par Instance metadata can be used to access user data that is specified when launching the instance. For example, it
 is possible to specify parameters for configuring the instance or include a simple script. It is also possible to
 build generic AMIs and use user data to modify the configuration files supplied at launch time.
-When more than one instance is launched at the same time, the user data is available to all instances. Each instance has a unique number called the ami-launch-index number. This number allows for writing code that controls what to do. For example, the first host might elect itself as the original node in a cluster \cite{33}.
+When more than one instance is launched at the same time,
+the user data is available to all instances.
+Each instance has a unique number called the ami-launch-index number.
+This number allows for writing code that controls what to
+do.
+For example, the first host might elect itself as the original node in a cluster \cite{34}.
+
+
+\hfill \break
 
 \textbf{Amazon Relational Database Service (RDS)}
 
@@ -474,18 +523,21 @@ It facilitates the deployment and maintenance of relational databases in the clo
 Figure \ref{fig:rds} shows the different database
 services offered by Amazon RDS. Amazon RDS manages common database administration tasks and provides cost-efficient, resizable capacity for an industry-standard relational database.
 Based of various database use cases, Amazon RDS provides users an opportunity to choose an instance type that meets their needs.
-The database instance varies with respect to the memory, CPU, network capacity, and storage, thus providing flexibility in choosing the ideal combination of resources for your database \cite{34}.
+The database instance varies with respect to the memory,
+CPU, network capacity, and storage, thus providing
+flexibility in choosing the ideal combination of resources for your database \cite{35}.
 \begin{figure}
     \centering
     \includegraphics[width=\textwidth]{rds.png}
-    \caption{Relational Database Service}{\cite{102}}
+    \caption{Relational Database Service}{\cite{36}}
     \label{fig:rds}
 \end{figure}
 
 \par The pricing of Amazon Relational Database Service is based on usage.
 The cost is dependent on various parameters such as instance hours, the number of input and output transactions, storage capacity, size of backup storage, or amount of Internet data transfer.
 Different applications use different instance types.
-The database instance is a fundamental element of the Amazon RDS. A database engine works in each database instance with function parameters and specific properties that determine and control the properties of the databases. Database instances can be created, configured, and deleted using the AWS CLI, AWS management console, or RDS API. Computing and storage and capacity, database engine, and other parameters such as backup, version and update settings, or master user access data must be specified for each database instance. Depending on the type of database engine the number of databases per instance varies for example, with Microsoft SQL Server, up to 100 databases are possible, Oracle allows one database per instance, MySQL, MariaDB, Amazon Aurora, and PostgreSQL have no software limitations on the maximum number of databases \cite{35}.
+The database instance is a fundamental element of the
+Amazon RDS. A database engine works in each database instance with function parameters and specific properties that determine and control the properties of the databases. Database instances can be created, configured, and deleted using the AWS CLI, AWS management console, or RDS API. Computing and storage and capacity, database engine, and other parameters such as backup, version and update settings, or master user access data must be specified for each database instance. Depending on the type of database engine the number of databases per instance varies for example, with Microsoft SQL Server, up to 100 databases are possible, Oracle allows one database per instance, MySQL, MariaDB, Amazon Aurora, and PostgreSQL have no software limitations on the maximum number of databases \cite{37}.
 
 \par Security of Amazon RDS and the stored or transmitted data is implemented at various levels.
 AWS IAM controls which application or which user has access to which database resources and functions.
@@ -505,30 +557,31 @@ The connections are encrypted and secured using Transport Layer Security (TLS) /
     \item \textbf{Amazon RDS Resources Encryption:} Data that is encrypted includes the underlying storage for DB instances, its automated backups, snapshots, and read replicas.
     The industry standard AES-256 encryption algorithm is used by the Amazon RDS encrypted DB instances to encrypt the data that is stored on the DB instances.
     After the data encryption is enabled, with minimal impact on the performance Amazon RDS handles decryption of data and authentication of access transparently.
-    There is no modification needed in the database client to use encryption \cite{35}.
+    There is no modification needed in the database client to use encryption \cite{37}.
 \end{itemize}
 \begin{itemize}
     \item \textbf{Automatic backups:} Amazon RDS provisions creation and saving automatic backups of RDS DB instance.
     It
     provides users the capability choose a retention period and restore databases to any time during that period.
-    Users can also take snapshots of instances manually and these snapshots remains until manually deleted \cite{71}.
+    Users can also take snapshots of instances manually and these snapshots remains until manually deleted \cite{37}.
 \end{itemize}
 \begin{itemize}
     \item \textbf{Replication:} Amazon RDS uses built-in
     replication functionality of Microsoft SQL Server, Oracle, MariaDB, and PostgreSQL DB engines to create a read replica, which is a special type of DB instance, from the source DB instance.
     A read replica represents a copy of the actual instance that reflects changes to the actual in almost real time and under normal circumstances.
-    Figure \ref{fig:readreplicasworking} shows a pictorial view of the working of read replica \cite{35}.
+    Figure \ref{fig:readreplicasworking} shows a pictorial view of the working of read replica \cite{37}.
 \end{itemize}
 \begin{figure}
     \centering
     \includegraphics[width=\textwidth]{readreplicasworking.png}
-    \caption{AWS RDS DB Instance Replication}{\cite{103}}
+    \caption{AWS RDS DB Instance Replication}{\cite{38}}
     \label{fig:readreplicasworking}
 \end{figure}
 \begin{itemize}
     \item \textbf{Performance metrics and monitoring:} Amazon provides CloudWatch service that enables managed
     monitoring.
-    Amazon CloudWatch make it possible for the users to view capacity and I/O metrics \cite{35}.
+    Amazon CloudWatch make it possible for the users to
+    view capacity and I/O metrics \cite{37}.
 \end{itemize}
 
 
@@ -539,27 +592,34 @@ The connections are encrypted and secured using Transport Layer Security (TLS) /
 storage
 service
 in cloud that offers data availability, security and high performance.
-Amazon S3 enables backup and archiving of data and applications in AWS. It can store any type of object, which allows uses like storage for Internet applications, data archives, backups, disaster recovery, hybrid cloud storage, IoT devices, and data lakes for analytics \cite{36}.
+Amazon S3 enables backup and archiving of data and
+applications in AWS. It can store any type of object,
+which allows uses like storage for Internet applications, data archives, backups, disaster recovery, hybrid cloud storage, IoT devices, and data lakes for analytics \cite{39}.
 
 \par Storing, organizing, and retrieving data in Amazon S3 primarily focuses on two key components: objects and buckets that work together to create the storage system.
 The Amazon S3 object storage data model is a flat structure.
 The bucket stores the objects, once the bucket is created.
 There is no real hierarchy of sub buckets or subfolders but a logical hierarchy can be inferred using key name prefixes and delimiters.
-The objects are data files which include photos, documents, and videos. Each object in the S3 environment is identified by a unique key that differentiates it from other objects. The buckets serve as the fundamental storage containers for objects. While creating the bucket AWS provides users the ability to choose the AWS region. Even though a bucket is associated with a specified region, the name of the bucket acts as a global identifier, thus the name of the bucket must be unique among all the buckets across the world. The figure \ref{fig:s3} show Amazon S3, buckets and objects \cite{37}.
+The objects are data files which include photos,
+documents, and videos. Each object in the S3 environment
+is identified by a unique key that differentiates it from other objects. The buckets serve as the fundamental storage containers for objects. While creating the bucket AWS provides users the ability to choose the AWS region. Even though a bucket is associated with a specified region, the name of the bucket acts as a global identifier, thus the name of the bucket must be unique among all the buckets across the world. The figure \ref{fig:s3} show Amazon S3, buckets and objects \cite{40}.
 
 \par Amazon S3 offers features to organize and manage data to operate cost-effectively, support specific use cases,
 increase security, and meet compliance requirements.
 With S3 Versioning, it is possible to keep multiple variants of an object in the same bucket.
 S3 Versioning helps to preserve, retrieve, and restore every version of every object stored in the buckets.
 Amazon S3 generates a unique version ID once the S3 versioning in a bucket is enabled for each object added to the bucket.
-Objects that already existed in the bucket at the time versioning is enabled, such objects get assigned with a version ID of \textit{null}. If an object is modified, such as \textit{CopyObject} and \textit{PutObject}, the new objects get a unique version ID \cite{72}.
+Objects that already existed in the bucket at the time
+versioning is enabled, such objects get assigned with a
+version ID of \textit{null}. If an object is modified, such as \textit{CopyObject} and \textit{PutObject}, the new objects get a unique version ID \cite{41}.
 
 \begin{figure}
     \centering
     \includegraphics[width=\textwidth]{s3.png}
-    \caption{Amazon Simple Storage Service}{\cite{104}}
+    \caption{Amazon Simple Storage Service}{\cite{42}}
     \label{fig:s3}
 \end{figure}
+
 \par Access to S3 objects is managed using the Identity
 and access management service (IAM), bucket policies, S3
 access points, and \gls{acl}.
@@ -578,7 +638,9 @@ To authorized users for individual objects and buckets, ACLs grants read and wri
 ACL are attached as a sub resource to each bucket and objects.
 The ACL defines which AWS groups or accounts are granted access and the type of access to which the access is granted.
 The Block Public Access feature in Amazon S3 provides settings for accounts, access points, and buckets to help user manage public access to resources.
-By default, public access is not allowed on access points, new buckets, and objects, however, users can modify the access point policies, bucket policies, or object-related permissions to allow public access \cite{36}.
+By default, public access is not allowed on access
+points, new buckets, and objects, however, users can
+modify the access point policies, bucket policies, or object-related permissions to allow public access \cite{43}.
 
 \par There are four settings provided by S3 Block Public
 Access.
@@ -586,7 +648,7 @@ These settings can be applied in combination to individual buckets, access point
 applies to all access points associated with that bucket. Table \ref{tab:blockpublicaccesssettings} highlights
 different settings for blocking public access \cite{23}.
 
-\clearpage
+
 
 \begin{longtable}{|p{5cm}|p{11.4cm}|}
     \hline
@@ -604,62 +666,71 @@ different settings for blocking public access \cite{23}.
     \begin{itemize}
         \item On applying this setting to the AWS account, then PUT bucket call fails in a situation where public ACL is included in the request.
     \end{itemize}
-    \par When BlockPublicAcls is set to TRUE, the above specified operations fail, however, existing policies and ACLs for buckets and objects are not modified. This setting enables protecting against public access while allowing to audit, refine, or otherwise alter the existing policies and ACLs for buckets and objects \cite{23}.
+    \par When BlockPublicAcls is set to TRUE, the above specified operations fail, however, existing policies and ACLs for buckets and objects are not modified. This setting enables protecting against public access while allowing to audit, refine, or otherwise alter the existing policies and ACLs for buckets and objects \cite{44}.
     \\
     \hline
     \textit{IgnorePublicAcls} & Setting IgnorePublicAcls to TRUE causes Amazon S3 to ignore all public ACLs on a bucket and any objects it contains.
     This ensures the public access granted by ACLs will be blocked, while the PUT object calls that include a public ACL will still be allowed.
-    The persistence of any existing ACLs does not get affected by enabling IgnorePublicAcls, and also it doesn't prevent new public ACLs from being set. \cite{23}.  \\
+    The persistence of any existing ACLs does not get affected by enabling IgnorePublicAcls, and also it doesn't prevent new public ACLs from being set. \cite{44}.  \\
     \hline
-    \textit{BlockPublicPolicy} & When BlockPublicPolicy is set to TRUE for a bucket, Amazon S3 rejects calls to PUT Bucket policy if the BlockPublicPolicy allows public access. When BlockPublicPolicy is set to TRUE for an access point, Amazon S3 rejects calls to PUT access point policy and PUT Bucket policy that are made through the access point if BlockPublicPolicy (for either the access point or the underlying bucket) is public \cite{23}.  \\
+    \textit{BlockPublicPolicy} & When BlockPublicPolicy is set to TRUE for a bucket, Amazon S3 rejects calls to PUT Bucket policy if the BlockPublicPolicy allows public access. When BlockPublicPolicy is set to TRUE for an access point, Amazon S3 rejects calls to PUT access point policy and PUT Bucket policy that are made through the access point if BlockPublicPolicy (for either the access point or the underlying bucket) is public \cite{44}.  \\
     \hline
     \textit{RestrictPublicBuckets} & The access to a bucket or access point with a public policy to authorized users and principals within the bucket owner's account will be restricted on setting RestrictPublicBuckets to TRUE.
-    All cross account access to the bucket or access point are blocked by RestrictPublicBuckets, while it will still be possible for the users within the account to manage the bucket or access point \cite{23}.  \\
+    All cross account access to the bucket or access point are blocked by RestrictPublicBuckets, while it will still be possible for the users within the account to manage the bucket or access point \cite{44}.  \\
     \hline
     \caption{Block public access settings}
     \label{tab:blockpublicaccesssettings}
 \end{longtable}
 
-
-
-
 \textbf{Lambda:}
 \par AWS Lambda is a serverless computing service that lets the users run code without provisioning or managing servers.
-Lambda runs the code on a highly available compute infrastructure and performs all the administrative tasks of the compute resources, including capacity provisioning, code monitoring, server and operating system maintenance, automatic scaling, and logging \cite{38}.
+Lambda runs the code on a highly available compute
+infrastructure and performs all the administrative tasks
+of the compute resources, including capacity provisioning, code monitoring, server and operating system maintenance, automatic scaling, and logging \cite{45}.
 
 \par With Lambda, it is possible to run code for virtually any type of application or backend service by supplying the code in one of the languages that Lambda supports.
 The code is organized into Lambda functions.
 Lambda runs the function only when needed and scales automatically, from a few requests per day to thousands per second.
 Lambda functions are invoked using the Lambda API or as a response to an event from other AWS services.
-There is no charge when the code is not running, users pay only for the compute time that Lambda consumes \cite{27}.
+There is no charge when the code is not running, users
+pay only for the compute time that Lambda consumes
+\cite{46}.
 
 \par Lambda is an ideal compute service for many application scenarios, as long as the user can run the application code using the Lambda standard runtime environment and within the resources that Lambda provides.
 When using Lambda, users are responsible only for their code.
 Lambda manages the compute fleet of resources that offers a balance of memory, CPU, network, and other resources to run the code.
 Because these resources are managed by Lambda, users cannot customize the operating system or login to compute instances on provided runtimes.
 Lambda performs administrative and operational activities on behalf of users, including managing capacity, monitoring, and logging the Lambda functions.
-AWS manages the entire infrastructure layer of AWS Lambda and thus saves user time on operational tasks. AWS Lambda provides a distinctive architectural property by enabling many instances of the same function, or of different functions from the same AWS account, to execute concurrently. This makes AWS Lambda a good fit for deploying highly scalable cloud computing solutions \cite{39}.
+AWS manages the entire infrastructure layer of AWS Lambda
+and thus saves user time on operational tasks. AWS Lambda
+provides a distinctive architectural property by enabling many instances of the same function, or of different functions from the same AWS account, to execute concurrently. This makes AWS Lambda a good fit for deploying highly scalable cloud computing solutions \cite{46}.
 
 \par AWS Lambda invokes the function in an execution environment.
 The execution environment provides an isolated and secure runtime environment and manages the resources required to run the function.
 The support for any external extensions associated with the function or function's runtime is provided by execution environment.
-The runtime of function and each external extension are processes that run within the execution environment \cite{27}.
+The runtime of function and each external extension are
+processes that run within the execution environment
+\cite{46}.
 
 \par The following phases are included in the execution
 environment:
 \begin{itemize}
     \item \textbf{Init phase}: In the init phase, Lambda unfreezes or creates an execution environment with the configured
     resources, downloads the code for the function and all layers, initializes the runtime, initializes any
-    extensions, and then runs the function’s initialization code \cite{27}.
+    extensions, and then runs the function’s
+    initialization code \cite{46}.
 \end{itemize}
 \begin{itemize}
     \item \textbf{Invoke phase}: During this phase, Lambda invokes the function handler. After the function runs to
-    completion, Lambda prepares to handle another function invocation \cite{27}.
+    completion, Lambda prepares to handle another
+    function invocation \cite{46}.
 \end{itemize}
 \begin{itemize}
     \item \textbf{Shutdown phase}: The shutdown phase is triggered if the Lambda function does not receive any invocations
     for a period of time.
-    During the shutdown  phase, the runtime is shutdown by Lambda, it send an alert to each extension for stopping cleanly, and finally removed the environment \cite{27}.
+    During the shutdown  phase, the runtime is shutdown
+    by Lambda, it send an alert to each extension for
+    stopping cleanly, and finally removed the environment \cite{46}.
 \end{itemize}
 
 
@@ -669,23 +740,27 @@ environment:
     \centering
     \includegraphics[width=\textwidth]{securitychallenges.png}
     \caption{Results of IDC ranking security
-    challenges}{\cite{41}}
+    challenges}{\cite{47}}
     \label{fig:securitychallenges}
 \end{figure}
 
 \par \gls{csp} leverage
 virtualization technologies combined with self-service capabilities for computing resources via the Internet.
 In these service provider environments, in order to maximize the efficiencies of virtualization, virtual machines must be located on the same physical server.
-Based on a survey conducted by IDC as seen in the figure \ref{fig:securitychallenges}, of 263 IT executives and their line-of-business, security is ranked first as the greatest issue or challenge of cloud computing \cite{79}.
+Based on a survey conducted by IDC as seen in the figure \ref{fig:securitychallenges}, of 263 IT executives and their line-of-business, security is ranked first as the greatest issue or challenge of cloud computing \cite{47}.
 
 \par Information security management encompasses many areas from encryption and perimeter protection to application security and disaster recovery.
 Security in IT is made more complex by compliance regulations, such as PCI, DSS, HIPAA, Sarbanes-Oxley, and global standards, such as GDPR. While most compliance experts and CEOs understand the value of cybersecurity measures, IT standards and security frameworks can make safeguarding organizations feel daunting.
-Knowledge of standards, regulations, and frameworks is essential for all infosec and cybersecurity professionals \cite{80}.
+Knowledge of standards, regulations, and frameworks is
+essential for all infosec and cybersecurity professionals
+\cite{48}.
 
 \par A security framework is a compilation of international cybersecurity procedures and policies and state-mandated for maintaining and establishing security controls to protect critical infrastructure from cybersecurity risks.
 These security frameworks are a blueprint for reducing vulnerabilities and managing risk by helping IT security professionals keep their organizations compliant and insulated from cyber threats.
 The frameworks are used by Information security professionals to prioritize and define the tasks required to manage enterprise security.
-It is possible for organizations to customize frameworks to solve specific information security problems, such as industry-specific requirements or different regulatory compliance goals \cite{80}.
+It is possible for organizations to customize frameworks
+to solve specific information security problems, such as
+industry-specific requirements or different regulatory compliance goals \cite{48}.
 
 \subsection{Prowler}
 
@@ -708,7 +783,7 @@ Benchmark and has more than 190 additional checks related
 to \gls{hippa}, \gls{gdpr}, \gls{pci-dss},
 ISO-27001, FFIEC, SOC2,
 and
-others \cite{75}.
+others \cite{49}.
 Prowler provides more than 240 checks covering security best practices across all AWS regions and related to AWS services such as Amazon CloudFront, Amazon Redshift, Amazon ElasticCache, Amazon API Gateway, etc.
 It helps organizations implement practices that ensure
 having proper security measures in place and a secure
@@ -718,7 +793,7 @@ The colorful or monochrome report enhances the user’s visibility.
 Prowler also supports running a specific check or groups or creating your own.
 When running the Prowler assessment, prowler supports
 checking multiple AWS accounts in Parallel or
-sequentially \cite{78}.\\
+sequentially \cite{50}.\\
 \hfill \break
 \par Prowler is written in bash, and it uses AWS-CLI
 underneath.
@@ -728,7 +803,7 @@ To use Prowler, though, an EC2 instance with the necessary security permissions 
 Prowler can also be deployed directly in AWS using the AWS
 CLI and other components such as Python pip,
 detect-secrets, an open-source tool used to detect secrets by running scans, and jq , a flexible and lightweight command-line JSON processor already installed.
-Detect-secrets is  \cite{78}.
+Detect-secrets is  \cite{50}.
 \hfill \break
 \begin{figure}
     \centering
@@ -742,11 +817,15 @@ successfully, the AWS environment need be configured with
 a valid Access Key and Region or by declaring the AWS
 variables.
 This can be done by running the command \textit{aws configure}.
-In order to run all the Prowler checks, managed policies \textit{SecurityAudit} and \textit{ViewOnlyAccess} must be added to the user \cite{75}.
+In order to run all the Prowler checks, managed policies
+\textit{SecurityAudit} and \textit{ViewOnlyAccess} must
+be added to the user \cite{47}.
 
 
 
-Prowler can then be installed directly by cloning the code for the source repository \cite{75} using the command \textit{git clone https://github.com/prowler-cloud/prowler} and does not require any additional setup afterward.
+Prowler can then be installed directly by cloning the
+code for the source repository \cite{48} using the
+command \textit{git clone https://github.com/prowler-cloud/prowler} and does not require any additional setup afterward.
 Once the source code is available, the assessment of security vulnerability using Prowler is performed by executing the command \textit{./prowler}.
 Figure \ref{fig:prowlercheckexecution} shows the execution of the check using Prowler.
 When the command is run, Prowler authenticates the configured environment variable.
@@ -754,7 +833,8 @@ Upon successful authentication, the checks are run over all the AWS regions.
 To limit the assessment to a custom profile and region, the command \textit{./prowler -p custom-profile -r us-east-1} is used.
 Prowler also enables assessing a single security vulnerability by running the command \textit{./prowler -c check78}.
 The check78 is a check id, this check ensures there are no Public Accessible RDS instances (verifies publicly accessible RDS instances).
-Table \ref{tab:prowlerextra} shows the execution result of the assessment performed using Prowler \cite{75}.
+Table \ref{tab:prowlerextra} shows the execution result
+of the assessment performed using Prowler \cite{48}.
 \begin{table}[h!]
     \begin{center}
         \caption{Prowler check execution result}
@@ -774,7 +854,7 @@ Table \ref{tab:prowlerextra} shows the execution result of the assessment perfor
 The command to generate the assessment report in CSV
 format is
 \textit{./prowler
--M csv} \cite{75}.
+-M csv} \cite{49}.
 
 \begin{figure}
     \centering

@@ -131,7 +131,7 @@ own account password.
 If the user is granted an administrative role, the user would not just be able to change the password for his own account but would be able to manage other user accounts as well.
 Assigning excessive privilege to a user can lead to 
 deadly sin such as siphoning important information to the
-competitors, data destruction, etc \cite{87}.
+competitors, data destruction, etc \cite{89}.
 
 \par Like IAM, looking at the graph for EC2 it can be determined that out of the 4 identified security vulnerabilities, 3 of those security vulnerabilities are assessed using Prowler.
  The unassessed security vulnerability using Prowler is the Denial of wallet.
@@ -140,7 +140,8 @@ competitors, data destruction, etc \cite{87}.
 disruption of the target system or flooding the system 
 with traffic as a form of threat, ransom, or revenge thus
 depriving the system usage or leading to downtime 
-resulting in loss of time and money, and reputation \cite{86}.
+resulting in loss of time and money, and reputation
+\cite{90}.
 
 \par Prowler shows 100 \% efficiency in assessing the security vulnerabilities that are identified in S3 and thus Prowler is highly efficient in performing the security best practices assessments, audits, and incident response for S3.
 
@@ -148,7 +149,7 @@ resulting in loss of time and money, and reputation \cite{86}.
 vulnerabilities prowler performs the assessment of 3 security vulnerabilities.
 Prowler does not perform the assessment of security vulnerability that can occur due to RDS instances running on AWS classic resources.
 The EC2-Classic platform is retired by Amazon and disabled on all accounts.
-The EC2-Classic platform is replaced the EC2-VPC \cite{88}.
+The EC2-Classic platform is replaced the EC2-VPC \cite{91}.
 
 \par As seen from the graph \ref{fig:prowlerefficiency}, out of the 6 security vulnerabilities identified in AWS lambda, Prowler can perform the assessment of 5 security vulnerabilities.
 The security vulnerability that is not assessed using Prowler is ‘Poisoning of well’.
@@ -157,8 +158,10 @@ It can occur when the malicious users inject fake
 training
 data with the aim of corrupting the learned model and can
 spread, affecting the products that draw from it or when
-an Integrated Development Environment (IDE) plugin hosting the cloud server is controlled by an attacker.
-A code backdoor is introduced as the security vulnerability by the attacker into the plugin \cite{89}.
+an \gls{ide} plugin
+hosting the cloud server is controlled by an attacker.
+A code backdoor is introduced as the security
+vulnerability by the attacker into the plugin \cite{72}.
 
 
 \section{Using Open-Source Application}
@@ -178,10 +181,13 @@ Simply transforming the hardware servers to AWS EC2 instances won't make the inf
 This is because, while AWS is responsible for the
 security of the cloud, it is the users responsibility
 for the security in the cloud.
-This resulted in organizations suffering from poorly architected and misconfigured cloud infrastructure leading to embarrassing data leaks \cite{74}.
+This resulted in organizations suffering from poorly
+architected and misconfigured cloud infrastructure
+leading to embarrassing data leaks \cite{92}.
 This section shows the assessment of security vulnerability performed using two open-source cloud security assessment tools namely Prowler and ScoutSuite which can help strengthen the cloud security posture without breaking the bank.
 
-\par The employee management web application \cite{69} leverages different AWS services namely IAM, EC2, S3, RDS, and Lambda for its deployment on AWS cloud infrastructure as shown in the figure \ref{fig:infrastructure_architecture}.
+\par The employee management web application \cite{78}
+leverages different AWS services namely IAM, EC2, S3, RDS, and Lambda for its deployment on AWS cloud infrastructure as shown in the figure \ref{fig:infrastructure_architecture}.
 Once the application is deployed on the AWS cloud, the application functionality is verified.
 The application provides different functions such as adding, updating and deleting the organization’s employee information.
 As the application deployment takes place, there could be a chance of introduction of security vulnerability due to misconfiguration or security flaws within the application.
@@ -194,14 +200,23 @@ To begin the assessment of the AWS account using Prowler the command \textit{./p
 Prowler supports the generation of assessment reports in multiple formats such as text, CSV, JSON, JSON-ASFF, JUnit-XML, and HTML.
 The generated assessment report provides a detailed 
 description of the security vulnerability assessed, check
-in Prowler that assesses the security vulnerability, the result of the assessment, region, associated AWS service, etc \cite{75}.
+in Prowler that assesses the security vulnerability, the
+result of the assessment, region, associated AWS service,
+etc \cite{49}.
 Similarly, when the assessment of the AWS account performed using ScoutSuite finishes, the assessment report is generated in PDF format.
 The assessment report provides a descriptive view of the 
 different AWS services, the resources leveraged by each 
-service, the rules available for each service, etc \cite{76}.
+service, the rules available for each service, etc
+\cite{88}.
 
 
-\par \par Looking at the graph \ref{fig:prowlervsscoutsuite}, it can be inferred that a total of 32 security vulnerabilities are identified in five AWS services based on literatures, the Open Web Application Security Project (OWASP) vulnerability list \cite{43}, Cybersecurity \& Infrastructure Security Agency (CISA) \cite{42}, International Data Corporation (IDC) \cite{41} as shown in the table \ref{tab:securityvulnerabilitiesandresources}.
+\par \par Looking at the graph
+\ref{fig:prowlervsscoutsuite}, it can be inferred that a
+total of 32 security vulnerabilities are identified in
+five AWS services based on literatures, the Open Web
+Application Security Project (OWASP) vulnerability list
+\cite{51}, Cybersecurity \& Infrastructure Security
+Agency (CISA) \cite{52}, International Data Corporation (IDC) \cite{53} as shown in the table \ref{tab:securityvulnerabilitiesandresources}.
 After the assessment of the AWS account finishes, a total of 27 of the identified security vulnerabilities are assessed using Prowler.
 There are 5 security vulnerabilities that could not be assessed using Prowler as Prowler does not provide checks to assess those 5 security vulnerabilities.
 Similarly, out of the 32 identified security vulnerabilities, ScoutSuite can perform the security assessment of 21 security vulnerabilities.
@@ -211,42 +226,45 @@ There are 11 security vulnerabilities that are not assessed using the rules prov
     \hline
     \textbf{Security Vulnerabilities} & \textbf{Identification Resource}\\
     \hline
-    Insider threat & Literature \cite{91} \\
+    Insider threat & Literature \cite{93} \\
     \hline
-    Misconfiguration: & OWASP, CISA, IDC  \\
+    Misconfiguration: & OWASP \cite{51}, CISA \cite{52}, IDC \cite{53} \\
     \hline
-    Instances created from Malicious AMI & Literature \cite{48} \\
+    Instances created from Malicious AMI & Literature \cite{58} \\
     \hline
-    User data public exposure & OWASP \\
+    User data public exposure & OWASP \cite{51} \\
     \hline
-    Server-Side Request Forgery & OWASP \\
+    Server-Side Request Forgery & OWASP \cite{51} \\
     \hline
-    Denial of Wallet & CISA \\
+    Denial of Wallet & CISA \cite{52} \\
     \hline
-    Public exposure of S3 buckets & OWASP, Literature \cite{92}\\
+    Public exposure of S3 buckets & OWASP \cite{51}, Literature
+    \cite{94}\\
     \hline
-    Unencrypted S3 buckets & Literature \cite{93}\\
+    Unencrypted S3 buckets & Literature \cite{95}\\
     \hline
-    GhostWriter & CISA \\
+    GhostWriter & CISA \cite{52} \\
     \hline
-    Public RDS Database instance & OWASP\\
+    Public RDS Database instance & OWASP \cite{51} \\
     \hline
-    Resources running in AWS classic resources & Literature \cite{94}\\
+    Resources running in AWS classic resources &
+    Literature \cite{96}\\
     \hline
-    Default data retention & Literature \cite{95} \\
+    Default data retention & Literature \cite{97} \\
     \hline
-    Data Event Injection & OWASP \\
+    Data Event Injection & OWASP \cite{51} \\
     \hline
-    Insecure Management of Secrets & CISA\\
+    Insecure Management of Secrets & CISA \cite{52} \\
     \hline
-    Poisoning the Well & CISA \\
+    Poisoning the Well & CISA \cite{52} \\
     \hline
     \caption{Identified Security vulnerabilities}
     \label{tab:securityvulnerabilitiesandresources}
 \end{longtable}
 
 \par Based on the assessment of security vulnerabilities performed using the two security tools, it is possible to calculate the efficiency of the tools.
-The formula to calculate efficiency of the two security assessment tools mathematically is the ratio of output to input expressed as a percentage \cite{88}.
+The formula to calculate efficiency of the two security
+assessment tools mathematically is the ratio of output to input expressed as a percentage \cite{98}.
 \[ efficiency = (output/input) * 100 \]
 
 Using this formula, the overall percentage efficiency of Prowler is calculated to be 84 \% and the overall efficiency of ScoutSuite is calculated to be 65 \%.
@@ -424,14 +442,28 @@ Starting with IAM, it can be inferred that both Prowler and ScoutSuite are equal
 The two security vulnerabilities that were left unassessed by both tools occurs due to excessive privilege issue.
 There is no check in Prowler, and there are rules in ScoutSuite to perform the security assessment of those security vulnerabilities.
 
-\par For EC2, it can be seen that Prowler does not contain a check to assess Denial of Wallet security vulnerability, on the other hand, there are no rules in ScoutSuite to assess Server-Side Request Forgery and Denial of Wallet security vulnerabilities. SSRF attack can result in access to the configuration that includes files, metadata, etc. It scans the organization’s internal network, thus letting the malicious user exploit and identify unsecured services \cite{97}. The Denial of Wallet security vulnerability causes financial exhaustion to the organization \cite{86}.
+\par For EC2, it can be seen that Prowler does not
+contain a check to assess Denial of Wallet security
+vulnerability, on the other hand, there are no rules in
+ScoutSuite to assess Server-Side Request Forgery and
+Denial of Wallet security vulnerabilities. SSRF attack
+can result in access to the configuration that includes
+files, metadata, etc.
+It scans the organization’s internal network, thus letting the malicious user exploit and identify unsecured services \cite{100}. The Denial of Wallet security vulnerability causes financial exhaustion to the organization \cite{101}.
 
 \par It is seen that both tools were able to perform the assessment of all the identified security vulnerabilities in S3 and thus no security vulnerability is left unassessed.
 
 \par Based on the assessment RDS, it is seen that the RDS instance running on AWS classic resource could not be assessed.
-The AWS classic is retired by AWS and thus no checks or rules are available to perform the assessment \cite{88}.
+The AWS classic is retired by AWS and thus no checks or
+rules are available to perform the assessment \cite{99}.
 
 
-\par ScoutSuite does not provide rules to access AWS Lambda \cite{72}, thus assessing the Lambda function is not possible using ScoutSuite.
+\par ScoutSuite does not provide rules to access AWS
+Lambda \cite{86}, thus assessing the Lambda function is
+not possible using ScoutSuite.
 Prowler performs the assessment of identified security vulnerabilities in AWS Lambda.
-From the table \ref{tab:comparisionresultprowlervsscoutsuite}, it can be seen that Poisoning of Well is not assessed using Prowler as there are no checks available in Prowler to perform the assessment \cite{90}.
+From the table
+\ref{tab:comparisionresultprowlervsscoutsuite}, it can be
+seen that Poisoning of Well is not assessed using Prowler
+as there are no checks available in Prowler to perform
+the assessment \cite{102}.

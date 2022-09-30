@@ -10,7 +10,9 @@ and tools, new security challenges are
 introduced.
 Based on a report, 61 percent of \gls{smb} believe their
 cloud
-data is at risk and around 70 percent of organizations IT leaders are concerned about how secure they are in the cloud \cite{65}.
+data is at risk and around 70 percent of organizations IT
+leaders are concerned about how secure they are in the
+cloud \cite{73}.
 Although AWS is responsible for securing the infrastructure, it makes it clear to the users to ensure AWS services are properly configured according to best practices to avoid security vulnerabilities.
 
 \par This research emphasizes identifying the efficiency of the open-source security assessment tool, Prowler.
@@ -23,7 +25,8 @@ To do so, different approaches are identified. This chapter explains the used ap
 These security vulnerabilities can be classified corresponding to each of the AWS services.
 This research work is limited to 5 AWS services namely IAM, EC2, S3, RDS, and Lambda.
 Columns 1 and 2 in table \ref{tab:classificationofsecurityvulnerabilities} lists the different security
-vulnerabilities based on literatures, OWASP vulnerability list \cite{43}, CISA \cite{42}, IDC \cite{41}.
+vulnerabilities based on literatures, OWASP vulnerability
+list \cite{51}, CISA \cite{52}, IDC \cite{53}.
 
 \begin{longtable}{|p{12cm}|p{2.4cm}|}
     \hline
@@ -100,10 +103,13 @@ vulnerabilities based on literatures, OWASP vulnerability list \cite{43}, CISA \
 
 \par Prowler scans the AWS account to check for overly permissive IAM permissions, potential vulnerabilities, and best practice violations.
 Prowler executes over 40 checks related to HIPAA and GDPR compliance and 49 checks against the CIS AWS Foundations Benchmark.
-Prowler constantly checks the AWS accounts against the CIS benchmarks for the AWS Cloud. Thus, ensuring that the organization is operating in accordance with guidelines developed by industry consultants, audit and compliance organizations, software developers, operations specialists, security research organizations, government agencies, and legal experts \cite{66}.
+Prowler constantly checks the AWS accounts against the
+CIS benchmarks for the AWS Cloud. Thus, ensuring that the
+organization is operating in accordance with guidelines developed by industry consultants, audit and compliance organizations, software developers, operations specialists, security research organizations, government agencies, and legal experts \cite{74}.
 
 \par To determine the efficiency of Prowler against security vulnerabilities two approaches are identified.
-The first approach is a test-driven approach, it’s a manual approach and the second approach uses an open-source application to evaluate the efficiency of Prowler against the identified security vulnerabilities \cite{37}.
+The first approach is a test-driven approach, it’s a
+manual approach and the second approach uses an open-source application to evaluate the efficiency of Prowler against the identified security vulnerabilities \cite{47}.
 
 \par In the end, another open-source assessment tool called ScoutSuite is used to perform the security assessment of the AWS account.
 After the assessment using ScoutSuite finishes, the results are recorded.
@@ -114,10 +120,11 @@ assessment tools are shown in the next chapter.
 
 \par A test case is a set of actions performed on a system to determine if it functions correctly. Test cases helps
 in determining if different features within a system are performing as expected and to confirm that the system
-satisfies all related standards, customer requirements and guidelines \cite{86}. This manual approach determines the
+satisfies all related standards, customer requirements and guidelines \cite{75}. This manual approach determines the
 efficiency of Prowler against the identified security vulnerabilities listed in table \ref{tab:classificationofsecurityvulnerabilities}.
 
-\par Prowler provides several checks to perform security assessments. These checks help determine whether good practices are being followed to secure the set of resources. For each security assessment check in Prowler, we develop test cases to verify the positive and negative scenarios. In the end, the efficiency of Prowler is determined against the identified security vulnerabilities.
+\par Prowler provides several checks to perform security assessments.
+These checks help determine whether good practices are being followed to secure the set of resources. For each security assessment check in Prowler, we develop test cases to verify the positive and negative scenarios. In the end, the efficiency of Prowler is determined against the identified security vulnerabilities.
 
 \subsubsection{Algorithm and Flowchart}
 
@@ -129,7 +136,9 @@ efficiency of Prowler against the identified security vulnerabilities listed in 
 \end{figure}
 \begin{itemize}
     \item As an initial step, the process starts by identifying the security vulnerabilities in the five AWS services.
-    The different security vulnerabilities are identified based on literatures, OWASP vulnerability list \cite{43}, CISA \cite{42}, IDC \cite{41}.
+    The different security vulnerabilities are identified
+    based on literatures, OWASP vulnerability list
+    \cite{51}, CISA \cite{52}, IDC \cite{53}.
     This is highlighted as Step 1 in the flow diagram \ref{fig:flowdiagram}.
 \end{itemize}
 \begin{itemize}
@@ -157,12 +166,15 @@ The positive scenario is verified using the method
 check15\_require\_upper\_case\_characters\_true() and the negative test scenario is verified
 using check15\_require\_upper\_case\_characters\_false().
 
-\par Python boto3 \cite{67} library is used in the test cases.
+\par Python boto3 \cite{76} library is used in the test
+cases.
 Boto3 is the Python SDK for AWS
 that allows creating, updating, and deleting AWS resources directly from your Python
 scripts.
 
-\par As a first step, for each scenario the AWS resource such as IAM, EC2, etc. are enabled using boto3 \cite{67}. Upon enabling the resource, the method associated with the resource is determined and used to set the value on the argument, for example, RequireUppercaseCharacters is set to True in this case. After setting the required value on the argument, the check is executed. After the execution of the check finishes, the return code for the test scenario is determined. Once the return code is obtained, it is verified. Only after the verification is successful, the security vulnerability is added to the list of security vulnerabilities verified using prowler.
+\par As a first step, for each scenario the AWS resource
+such as IAM, EC2, etc. are enabled using boto3 \cite{76}.
+Upon enabling the resource, the method associated with the resource is determined and used to set the value on the argument, for example, RequireUppercaseCharacters is set to True in this case. After setting the required value on the argument, the check is executed. After the execution of the check finishes, the return code for the test scenario is determined. Once the return code is obtained, it is verified. Only after the verification is successful, the security vulnerability is added to the list of security vulnerabilities verified using prowler.
 
 
 \lstset{frame=lines}
@@ -206,9 +218,12 @@ scripts.
 
 \par The term open source refers to something that can be modified and shared among people because its design is publicly accessible.
 The open-source software application is an application that is distributed with its source code, making it available
-for use, modification, enhancement, and distribution with its original rights \cite{68}.
+for use, modification, enhancement, and distribution with
+its original rights \cite{77}.
 
-\par \par In this approach, an open-source web application developed in Angular.js, and Java Spring boot are used \cite{69}.
+\par \par In this approach, an open-source web
+application developed in Angular.js, and Java Spring boot
+are used \cite{78}.
 An information system to store data of their employees is used by every organisation regardless it is private or government.
 The employee management system is intended to organize
 \gls{hr}
@@ -237,16 +252,22 @@ Below is a detailed explanation that helps to understand the role of each AWS se
 \par IAM
 
 \par The application requires the creation of buckets, databases, ec2 instances, and lambda function and carries out the
-execution of commands to perform security assessment using Prowler and ScoutSuite \cite{70}.
+execution of commands to perform security assessment
+using Prowler and ScoutSuite \cite{79}.
 
 \par To perform these operations, the user needs to be assigned the required permissions.
 Based on the leave privilege principle the user should only be assigned the permission needed to perform the task.
-If a user does not need an access right, then the user must should not be assigned such access right \cite{81}.
+If a user does not need an access right, then the user
+must should not be assigned such access right \cite{80}.
 AWS IAM service assigns the required permission to the user.
-To create and write to the s3 bucket, the user is assigned \textit{s3:CreateBucket} and \textit{s3:PutObject} permission \cite{82}.
-To launch the ec2 instance, \textit{ec2:RunInstances} permission is added to the user \cite{83}.
-To create the database, \textit{rds:CreateDBCluster} permission is assigned to the user \cite{85}.
-To create and execute the lambda function, \textit{lambda:CreateFunction} is added to the user \cite{85}.
+To create and write to the s3 bucket, the user is
+assigned \textit{s3:CreateBucket} and \textit{s3:PutObject} permission \cite{81}.
+To launch the ec2 instance, \textit{ec2:RunInstances}
+permission is added to the user \cite{82}.
+To create the database, \textit{rds:CreateDBCluster}
+permission is assigned to the user \cite{83}.
+To create and execute the lambda function,
+\textit{lambda:CreateFunction} is added to the user \cite{84}.
 \hfill \break
 \par S3
 
@@ -255,7 +276,9 @@ With the help of \gls{ci}/\gls{cd}, the application code is
 deployed
 in the AWS cloud.
 CI/CD combines the practices of continuous integration and continuous delivery.
-It helps the developers to make changes to code that are then automatically tested and pushed out for delivery and deployment \cite{71}.
+It helps the developers to make changes to code that are
+then automatically tested and pushed out for delivery and
+deployment \cite{85}.
 
 \par The required application package, Jar in case of spring boot application, and modules in case of angular.js application are stored in S3 buckets.
 For the application to be accessed by the HR\/employer, static web hosting is enabled for the bucket containing angular.js application files.
@@ -278,7 +301,9 @@ The Jar contains the code implemented to perform different application operation
 For the web application to function, the backend application needs to be run.
 To do so an EC2 instance is created.
 The backend spring boot application jar is downloaded from the S3 bucket to the ec2 instance.
-Once the Jar is downloaded, it is run on the EC2 instance using the command \textit{java -jar applicationname.jar}.
+Once the Jar is downloaded, it is run on the EC2 instance
+using the command \textit{java -jar applicationname.jar} 
+\cite{78}.
 
 \hfill \break
 \par Lambda
@@ -306,7 +331,9 @@ Figure \ref{fig:prowlerassessmentreport} shows the snippet of the assessment rep
 internal security analysts to perform the assessment of cloud environments.
 It is used by external and internal security analysts to assess cloud environments.
 To collect configuration data from high security risk areas for manual audit by researchers Scout Suite uses the API exposed by the cloud service provider.
-Based on configuration gathered data, it shows security risks and issues present in the infrastructure \cite{72}.
+Based on configuration gathered data, it shows security
+risks and issues present in the infrastructure \cite{86}
+\cite{87}.
 \hfill \break
 \par Features of ScoutSuite
 \begin{itemize}
@@ -314,13 +341,17 @@ Based on configuration gathered data, it shows security risks and issues present
     the public cloud accounts.
     It helps to review computing resources in order to optimize the workflow by ensuring high performance and ceaseless service availability.
     It ensures tracking of the issues as they occur.
-    Persistent monitoring also helps in the evaluation of program speed, resource availability, and resource levels, to help predict the security attack before it occurs \cite{73}.
+    Persistent monitoring also helps in the evaluation of
+    program speed, resource availability, and resource
+    levels, to help predict the security attack before it occurs \cite{88}.
 \end{itemize}
 \begin{itemize}
     \item Agnostic platform: Agnostic Platform refers to tools or applications that are compatible with any cloud
     infrastructure and can be moved without any operational issues to and from different cloud environments.
     An agnostic platform is similar to cloud-native tools which are platform specific and creates visibility issues businesses operating in a hybrid cloud or multi-cloud environment.
-    Using cloud-agnostic tools such as ScoutSuite benefits from greater visibility across their cloud environment and gives them more clarity about how their ecosystem works, leading to better-informed decision making \cite{73}.
+    Using cloud-agnostic tools such as ScoutSuite
+    benefits from greater visibility across their cloud
+    environment and gives them more clarity about how their ecosystem works, leading to better-informed decision making \cite{88}.
 \end{itemize}
 
 
@@ -332,7 +363,7 @@ Based on configuration gathered data, it shows security risks and issues present
 Google Cloud Platform, AWS, Microsoft Azure, Alibaba Cloud (alpha), and
 Oracle Cloud Infrastructure (alpha).
 In this research work, ScoutSuite is deployed on an AWS EC2 instance with an
-IAM role configured \cite{73}.
+IAM role configured \cite{87}.
 
 \par Once the EC2 instance is running, the instance is connected.
 Connection to the EC2 instance is established using EC2 Instance Connect, Session Manager, SSH client example Putty, and EC2 serial console.
@@ -343,7 +374,8 @@ During configuration, it prompts for users access-key,
 secret.key, output format and the region.
 The user used to configure the environment must
 be assigned the
-ReadOnlyAccess and SecurityAudit AWS Managed Policies \cite{76}.
+ReadOnlyAccess and SecurityAudit AWS Managed Policies
+\cite{87}.
 Once configured, the virtual environment must be installed.
 Installation of the virtual environment is done by using the command \textit{pip3 install virtualenv}.
 After installing virtualenv, a virtual environment must be created, to do this the command \textit{virtualenv -p python3 venv} is executed.
@@ -357,10 +389,12 @@ AWS IAM role, the command \textit{scout aws --profile my-aws-cli-profile} is exe
 The assessment of the AWS account against the security
 vulnerabilities is started by executing the command\textit{scout aws}.
 ScoutSuite gathers data from APIs, performs the authenticity of the configured environment variable, and pulls info on the cloud services and various resources.
-Once Scout Suite finishes auditing the environment, an HTML report will be generated \cite{77}.
+Once Scout Suite finishes auditing the environment, an
+HTML report will be generated \cite{87}.
 Unlike checks in Prowler, ScoutSuite has rules.
 To verify publicly accessible RDS instances, ScoutSuite uses the rule \textit{rds-instance-publicly-accessible}.
-The result is demonstrated in table \ref{tab:scoutsuiterule} \cite{77}.
+The result is demonstrated in table
+\ref{tab:scoutsuiterule} \cite{88}.
 
 \begin{table}[h!]
     \begin{center}
