@@ -194,33 +194,36 @@ As the application deployment takes place, there could be a chance of introducti
 In order to deal with these issues, the AWS account must be assessed using the assessment tools against any security vulnerability that might have been introduced while deploying the application on the AWS infrastructure.
 
 \par To assess the AWS account against any security vulnerabilities two security assessment tools namely Prowler and ScoutSuite were introduced in chapter 4.
-To begin the assessment of the AWS account using Prowler the command \textit{./prowler} is executed, on the other hand, the assessment of security vulnerabilities using ScoutSuite is performed by executing the command \textit{scout aws}.
 
-\par Once the assessment of the AWS account finishes, the assessment report is generated.
-Prowler supports the generation of assessment reports in multiple formats such as text, CSV, JSON, JSON-ASFF, JUnit-XML, and HTML.
-The generated assessment report provides a detailed 
-description of the security vulnerability assessed, check
-in Prowler that assesses the security vulnerability, the
-result of the assessment, region, associated AWS service,
-etc \cite{49}.
-Similarly, when the assessment of the AWS account performed using ScoutSuite finishes, the assessment report is generated in PDF format.
+\par The assessment of AWS account against security vulnerabilities using Prowler is started via the command line by executing the command \textit{./prowler}.
+After the assessment AWS account finishes, the assessment report is generated.
+Prowler supports the generation of assessment reports in multiple formats such as text, CSV, JSON, JSON-ASFF, JUnit-XML, and HTML. The generated assessment report provides a detailed description of the security vulnerability assessed, check in Prowler that assesses the security vulnerability, the result of the assessment, region, associated AWS service, etc \cite{49}.
+
+
+\par Similarly, the assessment using ScoutSuite is
+started via the command line by executing the command
+\textit{scout aws}.
+When the assessment
+of the AWS account finishes, the assessment report is generated in PDF format.
 The assessment report provides a descriptive view of the 
 different AWS services, the resources leveraged by each 
 service, the rules available for each service, etc
 \cite{88}.
 
 
-\par \par Looking at the graph
-\ref{fig:prowlervsscoutsuite}, it can be inferred that a
-total of 32 security vulnerabilities are identified in
-five AWS services based on literatures, the Open Web
-Application Security Project (OWASP) vulnerability list
-\cite{51}, Cybersecurity \& Infrastructure Security
-Agency (CISA) \cite{52}, International Data Corporation (IDC) \cite{53} as shown in the table \ref{tab:securityvulnerabilitiesandresources}.
-After the assessment of the AWS account finishes, a total of 27 of the identified security vulnerabilities are assessed using Prowler.
-There are 5 security vulnerabilities that could not be assessed using Prowler as Prowler does not provide checks to assess those 5 security vulnerabilities.
-Similarly, out of the 32 identified security vulnerabilities, ScoutSuite can perform the security assessment of 21 security vulnerabilities.
-There are 11 security vulnerabilities that are not assessed using the rules provided by ScoutSuite.
+\par A total of 32 security vulnerabilities are identified in five AWS services based on literatures, the Open Web Application Security Project (OWASP) vulnerability list \cite{51}, Cybersecurity \& Infrastructure Security Agency (CISA) \cite{52}, International Data Corporation (IDC) \cite{53} as shown in the table \ref{tab:securityvulnerabilitiesandresources}.
+After the assessment of the AWS account finishes, the following observation were determined:
+\begin{itemize}
+    \item Prowler was able to perform the assessment of 27 security vulnerabilities out of the 32 identified security vulnerabilities.
+    There were 5 security vulnerabilities that could not be assessed using Prowler, as Prowler does not provide checks to assess those 5 security vulnerabilities.
+\end{itemize}
+\begin{itemize}
+    \item ScoutSuite on the other hand performed the assessment of 21 security vulnerabilities successfully.
+    There were 11 security vulnerabilities for which
+    there were no rules provided by ScoutSuite.
+\end{itemize}
+
+\par The graph \ref{fig:prowlervsscoutsuite} shows the number of security vulnerabilities that were assessed by both the security assessment tools with regard to the total number of security vulnerabilities that were identified.
 
 \begin{longtable}{|p{9cm}|p{4.2cm}|}
     \hline
@@ -262,10 +265,12 @@ There are 11 security vulnerabilities that are not assessed using the rules prov
     \label{tab:securityvulnerabilitiesandresources}
 \end{longtable}
 
-\par Based on the assessment of security vulnerabilities performed using the two security tools, it is possible to calculate the efficiency of the tools.
-The formula to calculate efficiency of the two security
-assessment tools mathematically is the ratio of output to input expressed as a percentage \cite{98}.
-\[ efficiency = (output/input) * 100 \]
+\par Based on the number of security vulnerabilities assessed, the efficiency of each tool can be evaluated.
+To calculate the efficiency of each tool, the standard mathematical formula that evaluated the ratio of the output to input is used.
+This formula expresses the result as a percentage \cite{98}.
+\[ efficiency = (\# security
+vulnerabilities assessed/\# security
+vulnerabilities identified) * 100 \]
 
 Using this formula, the overall percentage efficiency of Prowler is calculated to be 84 \% and the overall efficiency of ScoutSuite is calculated to be 65 \%.
 
