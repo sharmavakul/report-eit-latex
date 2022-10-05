@@ -13,7 +13,8 @@ storage, databases, servers, software, and networking over the internet.
 Cloud computing is a combination of two
 words “cloud” which means “internet” and computing involves the systems and infrastructures that enable a computer to run and build, deploy, or interact with information.
 Cloud computing is a very common phrase that people hear nowadays but might not actually understand.
-It is because cloud computing encompasses several different services and systems thus making it ambiguous or confusing. In simple words, cloud computing can be defined as the delivery of computing services, these include databases, storage, servers, etc. over the internet \cite{11}.
+It is because cloud computing encompasses several different services and systems thus making it ambiguous or confusing.
+Delivery of computing services such as servers, databases, storage, etc. over the internet is defined as cloud computing \cite{11}.
 
 Cloud computing enables the use of off-site systems which helps the computers to store, manage, process, and
 communicate information.
@@ -146,9 +147,11 @@ about the huge
 upfront cost.
 In SaaS, all the
 application software, middleware, application data, and infrastructure are in the cloud service provider’s data center.
-The software and hardware are managed by the cloud
+The software resources and hardware resources are managed
+by the
+cloud
 service provider.
-The cloud service provider also ensures the security and availability of applications and data.
+The availability and security of data and applications in the cloud are also ensured by cloud service providers.
 It enables bringing up the organization’s application and
 running quickly and at a minimal upfront cost \cite{15}.
 
@@ -209,7 +212,7 @@ fiber network and are isolated from each other \cite{21}
 
 
 \textbf{Availability zones}
-\par Each region is made of a logical building block known as \textit{AWS Availability Zone (AZ)} and is isolated from the failures of other availability zones.
+\par Every AWS region is made up of \textit{AWS Availability Zone (AZ)} which are the logical building block. Each AZ is isolated from other AZ for the failures.
 The AWS regions operate independently and are isolated from other regions, but the availability zone within a region provides low-latency network connectivity to other Availability Zones within the same AWS Region.
 There is no explicit cost incurred for the network connectivity between two Availability Zones within the same AWS Region.
 Depending on the service used, in case of a failure, if an Availability Zone goes down, it is possible to ensure high availability by shifting the workload to another Availability Zone within the same region, this capability is known as \textit{Multi-AZ} redundancy.
@@ -275,7 +278,6 @@ collection of IAM users as shown in figure \ref{fig:groupusers}.
 The user
 groups help in specifying the permissions for multiple users, thus making it easier to manage the permissions for the users.
 For example, there could be a user group in an organization called Admins that provides all users administrator permissions who belong to that user group.
-A user belonging to a user group gets assigned all the permissions that are assigned to the user group automatically.
 If a new user joins the organization and should have administrator privileges, just by adding the new user to the admin user group, the user can be assigned the required permissions.
 Similarly, if a user changes a job role within the organization, instead of editing that user’s permissions, it is possible to simply remove them from the old user groups and add them to the new user groups \cite{27}.
 \hfill \break
@@ -289,8 +291,10 @@ temporarily by switching the roles in the management
 console of AWS. It is also possible to assume a role
 through the AWS API operation or by calling the AWS
 \gls{cli}
-or by using a custom URL. However, a role is intended to be assumable by anyone who needs it instead of being uniquely associated with one person.
-There are no standard long-term credentials such as passwords or access keys associated with a role. Instead, when a role is assumed, it provides temporary security credentials for the role session. It is possible to use roles to delegate access to users, services, or applications that don't have access to your AWS resources. For example, it is required to grant users within an AWS account access to resources the users usually don’t have or grant users in one AWS account access to resources in another account \cite{27}.
+or by using a custom URL.
+There are no standard long-term credentials such as passwords or access keys associated with a role.
+A role provides a temporary security credentials for the role session when it is assumed.
+It is possible to use roles to delegate access to users, services, or applications that don't have access to your AWS resources. For example, it is required to grant users within an AWS account access to resources the users usually don’t have or grant users in one AWS account access to resources in another account \cite{27}.
 
 \hfill \break
 \textbf{Policy}
@@ -381,9 +385,7 @@ Figure \ref{fig:iamidentities} shows the overview of AWS IAM concepts in AWS inf
     Users who have their password in the organization's
     corporate network or elsewhere such as in the
     internet identity provider are allowed to log in to the AWS console by the identity federation.
-    For example, if there is a user who has logged into his
-    google account and would like to use the AWS account,
-    then identity federation helps AWS IAM to trust the authentication method.
+    For example, consider a scenario where there is a user who has logged into his google account and would like to use the AWS account, then identity federation helps AWS IAM to trust the authentication method.
     This authentication enables temporary access to the user’s AWS account \cite{27}.
 \end{itemize}
 \begin{itemize}
@@ -419,7 +421,7 @@ virtual server is called an EC2 instance and they come in different configuratio
 \end{itemize}
 
 \begin{itemize}
-    \item \textbf{Versatile cloud hosting services:} Amazon EC2 gives users the choice to select from a variety of instance types, operating systems, and software packages.
+    \item \textbf{Versatile cloud hosting services:} Amazon EC2 gives users the choice to select from a variety of software packages, os, and types of instances.
     Amazon EC2 allows selecting a configuration of memory, instance storage, CPU, and boot partition size that is optimal for your choice of operating system and application. For example, the operating system options include a variety of Linux variants as well as Microsoft Windows Server \cite{29}.
 \end{itemize}
 
@@ -489,9 +491,13 @@ made public when the access doesn’t need to be restricted \cite{33}.
 \hfill \break
 
 \textbf{Instance metadata and user data}
-\par Instance metadata is the data associated with your EC2 instance that can be used to manage or configure the
-running instance using the Instance metadata service (IMDS). Each EC2 instance has access to the Instance metadata
-service (IMDS). The instance metadata is divided into different categories such as events, hostnames, and security
+\par Instance metadata is the data associated with your EC2 instance.
+The \gls{imds} used instance metadata to configure and
+manage
+the
+running instance.
+IMDS can be accessed by each EC2 instance.
+The instance metadata is divided into different categories such as events, hostnames, and security
 groups. Instance metadata service contains information
 about the running EC2 instance and can be used to capture the temporary API credentials for accessing the AWS APIs \cite{34}.
 
@@ -515,11 +521,12 @@ make it
 easy
 to
 set up, operate, and scale databases in the Amazon Web Services Cloud.
-Amazon RDS supports an array of database engines to organize and store data.
-It also helps with relational database management tasks,
-such as data backup, patching, recovery, and migration.
+An array of database engines to organize and store data
+are supported by Amazon RDS.
+An array of database engines is supported by Amazon RDS for organizing and storing the data.
+Performing management tasks such as data patching, migration, recovery, and back up is also supported by Amazon RDS.
 Amazon RDS provides its users access to the functionality of a familiar MariaDB, MySQL, SQL Server, Oracle, or PostgreSQL database.
-It facilitates the deployment and maintenance of relational databases in the cloud.
+Maintenance and deployment of relational databases in the cloud are facilitated by Amazon RDS.
 Figure \ref{fig:rds} shows the different database
 services offered by Amazon RDS. Amazon RDS manages common database administration tasks and provides cost-efficient, resizable capacity for an industry-standard relational database.
 Based of various database use cases, Amazon RDS provides users an opportunity to choose an instance type that meets their needs.
@@ -629,6 +636,8 @@ Associating a policy with a bucket can only be done by
 the bucket owner.
 JSON-based access policy language is used to create Bucket policies.
 The bucket policies can be used to add or deny permissions for the objects in a bucket.
+The way data can be accessed using that endpoint is
+described by access points.
 Amazon S3 Access Points describe how data can be accessed using that endpoint.
 To perform S3 object operations such as
 \textit{PutObject} and \textit{GetObject}, access points are
@@ -690,11 +699,14 @@ of the compute resources, including capacity provisioning, code monitoring, serv
 
 \par With Lambda, it is possible to run code for virtually any type of application or backend service by supplying the code in one of the languages that Lambda supports.
 The code is organized into Lambda functions.
-Lambda runs the function only when needed and scales automatically, from a few requests per day to thousands per second.
+From a few requests per day to hundreds or thousands of
+request per second, lambda runs the function only when
+needed and scales automatically.
 Lambda functions are invoked using the Lambda API or as a response to an event from other AWS services.
-There is no charge when the code is not running, users
-pay only for the compute time that Lambda consumes
-\cite{46}.
+There is no charge when the code is not running, users pay only for the compute time that Lambda consumes
+When the code is not running, users don't get charged
+and pays only for the compute time
+that lambda consumes \cite{46}.
 
 \par Lambda is an ideal compute service for many application scenarios, as long as the user can run the application code using the Lambda standard runtime environment and within the resources that Lambda provides.
 When using Lambda, users are responsible only for their code.
@@ -780,8 +792,8 @@ Prowler scans the AWS account to check for potential security vulnerabilities, o
 Using Prowler, it is possible to evaluate the AWS
 security specifically against the CIS AWS Foundations
 Benchmark and has more than 190 additional checks related
-to \gls{hippa}, \gls{gdpr}, \gls{pci-dss},
-ISO-27001, FFIEC, SOC2,
+to \gls{hippa}, FFIEC, \gls{pci-dss}, SOC2, ISO-27001,
+\gls{gdpr}
 and
 others \cite{49}.
 Prowler provides more than 240 checks covering security best practices across all AWS regions and related to AWS services such as Amazon CloudFront, Amazon Redshift, Amazon ElasticCache, Amazon API Gateway, etc.

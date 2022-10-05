@@ -32,27 +32,29 @@ list \cite{51}, CISA \cite{52}, IDC \cite{53}.
     \hline
     \textbf{Security Vulnerabilities} & \textbf{Service} \\
     \hline
-    Avoid the use of the root account & IAM \\
+    Avoid using root user account & IAM \\
     \hline
-    MFA is enabled for all IAM users & IAM  \\
+    All IAM users have MFA enabled & IAM  \\
     \hline
-    Credentials unused for 90 days or greater are disabled & IAM  \\
+    Disable unused credentials Credentials & IAM  \\
     \hline
-    Access keys are rotated every 90 days or less & IAM  \\
+    Rotating access keys & IAM  \\
     \hline
-    IAM password policy requires at least one uppercase letter & IAM  \\
+    At least one uppercase letter in account password & IAM
+    \\
     \hline
-    IAM password policy requires at least one lowercase letter & IAM  \\
+    At least one lowercase letter  in account password &
+    IAM  \\
     \hline
-    IAM password policy requires at least one symbol & IAM \\
+    At least one symbol  in account password & IAM \\
     \hline
-    IAM password policy requires at least one number & IAM \\
+    At least one number  in account password & IAM \\
     \hline
-    IAM password policy requires a minimum length of 14 or greater & IAM \\
+    Minimum password length & IAM \\
     \hline
-    IAM password policy prevents password reuse & IAM \\
+    Prevents password reuse & IAM \\
     \hline
-    IAM password policy expires passwords within 90 days or less & IAM \\
+    Password expiry after 90 days & IAM \\
     \hline
     Password expiration requires an administrator reset & IAM \\
     \hline
@@ -360,8 +362,7 @@ risks and issues present in the infrastructure \cite{86}
 \subsection{Deploying ScoutSuite}
 
 \par Scout Suite is a multi-cloud tool namely \gls{gcp}
-Google Cloud Platform, AWS, Microsoft Azure, Alibaba Cloud (alpha), and
-Oracle Cloud Infrastructure (alpha).
+Google Cloud Platform, AWS, Microsoft Azure, etc.
 In this research work, ScoutSuite is deployed on an AWS EC2 instance with an
 IAM role configured \cite{87}.
 
