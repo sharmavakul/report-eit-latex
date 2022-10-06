@@ -279,20 +279,25 @@ It is a highly reliable and light piece of software with considerable documentat
 
 \section{Comparision between Prowler and ScoutSuite}
 
-\par In the previous sections of this chapter, the analysis was more manual-driven.
+\par In the previous sections of this chapter, the analysis was more manual.
 In the first approach, the test cases were developed for the different checks in Prowler and the efficiency was evaluated.
-In the second approach, an open source was deployed on the infrastructure, and the infrastructure was assessed to perform the security assessment.
+In the second approach, an open source application was
+deployed
+on the AWS infrastructure.
+After the application
+was deployed on AWS infrastructure, the assessment of
+security vulnerabilities was performed.
 Based on the result of the assessment the efficiency was calculated.
 \\
 \par In this section, a real-world situation is considered.
 An organization plans to migrate from its on-premises data center setup to the AWS cloud infrastructure.
 Migration involves moving all the organization’s workload, data, and applications to the AWS cloud.
-During the migration process, different AWS services are employed such as RDS, EC2, etc.
+During the migration process, different AWS services were
+used such as RDS, EC2, etc.
 \\
-\par After the migration of the organization's workload
-to the cloud finishes, the organization plans to start using the cloud infrastructure in order to improve its customer experience.
-Before starting to use the cloud infrastructure, a Security Engineer in the organization in a meeting advised performing a complete scan of the cloud infrastructure to avoid any security vulnerabilities that would have been introduced during the migration activity.
-Considering the point made by the Security Engineer the company plans to perform a thorough scan of its cloud infrastructure.
+\par After the migration of the organization’s workload to the cloud finishes, the organization plans to start using the cloud infrastructure in order to improve its customer experience.
+Before starting to use the cloud infrastructure the
+Security Engineers in the organization plans to perform a complete scan of the cloud infrastructure to avoid any security vulnerabilities that would have been introduced during the migration activity.
 \\
 \par To begin this process, the cloud administrator creates a user account called \textit{audit-user}.
 The audit-user is used to audit AWS cloud infrastructure.
@@ -320,7 +325,9 @@ of policies assigned to the audit-user.
 
 
 
-\par Once the audit-user account is provisioned with the required permission, the decision was made to use Prowler and ScoutSuite as the assessment tools to perform the assessment of the organization’s cloud infrastructure.
+\par Once the audit-user account is provisioned with the
+required permission, the organization decides to
+use Prowler and ScoutSuite as the assessment tools to perform the assessment of the organization’s cloud infrastructure.
 To perform the assessment using Prowler and ScoutSuite additional managed policies namely \textit{SecurityAudit} and \textit{ViewOnlyAccess} are assigned to the audit-user.
 
 \par Before starting the assessment using the assessment tools, the audit-user plans to look at the different AWS services used for managing the organization’s workload.
