@@ -255,7 +255,12 @@ based on literature, the \gls{owasp} vulnerability list
     user who does not have a proper patching policy, thus
     leaving them vulnerable for a longer period \cite{72}.
 
-    Although libraries can be susceptible to poisoning, it is not very likely this attack will be executed. If a Lambda function uses an out-of-date library, an attacker would still require access to the script or the input data triggering the function. As for impact, this depends on the permissions of the Lambda function. If the function has an over-permissive IAM Role, much can go wrong. If it is really strict and only allows minimal actions on minimal resources, the possibilities for an attacker are highly restricted. This makes the likelihood of the attack Neutral and the impact Medium. \cite{64}.
+    Although libraries can be susceptible to poisoning, it is not very likely this attack will be executed.
+    If a Lambda function uses an out-of-date library, an attacker would still require access to the script or the input data triggering the function.
+    As for impact, this depends on the permissions of the Lambda function.
+    If the function has an over-permissive IAM Role, much can go wrong.
+    If it is really strict and only allows minimal actions on minimal resources, the possibilities for an attacker are highly restricted.
+    This makes the likelihood of the attack Neutral and the impact Medium. \cite{64}.
 \end{itemize}
 
 \par The above-listed security vulnerabilities associated with the different AWS services will be evaluated and assessed using security assessment tools in the next chapter.

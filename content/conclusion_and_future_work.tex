@@ -12,15 +12,8 @@
 It also aimed at investigating the efficiency of a security framework called Prowler in performing the assessment of security vulnerabilities.
 
 
-\par A table highlighting the different security vulnerabilities that existed in AWS cloud infrastructure was created.
-The AWS service mapping to each security vulnerability
-was added in the table.
-The AWS cloud environment was assessed using Prowler to
-perform the assessment of these security vulnerabilities.
-
-\par A table highlighting the different security vulnerabilities that existed in AWS cloud infrastructure was created.
-The AWS service mapping to each security vulnerability was shown in the table.
-After the security vulnerabilities were identified, the AWS cloud environment was assessed using Prowler to perform the assessment of these security vulnerabilities.
+\par Based on literatures, the \gls{owasp} vulnerability list \cite{51}, \gls{cisa} \cite{52}, \gls{idc} \cite{53} different security vulnerabilities in five AWS services were identified.
+After identifying the different security vulnerabilities, the AWS cloud environment was assessed using Prowler to perform the assessment of these security vulnerabilities.
 
 
 \par As part of this research work, the efficiency of Prowler was determined using two approaches.
@@ -30,28 +23,29 @@ In both approaches, the efficiency of Prowler was
 calculated to be greater than 80 \% with respect to the identified security vulnerabilities.
 
 
-\par Apart from these two approaches, a real-life example of an organization migrating its workload from an on-premises data center to an AWS cloud infrastructure was considered.
+\par Apart from these two approaches, a use case of
+an organization migrating its workload from an on-premises data center to an AWS cloud infrastructure was considered.
 During the assessment of the newly set up cloud infrastructure using Prowler, several new security vulnerabilities and misconfigurations assessed using Prowler that were introduced during the migration to the AWS cloud were highlighted.
 
-\par Later, another security assessment tool called ScoutSuite was introduced.
-The assessment of the cloud infrastructure was performed using ScoutSuite.
-In the end, the assessment performed using Prowler and ScoutSuite was compared.
-Based on the comparison result, it was easy to identify that Prowler was able to assess more security vulnerabilities compared to ScoutSuite.
-Thus, it can be easily concluded that Prowler is more
-efficient than ScoutSuite in performing the security assessment of the AWS cloud against security vulnerabilities.
+\par In addition to Prowler, another security assessment
+tool called ScoutSuite was introduced.
+The cloud infrastructure was accessed against the security vulnerabilities using ScoutSuite.
+In the end, the assessment performed using Prowler and
+ScoutSuite was compared.
 
-
+\par Based on this research work, it can be concluded that Prowler is highly efficient in performing the security assessment of the identified security vulnerabilities.
+It provides several checks for assessing different AWS services against security vulnerabilities.
+Prowler generates the assessment result in multiple formats such as CSV, HTML, and JSON which enables integration with other tools, for example, Splunk.
+It’s auditing, assessment, forensics readiness, and hardening capabilities make the AWS cloud infrastructure highly reliable and less vulnerable to incidents.
 
 
 \section{Future Work}
 
 \par Although this thesis work has explored the efficiency of Prowler in performing the assessment of security vulnerabilities, further studies are needed to confirm the obtained results.
 More research should be done along with security experts from the industry in predicting the prominent security vulnerabilities and attacks in the referred five AWS services and other AWS services.
-Another topic for additional research would be to better understand the kind of security vulnerabilities and attacks that can lead to compromising the account, especially against cloud providers.
 
-\par A future plan could be to explore the other security issues and vulnerabilities in the cloud computing environment and aim to design a security model using some encryption techniques for data concealment in cloud computing.
-Encryption has been a well established mechanism for protecting delicate information and ensure the security, integrity, and confidentiality of the data.
-Another area for research could be to question companies using Prowler about their experience, determine
+
+\par Another area for research could be to question companies using Prowler about their experience, determine
 the pros and cons based on their experience, and identify
 the limitations that the companies could face while using
 Prowler.
