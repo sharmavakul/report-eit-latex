@@ -34,37 +34,38 @@ The efficiency calculation is done programmatically.
     \hline
     \textbf{Security Vulnerabilities} & \textbf{Service} & \textbf{Prowler Check}\\
     \hline
-    Avoid the use of the root account & IAM & Check11 \\
+    Avoid using root user account & IAM & Check11 \\
     \hline
-    MFA is enabled for all IAM users & IAM & Check12 \\
+    All IAM users have MFA enabled & IAM & Check12 \\
     \hline
-    Credentials unused for 90 days or greater are disabled & IAM & Check13 \\
+    Disable unused credentials & IAM & Check13 \\
     \hline
-    Access keys are rotated every 90 days or less & IAM & Check14 \\
+    Access key rotation & IAM & Check14 \\
     \hline
-    IAM password policy requires at least one uppercase letter & IAM & Check15 \\
+    Account password contains at least one uppercase letter & IAM & Check15 \\
     \hline
-    IAM password policy requires at least one lowercase letter & IAM & Check16 \\
+    Account password contains at least one lowercase letter & IAM & Check16 \\
     \hline
-    IAM password policy requires at least one symbol & IAM & Check17\\
+    Account password contains at least one symbol & IAM & Check17\\
     \hline
-    IAM password policy requires at least one number & IAM & Check18\\
+    Account password contains at least one number & IAM & Check18\\
     \hline
-    IAM password policy requires a minimum length of 14 or greater & IAM & Check19\\
+    Account password fulfill minimum password length criteria & IAM & Check19\\
     \hline
-    IAM password policy prevents password reuse & IAM & Check110\\
+    Prevents password reuse & IAM & Check110\\
     \hline
-    IAM password policy expires passwords within 90 days or less & IAM & Check111\\
+    Expiry password after 90 days & IAM & Check111\\
     \hline
-    Password expiration requires an administrator reset & IAM & \\
+    Administrator reset for expired password account & IAM & \\
     \hline
-    Allow users to change their own password & IAM& \\
+    Enable users to change their own account password & IAM& \\
     \hline
     Insider Threat & IAM & Extra774\\
     \hline
-    Access key for the root account & IAM & Check112 \\
+    Verify if root account has an access key & IAM &
+    Check112 \\
     \hline
-    Instances created from Malicious AMI & EC2 & Check76\\
+    Malicious AMI used to create EC2 instances & EC2 & Check76\\
     \hline
     User data public exposure & EC2 & Extra741\\
     \hline
@@ -72,23 +73,23 @@ The efficiency calculation is done programmatically.
     \hline
     Denial of Wallet & EC2, Lambda &\\
     \hline
-    Public exposure of S3 buckets & S3 & Check73\\
+    S3 buckets publicly exposed & S3 & Check73\\
     \hline
-    Unencrypted S3 buckets & S3 & Extra764\\
+    S3 buckets unencrypted & S3 & Extra764\\
     \hline
-    GhostWriter & S3 & Extra771 \\
+    S3 bucket public write access (GhostWriter) & S3 & Extra771 \\
     \hline
-    Publicly accessible RDS instances & RDS & Check78\\
+    RDS instances publicly accessible & RDS & Check78\\
     \hline
-    Unencrypted RDS Instance & RDS & Extra735\\
+    RDS instances publicly accessible unencrypted & RDS & Extra735\\
     \hline
     Resources running in an AWS classic resource & RDS & \\
     \hline
-    Default data retention & RDS & Extra739\\
+    Default data retention for AWS RDS & RDS & Extra739\\
     \hline
     Lambda functions have a public resource-based policy & Lambda & Extra798 \\
     \hline
-    Publicly accessible AWS account & Lambda & Extra7145 \\
+    AWS account publicly accessible & Lambda & Extra7145 \\
     \hline
     Public lambda function URL & Lambda & Extra7179 \\
     \hline
@@ -377,37 +378,37 @@ tools a table \ref{tab:comparisionresultprowlervsscoutsuite} comparing the asses
     \hline
     \textbf{Security Vulnerabilities} & \textbf{Service} & \textbf{Prowler} & \textbf{ScoutSuite}\\
     \hline
-    Avoid the use of the root account & IAM & {{\color{green}\checkmark}} & {{\color{green}\checkmark}} \\
+    Avoid using root user account & IAM & {{\color{green}\checkmark}} & {{\color{green}\checkmark}} \\
     \hline
-    MFA is enabled for all IAM users & IAM & {{\color{green}\checkmark}} & {{\color{green}\checkmark}}\\
+    All IAM users have MFA enabled & IAM & {{\color{green}\checkmark}} & {{\color{green}\checkmark}}\\
     \hline
-    Credentials unused for 90 days or greater are disabled & IAM & {{\color{green}\checkmark}} & {{\color{green}\checkmark}}\\
+    Disable unused credentials & IAM & {{\color{green}\checkmark}} & {{\color{green}\checkmark}}\\
     \hline
-    Access keys are rotated every 90 days or less & IAM & {{\color{green}\checkmark}} & {{\color{green}\checkmark}}\\
+    Access key rotation & IAM & {{\color{green}\checkmark}} & {{\color{green}\checkmark}}\\
     \hline
-    IAM password policy requires at least one uppercase letter & IAM & {{\color{green}\checkmark}} & {{\color{green}\checkmark}}\\
+    Account password contains at least one uppercase letter & IAM & {{\color{green}\checkmark}} & {{\color{green}\checkmark}}\\
     \hline
-    IAM password policy requires at least one lowercase letter & IAM & {{\color{green}\checkmark}} & {{\color{green}\checkmark}}\\
+    Account password contains at least one lowercase letter & IAM & {{\color{green}\checkmark}} & {{\color{green}\checkmark}}\\
     \hline
-    IAM password policy requires at least one symbol & IAM & {{\color{green}\checkmark}} & {{\color{green}\checkmark}}\\
+    Account password contains at least one symbol & IAM & {{\color{green}\checkmark}} & {{\color{green}\checkmark}}\\
     \hline
-    IAM password policy requires at least one number & IAM & {{\color{green}\checkmark}} & {{\color{green}\checkmark}}\\
+    Account password contains at least one number & IAM & {{\color{green}\checkmark}} & {{\color{green}\checkmark}}\\
     \hline
-    IAM password policy requires a minimum length of 14 or greater & IAM & {{\color{green}\checkmark}} & {{\color{green}\checkmark}}\\
+    Account password fulfill minimum password length criteria & IAM & {{\color{green}\checkmark}} & {{\color{green}\checkmark}}\\
     \hline
-    IAM password policy prevents password reuse & IAM & {{\color{green}\checkmark}} & {{\color{green}\checkmark}}\\
+    Prevents password reuse & IAM & {{\color{green}\checkmark}} & {{\color{green}\checkmark}}\\
     \hline
-    IAM password policy expires passwords within 90 days or less & IAM & {{\color{green}\checkmark}} & {{\color{green}\checkmark}}\\
+    Expiry password after 90 days & IAM & {{\color{green}\checkmark}} & {{\color{green}\checkmark}}\\
     \hline
-    Password expiration requires an administrator reset & IAM &  &\\
+    Administrator reset for expired password account & IAM &  &\\
     \hline
-    Allow users to change their own password & IAM & &\\
+    Enable users to change their own account password & IAM & &\\
     \hline
     Insider Threat & IAM & {{\color{green}\checkmark}} & {{\color{green}\checkmark}}\\
     \hline
-    Access key for the root account & IAM & {{\color{green}\checkmark}} & {{\color{green}\checkmark}}\\
+    Verify if root accounthas an access key & IAM & {{\color{green}\checkmark}} & {{\color{green}\checkmark}}\\
     \hline
-    Instances created from Malicious AMI & EC2 & {{\color{green}\checkmark}} & {{\color{green}\checkmark}}\\
+    Malicious AMI used to create EC2 instances & EC2 & {{\color{green}\checkmark}} & {{\color{green}\checkmark}}\\
     \hline
     User data public exposure & EC2 & {{\color{green}\checkmark}} & {{\color{green}\checkmark}}\\
     \hline
@@ -415,23 +416,23 @@ tools a table \ref{tab:comparisionresultprowlervsscoutsuite} comparing the asses
     \hline
     Denial of Wallet & EC2, Lambda & &\\
     \hline
-    Public exposure of S3 buckets & S3 &  {{\color{green}\checkmark}} & {{\color{green}\checkmark}}\\
+    S3 buckets publicly exposed & S3 &  {{\color{green}\checkmark}} & {{\color{green}\checkmark}}\\
     \hline
-    Unencrypted S3 buckets & S3 & {{\color{green}\checkmark}} & {{\color{green}\checkmark}}\\
+    S3 buckets uneccrypted & S3 & {{\color{green}\checkmark}} & {{\color{green}\checkmark}}\\
     \hline
-    Write access on S3 buckets (Ghostwriter) & S3 & {{\color{green}\checkmark}} & {{\color{green}\checkmark}}\\
+    S3 bucket public write access (GhostWriter) & S3 & {{\color{green}\checkmark}} & {{\color{green}\checkmark}}\\
     \hline
-    Publicly accessible RDS instances & RDS & {{\color{green}\checkmark}} & {{\color{green}\checkmark}}\\
+    RDS instances publicly accessible & RDS & {{\color{green}\checkmark}} & {{\color{green}\checkmark}}\\
     \hline
-    Unencrypted RDS Instance & RDS & {{\color{green}\checkmark}} & {{\color{green}\checkmark}}\\
+    RDS Instance unencrypted & RDS & {{\color{green}\checkmark}} & {{\color{green}\checkmark}}\\
     \hline
     Resources running in an AWS classic resource & RDS & &\\
     \hline
-    Default data retention & RDS & {{\color{green}\checkmark}} & {{\color{green}\checkmark}}\\
+    Default data retention for AWS RDS & RDS & {{\color{green}\checkmark}} & {{\color{green}\checkmark}}\\
     \hline
     Lambda functions have a public resource-based policy & Lambda & {{\color{green}\checkmark}} & \\
     \hline
-    Publicly accessible AWS account & Lambda & {{\color{green}\checkmark}} & \\
+    AWS account publicly accessible & Lambda & {{\color{green}\checkmark}} & \\
     \hline
     Public lambda function URL & Lambda & {{\color{green}\checkmark}} &\\
     \hline

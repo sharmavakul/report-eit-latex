@@ -263,7 +263,83 @@ based on literature, the \gls{owasp} vulnerability list
     This makes the likelihood of the attack Neutral and the impact Medium. \cite{64}.
 \end{itemize}
 
-\par The above-listed security vulnerabilities associated with the different AWS services will be evaluated and assessed using security assessment tools in the next chapter.
+\par The above-listed security vulnerabilities associated
+with the different AWS services are shown in the table
+\ref{tab:identifiedsecurityvulnerabilities}.
+These
+security vulnerabilities will be evaluated and assessed
+using security
+assessment tools in the next chapter.
+
+\begin{longtable}{|p{10cm}|}
+    \hline
+    \textbf{Security Vulnerabilities}\\
+    \hline
+    Avoid using root user account \\
+    \hline
+    All IAM users have MFA enabled \\
+    \hline
+    Disable unused credentials \\
+    \hline
+    Access key rotation \\
+    \hline
+    Account password contains at least one uppercase letter \\
+    \hline
+    Account password contains at least one lowercase letter \\
+    \hline
+    Account password contains at least one symbol \\
+    \hline
+    Account password contains at least one number \\
+    \hline
+    Account password fulfill minimum password length criteria\\
+    \hline
+    Prevents password reuse \\
+    \hline
+    Expiry password after 90 days \\
+    \hline
+    Administrator reset for expired password account\\
+    \hline
+    Enable users to change their own account password \\
+    \hline
+    Insider Threat \\
+    \hline
+    Verify if root account has an access key \\
+    \hline
+    Malicious AMI used to create EC2 instances\\
+    \hline
+    User data public exposure \\
+    \hline
+    Server-Side Request Forgery \\
+    \hline
+    Denial of Wallet \\
+    \hline
+    S3 buckets publicly exposed\\
+    \hline
+    S3 buckets unencrypted \\
+    \hline
+    S3 bucket public write access (GhostWriter) \\
+    \hline
+    RDS instances publicly accessible \\
+    \hline
+    RDS Instance unencrypted \\
+    \hline
+    Resources running in an AWS classic resource \\
+    \hline
+    Default data retention for AWS RDS \\
+    \hline
+    Lambda functions have a public resource-based policy \\
+    \hline
+    AWS account publicly accessible  \\
+    \hline
+    Public lambda function URL \\
+    \hline
+    Public lambda function URL Cors \\
+    \hline
+    Insecure Management of Secrets \\
+    \hline
+    \caption{Identified AWS Security Vulnerabilities}
+    \label{tab:identifiedsecurityvulnerabilities}
+\end{longtable}
 
 
 
