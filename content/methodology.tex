@@ -188,19 +188,25 @@ Below is a detailed explanation that helps to understand the role of each AWS se
 execution of commands to perform security assessment
 using Prowler and ScoutSuite \cite{79}.
 
+\par AWS provides standalone policies called managed
+policies that are administered and created by AWS. These
+policies have their own  \gls{arn} and thus they are called
+standalone policies.
+The ARN includes the name of the policy for example
+arn:aws:iam::aws:policy/AmazonEC2ReadOnlyAccess is an AWS-managed policy \cite{80}.
+
 \par To perform these operations, the user needs to be assigned the required permissions.
-Based on the leave privilege principle the user should only be assigned the permission needed to perform the task.
-If a user does not need an access right, then the user should not be assigned such access right \cite{80}.
 AWS IAM service assigns the required permission to the user.
-To create and write to the s3 bucket, the user is
-assigned \textit{s3:CreateBucket} and \textit{s3:PutObject} permission \cite{81}.
-To launch the ec2 instance, \textit{ec2:RunInstances}
-permission is added to the user \cite{82}.
-To create the database, \textit{rds:CreateDBCluster}
-permission is assigned to the user \cite{83}.
-To create and execute the lambda function,
-\textit{lambda:CreateFunction} is added to the user \cite{84}.
+To create the S3 bucket and perform other operation with AWS S3, the user is assigned AmazonS3FullAccess permission \cite{81}.
+To launch the ec2 instance and run the application jar, AmazonEC2FullAccess permission is added to the user \cite{82}.
+For creating the database, AmazonRDSFullAccess permission is assigned to the user \cite{83}.
+To create and execute the lambda function, AWSLambdaFullAccess is added to the user \cite{84}.
 \hfill \break
+
+
+
+\hfill \break
+
 \par S3
 
 \par The application backend of the employee management application as described above is developed in Spring boot and the frontend is developed in Angular.JS. The developed application is available in version control systems such as GitHub, Bitbucket, etc.
@@ -252,7 +258,17 @@ Upon successful validation of the database details, the request is made to fetch
     \caption{Prowler security assessment}
     \label{fig:prowlerassessmentreport}
 \end{figure}
-\par To ensure the safety of the infrastructure, a security assessment needs to be performed to identify any security vulnerabilities that might have been introduced while setting up the infrastructure. This is performed by making use of security assessment tools such as Prowler. The assessment starts by executing the command \textit{./prowler}. Once the assessment completes, the assessment report is generated. This report provides details about the security vulnerabilities associated with different AWS services within the infrastructure.
+
+\par After the AWS cloud infrastructure is configured, it needs to be assessed.
+In order to perform the assessment, the user must be provided with additional managed policies namely \textit{SecurityAudit} and \textit{ViewOnlyAccess}.
+In addition to providing the permissions to perform the assessment, the user’s permissions to the AWS services much be restricted to read-only permissions after the infrastructure is set up completely.
+This ensures complying with the leave privilege principle \cite{80}.
+
+\par To ensure the safety of the infrastructure, a security assessment needs to be performed to identify any security vulnerabilities that might have been introduced while setting up the infrastructure.
+This is performed by making use of security assessment tools such as Prowler.
+The assessment starts by executing the command \textit{./prowler}.
+Once the assessment completes, the assessment report is generated.
+This report provides details about the security vulnerabilities associated with different AWS services within the infrastructure.
 
 Figure \ref{fig:prowlerassessmentreport} shows the snippet of the assessment report generated using Prowler.
 
