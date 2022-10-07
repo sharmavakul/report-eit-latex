@@ -275,81 +275,82 @@ based on literature, the \gls{owasp} vulnerability list
 
 \par The above-listed security vulnerabilities associated
 with the different AWS services are shown in the table
-\ref{tab:identifiedsecurityvulnerabilities}.
+\ref{tab:classificationofsecurityvulnerabilities}.
 These
 security vulnerabilities will be evaluated and assessed
 using security
 assessment tools in the next chapter.
 
-\begin{longtable}{|p{10cm}|}
+\begin{longtable}{|p{10cm}|p{2.4cm}|}
     \hline
-    \textbf{Security Vulnerabilities}\\
+    \textbf{Security Vulnerabilities} & \textbf{Service} \\
     \hline
-    Avoid using root user account \\
+    Avoid using root user account & IAM \\
     \hline
-    All IAM users have MFA enabled \\
+    All IAM users have MFA enabled & IAM  \\
     \hline
-    Disable unused credentials \\
+    Disable unused credentials & IAM  \\
     \hline
-    Access key rotation \\
+    Access key rotation & IAM  \\
     \hline
-    Account password contains at least one uppercase letter \\
+    Account password contains at least one uppercase letter & IAM
+    \\
     \hline
-    Account password contains at least one lowercase letter \\
+    Account password contains at least one lowercase letter &
+    IAM  \\
     \hline
-    Account password contains at least one symbol \\
+    Account password contains at least one symbol & IAM \\
     \hline
-    Account password contains at least one number \\
+    Account password contains at least one number & IAM \\
     \hline
-    Account passwords fulfill minimum password length
-    criteria\\
+    Account password fulfill minimum password length criteria & IAM \\
     \hline
-    Prevents password reuse \\
+    Prevents password reuse & IAM \\
     \hline
-    Expiry password after 90 days \\
+    Expiry password after 90 days & IAM \\
     \hline
-    Administrator reset for expired password account\\
+    Administrator reset for expired password account & IAM \\
     \hline
-    Enable users to change their own account password \\
+    Enable users to change their own account password & IAM \\
     \hline
-    Insider Threat \\
+    Insider Threat & IAM \\
     \hline
-    Verify if root account has an access key \\
+    Verify if root account has an access key & IAM \\
     \hline
-    Malicious AMI used to create EC2 instances\\
+    Malicious AMI used to create EC2 instances  & EC2 \\
     \hline
-    User data public exposure \\
+    User data public exposure & EC2 \\
     \hline
-    Server-Side Request Forgery \\
+    Server-Side Request Forgery & EC2 \\
     \hline
-    Denial of Wallet \\
+    Denial of Wallet & EC2, Lambda \\
     \hline
-    S3 buckets publicly exposed\\
+    S3 buckets publicly exposed & S3 \\
     \hline
-    S3 buckets unencrypted \\
+    S3 buckets unencrypted & S3 \\
     \hline
-    S3 bucket public write access (GhostWriter) \\
+    S3 bucket public write access (GhostWriter) & S3  \\
     \hline
-    RDS instances publicly accessible \\
+    RDS instances publicly accessible & RDS \\
     \hline
-    RDS Instance unencrypted \\
+    RDS Instance unencrypted & RDS \\
     \hline
-    Resources running in an AWS classic resource \\
+    Resources running in an AWS classic resource & RDS \\
     \hline
-    Default data retention for AWS RDS \\
+    Default data retention for AWS RDS & RDS \\
     \hline
-    Lambda functions have a public resource-based policy \\
+    Lambda functions have a public resource-based policy & Lambda \\
     \hline
-    AWS account publicly accessible  \\
+    AWS account publicly accessible & Lambda \\
     \hline
-    Public lambda function URL \\
+    Public lambda function URL & Lambda \\
     \hline
-    Public lambda function URL Cors \\
+    Public lambda function URL Cors & Lambda \\
     \hline
-    Insecure Management of Secrets \\
+    Insecure Management of Secrets & Lambda \\
     \hline
-    \caption{Identified AWS Security Vulnerabilities}
-    \label{tab:identifiedsecurityvulnerabilities}
+    \caption{Classification of AWS Security Vulnerabilities}
+    \label{tab:classificationofsecurityvulnerabilities}
 \end{longtable}
 
 
