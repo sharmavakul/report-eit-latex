@@ -296,9 +296,8 @@ Migration involves moving all the organization’s workload, data, and applicati
 During the migration process, different AWS services were
 used such as RDS, EC2, etc.
 \\
-\par After the migration of the organization’s workload to the cloud finishes, the organization plans to start using the cloud infrastructure in order to improve its customer experience.
-Before starting to use the cloud infrastructure the
-Security Engineers in the organization plans to perform a complete scan of the cloud infrastructure to avoid any security vulnerabilities that would have been introduced during the migration activity.
+\par After the migration of the organization’s workload to the cloud finishes, the organization plans to use the cloud infrastructure to improve its customer experience.
+But before starting to use the cloud infrastructure, the Security Engineers in the organization plan to perform a complete scan of the cloud infrastructure to avoid any security vulnerabilities that would have been introduced during the migration activity.
 \\
 \par To begin this process, the cloud administrator creates a user account called \textit{audit-user}.
 The audit-user is used to audit AWS cloud infrastructure.
@@ -331,48 +330,38 @@ required permission, the organization decides to
 use Prowler and ScoutSuite as the assessment tools to perform the assessment of the organization’s cloud infrastructure.
 To perform the assessment using Prowler and ScoutSuite additional managed policies namely \textit{SecurityAudit} and \textit{ViewOnlyAccess} are assigned to the audit-user.
 
-\par Before starting the assessment using the assessment tools, the audit-user plans to look at the different AWS services used for managing the organization’s workload.
-During this process, the audit-user identifies a misconfiguration that was introduced while setting up the audit account.
-The audit-user account was granted read-only permission
-for EC2, Lambda, and RDS, but the audit-user was given \textit{AmazonS3FullAccess} to the S3 bucket.
+\par The audit-user reviews the account and identifies a misconfiguration that would have been introduced while the audit-user account was configured.
+The audit-user account was granted \textit{AmazonS3FullAccess} to the S3 bucket instead of read-only permission.
 Assigning full access to the S3 bucket for the audit-user account led to the deviation from the least privilege principle.
-This permission grants the user full access to the S3 buckets.
-The user can change the block public access setting, disable encryption of the bucket, and perform several other hazardous operations on the S3 buckets using this permission.
+It grants the user full access to the S3 buckets.
+Taking advantage of this permission, the user can change the block public access setting, disable encryption of the bucket, and perform several other hazardous operations on the S3 buckets using this permission.
 
-\par Once the audit-user finishes looking at the different AWS services, the audit-user plans to start the assessment of the cloud infrastructure using the two tools.
-Before beginning the assessment, the audit-user configures the AWS cloud environment with the credentials.
+\par After reviewing the account, the audit-user starts the assessment of the cloud infrastructure using the two tools.
+The audit-user configures the AWS cloud environment with the credentials and starts the assessment by running the commands \textit{./prowler} and \textit{scout aws} to perform the assessment using Prowler and scout aws respectively.
 
-\par Once the audit-user finishes looking at the different AWS services, the audit-user plans to start the assessment of the cloud infrastructure using the two tools.
-Before beginning the assessment, the audit-user configures the AWS cloud environment with the credentials.
-The audit-user starts the assessment by running the commands \textit{./prowler} and \textit{scout aws} to perform the assessment using Prowler and scout aws respectively.
+\par Once the assessment of the cloud infrastructure using
+the two tools finishes, the assessment reports were generated.
+Upon analyzing the assessment report several security vulnerabilities in the cloud infrastructure were identified.
 
-\par After the assessment finishes, the assessment reports were generated.
-The audit-user analyses the assessment report and identifies several security vulnerabilities in the cloud infrastructure.
-There were EC2 Security groups that had ports exposed to all the sources addresses.
-The ports should not be exposed publicly and if it is required to expose the port then a restriction on the source address must be made.
-This would limit the surface of attacks on the cloud infrastructure.
+\par The organization leverages two S3 buckets for storing the application files.
+One of the S3 buckets during the assessment was found to be publicly accessible.
+Additionally, it was found that both buckets were not encrypted and did not have bucket logging enabled.
 
+\par The organization data and information were stored in AWS RDS. The RDS instance was configured on a single availability zone.
+Hence in case of loss of availability, the failover to another instance would not possible.
 
-\par On further analyses, it was found that the organization leverages two S3 buckets for storing files.
-Based on the assessment report, it was found that for the S3 buckets logging was disabled.
-Server logging should be enabled as it provides a detailed description of all the calls that were made to the bucket.
-Also, it was found that multi-factor authentication (MFA) was not enabled for S3 bucket deletion.
-Enabling \gls{mfa} protects against unauthorized or
-accidental
-deletion of the S3 bucket.
+\par The infrastructure had a lambda function.
+This lambda function had a policy attached to it that allowed access to any AWS account.
 
 
-
-\par In RDS, it was found that the RDS instance provisioned for storing the organization’s data had a single AZ configured.
-Hence in case of loss of availability, the failover to
-another instance would not possible.
-Another security vulnerability related to AWS Lambda was identified.
-A policy was attached to the Lambda function that allowed access to any AWS account.
-
-
-\par Apart from the misconfiguration and security vulnerabilities highlighted above, the cloud infrastructure was assessed for the security vulnerability listed in chapter 4.
-Based on the assessment performed using the two security
-tools a table \ref{tab:comparisionresultprowlervsscoutsuite} comparing the assessment performed using the Prowler and ScoutSuite is created.
+\par In addition to identifying the above security
+vulnerabilities, the AWS account was assessed against the
+security
+vulnerabilities identified for this research work.
+The table \ref{tab:comparisionresultprowlervsscoutsuite}
+below lists the different the security
+vulnerabilities that were assessed using each tool
+individually.
 
 \begin{longtable}{|p{8cm}|p{2.4cm}|p{2cm}|p{2cm}|}
     \hline
@@ -448,35 +437,28 @@ tools a table \ref{tab:comparisionresultprowlervsscoutsuite} comparing the asses
 
 
 \par Looking at the assessment results in the table \ref{tab:comparisionresultprowlervsscoutsuite}, it
-is easy to determine how efficient individual security tools are in performing the security assessment of the security vulnerabilities associated with the different AWS services.
+is possible to determine how efficient individual security
+tools
+are in performing the security assessment of the security vulnerabilities associated with the different AWS services.
 
-\par From the table, it is easy to understand the assessment performed for the different security vulnerabilities for each AWS service.
-Starting with IAM, it can be inferred that both Prowler and ScoutSuite are equally efficient in performing the assessment of identified security vulnerabilities.
+\par Starting with IAM, it can be inferred that both Prowler and ScoutSuite are equally efficient in performing the assessment of identified security vulnerabilities.
 The two security vulnerabilities that were left unassessed by both tools occurs due to excessive privilege issue.
-There is no check in Prowler, and there are rules in ScoutSuite to perform the security assessment of those security vulnerabilities.
+There are no checks in Prowler, and there are no rules in ScoutSuite to perform the security assessment of those security vulnerabilities.
 
 \par For EC2, it can be seen that Prowler does not
 contain a check to assess Denial of Wallet security
 vulnerability, on the other hand, there are no rules in
 ScoutSuite to assess Server-Side Request Forgery and
-Denial of Wallet security vulnerabilities. SSRF attack
-can result in access to the configuration that includes
-files, metadata, etc.
-It scans the organization’s internal network, thus letting the malicious user exploit and identify unsecured services \cite{100}. The Denial of Wallet security vulnerability causes financial exhaustion to the organization \cite{101}.
+Denial of Wallet security vulnerabilities.
 
-\par It is seen that both tools were able to perform the assessment of all the identified security vulnerabilities in S3 and thus no security vulnerability is left unassessed.
+\par The table shows that both tools were able to perform
+the assessment of all the identified security vulnerabilities in S3 and thus no security vulnerability is left unassessed.
 
-\par Based on the assessment RDS, it is seen that the RDS instance running on AWS classic resource could not be assessed.
-The AWS classic is retired by AWS and thus no checks or
-rules are available to perform the assessment \cite{99}.
-
+\par Based on the assessment report for RDS, it is seen that both the tools cannot perform the assessment of the RDS instance running on AWS classic resource.
 
 \par ScoutSuite does not provide rules to access AWS
 Lambda \cite{86}, thus assessing the Lambda function is
 not possible using ScoutSuite.
-Prowler performs the assessment of identified security vulnerabilities in AWS Lambda.
 From the table
 \ref{tab:comparisionresultprowlervsscoutsuite}, it can be
-seen that Poisoning of Well is not assessed using Prowler
-as there are no checks available in Prowler to perform
-the assessment \cite{102}.
+seen that Poisoning of Well is not assessed using Prowler.
