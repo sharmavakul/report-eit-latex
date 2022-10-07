@@ -14,13 +14,15 @@ Cloud computing is a combination of two
 words “cloud” which means “internet” and computing involves the systems and infrastructures that enable a computer to run and build, deploy, or interact with information.
 Cloud computing is a very common phrase that people hear nowadays but might not actually understand.
 It is because cloud computing encompasses several different services and systems thus making it ambiguous or confusing.
-Delivery of computing services such as servers, databases, storage, etc. over the internet is defined as cloud computing \cite{11}.
+Delivery of computing services such as servers, databases, storage, etc.
+over the internet is defined as cloud computing \cite{11}.
 
 Cloud computing enables the use of off-site systems which helps the computers to store, manage, process, and
 communicate information.
 These services are not posted on-premises by the
 organization rather they are accessible over the internet.
-These systems can store anything from software programs to email servers, data storage, etc \cite{11}
+These systems can store anything from software programs
+to email servers, data storage, etc. \cite{11}
 \cite{12}.
 
 \subsection{Types of cloud computing:}
@@ -36,8 +38,8 @@ availability zones, Azure has 54 regions worldwide and is
 available in 140 countries all around the world, and
 \gls{gcp} has been made available in
 20 regions around the world \cite{13}.
-While deciding on a cloud service provider there are
-several factors that needs to be considered.
+When deciding on a cloud service provider there are
+several factors that need to be considered.
 In order to determine the most suitable type of cloud computing on which the cloud services can be implemented, it is better to first identify the type of cloud computing architecture or cloud deployment.
 There are three different cloud offerings to deploy cloud services: a private cloud, a public cloud, or a hybrid cloud \cite{14}.
 \hfill \break
@@ -73,7 +75,9 @@ security of the public cloud \cite{14}.
 essential storage, memory, compute, and related networking, such as
 operating systems and databases, as a cloud service to replace the on-premises infrastructure.
 In a typical IaaS
-architecture, the most essential components are hosted by the cloud providers such as Networking hardware, Servers, Storage, Physical hardware, etc. This feature enables IaaS to provide the same capabilities and technologies as offered by the traditional on-premises data centers \cite{9}. The customer needs to only perform a few steps:
+architecture, the most essential components are hosted by the cloud providers such as Networking hardware, Servers, Storage, Physical hardware, etc.
+This feature enables IaaS to provide the same capabilities and technologies as offered by traditional on-premises data centers \cite{9}.
+The customer needs to only perform a few steps:
 \begin{itemize}
     \item Customers can access the services over the internet by logging in to the IaaS platform created by the cloud
     service provider \cite{15}.
@@ -134,15 +138,16 @@ These applications can be accessed via the
 mobile application, internet browser, or desktop app.
 Common examples of SaaS are calendaring, email, and office tools (such as Microsoft Office 365).
 It is a distribution model in which the applications are hosted by cloud service providers or vendors to users across the globe.
-The another name given to these applications are
+Another name given to these applications are
 on-demand
 software, Web-based software, or hosted software and run
 on the provider's servers.
-The provider takes all the responsibilities of managing the application that includes performance, availability and security.
+The provider takes all the responsibilities of managing
+the application that includes performance, availability, and security.
 SaaS offers a subscription-based model
 which
 means users pay recurring monthly or annual fees for
-using the product, the user don’t need to worry
+using the product, the user doesn’t need to worry
 about the huge
 upfront cost.
 In SaaS, all the
@@ -158,13 +163,16 @@ running quickly and at a minimal upfront cost \cite{15}.
 \par Figure \ref{fig:iaaspaassaas} describes the responsibilities of each deployment model compared to the on-premises setup.
 
 \section{Amazon Web Services}
-\par This section introduces the relevant AWS services and associated terminology used in this thesis. It is written to provide the reader with ample background knowledge required to understand this research work. It therefore by no means introduces the entire AWS platform.
+\par This section introduces the relevant AWS services and associated terminology used in this thesis.
+It is written to provide the reader with ample background knowledge required to understand this research work.
+It therefore by no means introduces the entire AWS platform.
 
 \subsection{General AWS background}
 
 \par Amazon web services is an evolving cloud computing subsidiary of Amazon.
 Amazon Web
-Services portfolio comprises more than 200+ services including database, compute, application
+Services portfolio comprises more than 200+ services
+including database, computing, application
 development, security, infrastructure management, analytics, migration, etc.
 that help the
 organization to scale and grow.
@@ -174,12 +182,15 @@ AWS combines the offerings of the three cloud services
 namely PaaS, IaaS, and SaaS \cite{17}.
 
 \par AWS was launched in 2006 and was one of the first
-cloud service providers to introduce a pay-as-you-go cloud computing model. It offers various tools and solutions for developers \cite{18}.
+cloud service providers to introduce a pay-as-you-go cloud computing model.
+It offers various tools and solutions for developers \cite{18}.
 
 \par AWS cloud infrastructure is a highly secure,
-reliable, and extensive cloud platform \cite{19}. Whether
+reliable, and extensive cloud platform \cite{19}.
+Whether
 it is required to deploy the application workloads
-globally with just one click, or to develop and deploy specific applications closer to the end user with latency in the single-digit millisecond range, AWS offers the right cloud infrastructure anywhere, anytime \cite{20}.
+globally with just one click or to develop and deploy
+specific applications closer to the end user with latency in the single-digit millisecond range, AWS offers the right cloud infrastructure anywhere, anytime \cite{20}.
 
 \begin{itemize}
     \item AWS Regions
@@ -212,19 +223,23 @@ fiber network and are isolated from each other \cite{21}
 
 
 \textbf{Availability zones}
-\par Every AWS region is made up of \textit{AWS Availability Zone (AZ)} which are the logical building block. Each AZ is isolated from other AZ for the failures.
+\par Every AWS region is made up of \textit{AWS
+Availability Zone (AZ)} which is the logical building block.
+Each AZ is isolated from other AZ for the failures.
 The AWS regions operate independently and are isolated from other regions, but the availability zone within a region provides low-latency network connectivity to other Availability Zones within the same AWS Region.
 There is no explicit cost incurred for the network connectivity between two Availability Zones within the same AWS Region.
-Depending on the service used, in case of a failure, if an Availability Zone goes down, it is possible to ensure high availability by shifting the workload to another Availability Zone within the same region, this capability is known as \textit{Multi-AZ} redundancy.
+Depending on the service used, in case of a failure, if
+an Availability Zone goes down, it is possible to ensure high availability by shifting the workload to another Availability Zone within the same region, this capability is known as \textit{multi-AZ} redundancy.
 The figure \ref{fig:identities} shows 2 different AWS
-regions which are isolated from each other and each region consists of AWS Availability Zones \cite{22}.
+regions which are isolated from each other, and each
+region consists of AWS Availability Zones \cite{22}.
 
 \textbf{Edge Location}
 \par In order to reduce the latency for the traffic, edge locations are deployed at multiple locations across the
 world. Edge locations limit to building a new data center
 if the customers are in different cities, a different
 state, a different
-country or a different
+country, or a different
 part of the world. Edge locations can be understood as servers that are placed geographically close to the clients.
 If we consider an example, an organization has many clients in Tokyo accessing the information which is deployed in a
 region in Mumbai. In such cases, instead of clients sending requests constantly to Mumbai region for accessing the
@@ -239,7 +254,8 @@ communication with customers \cite{23}.
 \par Amazon \gls{iam} is a web service that helps to
 securely
 control access for the users to Amazon Web Services resources and services.
-Using IAM enables creating and managing Amazon Web Services groups and users and uses permissions to allow and deny their permissions to AWS resources.
+Using IAM enables creating and managing of Amazon Web
+Services groups and users and uses permissions to allow and deny their permissions to AWS resources.
 IAM enables organizations to create and control services
 for user authentication or limit access to a certain set of people who use their AWS resources \cite{24}.
 
@@ -293,7 +309,7 @@ through the AWS API operation or by calling the AWS
 \gls{cli}
 or by using a custom URL.
 There are no standard long-term credentials such as passwords or access keys associated with a role.
-A role provides a temporary security credentials for the role session when it is assumed.
+A role provides a temporary security credential for the role session when it is assumed.
 It is possible to use roles to delegate access to users, services, or applications that don't have access to your AWS resources. For example, it is required to grant users within an AWS account access to resources the users usually don’t have or grant users in one AWS account access to resources in another account \cite{27}.
 
 \hfill \break
@@ -301,14 +317,20 @@ It is possible to use roles to delegate access to users, services, or applicatio
 
 \par An IAM policy is an IAM entity that sets permission and controls access to AWS resources.
 The IAM policies are attached to AWS resources or IAM identities (users, groups, or roles) and define their permission.
-These policies are evaluated when a principal such as a role or a user makes a request. Most policies in AWS are stored as JSON documents. IAM policies define permissions which specify who has access to the resources and what operation they can perform. For example, if there exists a policy that allows the GetUser action, then if this policy is assigned to the user, the user would be able to fetch the information either by using the AWS API or the AWS CLI or the AWS Management Console \cite{14}.
+These policies are evaluated when a principal such as a role or a user makes a request.
+Most policies in AWS are stored as JSON documents.
+IAM policies define permissions which specify who has access to the resources and what operation they can perform.
+For example, if there exists a policy that allows the
+\textit{GetUser} action, then if this policy is assigned to the
+user, the user would be able to fetch the information either by using the AWS API or the AWS CLI or the AWS Management Console \cite{14}.
 
 \par AWS provides six types of policies:
 
 \begin{itemize}
     \item \textbf{Identity-based policies:} Identity-based policies are JSON documents that control what actions an
     identity
-    (users, groups, and roles) can perform, under what conditions, and on which resources \cite{27}. The Identity-based policies can be further categorized as:
+    (users, groups, and roles) can perform, under what conditions, and on which resources \cite{27}.
+    The Identity-based policies can be further categorized as:
     \begin{itemize}
         \item Managed policies: Standalone identity-based policies that are attached to multiple users, groups, and
         roles in an AWS account \cite{27}.
@@ -334,25 +356,29 @@ These policies are evaluated when a principal such as a role or a user makes a r
     Organizations
     is a service for grouping and centrally managing the Amazon accounts that the business owns.
     It helps to centrally manage and govern the environment as the organization grows and scales its AWS resources.
-    The maximun permission for account members of an
+    The maximum permission for account members of an
     \gls{ou} is defined using
     Amazon
     Organizations.
-    AWS OSCP limits the permissions granted to entities i
-    .e. users or roles within the account by the
+    AWS OSCP limits the permissions granted to entities i.e., users or roles within the account by the
     identity-based policies or resource-based policies,
     but it does not grant permissions \cite{27}.
 
 \end{itemize}
 \begin{itemize}
-    \item \textbf{Access control lists (ACLs):} ACL is a service policy that allows to control the access to a resource by the principals in another account.
-    ACLs are the only policy types that does not uses the JSON policy structure and are similar to resource-based policies.
+    \item \textbf{Access control lists (ACLs):} ACL is a
+    service policy that allows controlling the access to a
+    resource by the principals in another account.
+    ACLs are the only policy types that do not use the JSON policy structure and are similar to resource-based policies.
     ACLs are used to grant permissions to the specified principal since they are cross-account permissions policies.
-    Using ACL it is not possible to control the access within the same account \cite{27}.
+    Using ACL, it is not possible to control access
+    within the same account \cite{27}.
 \end{itemize}
 \begin{itemize}
     \item \textbf{Session policies:} Session policies are
-    policies used for programmatically creating a temporary session for a federated user or role by passing them as parameters.The intersection of session policies and identity-based policies for the IAM user or role represents the permissions for a session \cite{27}.
+    policies used for programmatically creating a
+    temporary session for a federated user or role by passing them as parameters.
+    The intersection of session policies and identity-based policies for the IAM user or role represents the permissions for a session \cite{27}.
 \end{itemize}
 
 Figure \ref{fig:iamidentities} shows the overview of AWS IAM concepts in AWS infrastructure.
@@ -372,8 +398,10 @@ Figure \ref{fig:iamidentities} shows the overview of AWS IAM concepts in AWS inf
 
 \begin{itemize}
     \item \textbf{Granular permissions:} Based on the usage, permissions can be granted to different people to access
-    different resources. For example, some users are granted complete access to Amazon DynamoDB ,Amazon S3, Amazon EC2, and other AWS services while other users are only
-    provide permissions to administer some EC2 instances, read-only access to some S3 buckets but no other services \cite{27}.
+    different resources. For example, some users are
+    granted complete access to Amazon DynamoDB, Amazon S3, Amazon EC2, and other AWS services while other users are only
+    provided permissions to administer some EC2
+    instances, read-only access to some S3 buckets but no other services \cite{27}.
 \end{itemize}
 \begin{itemize}
     \item \textbf{Multi-factor authentication (MFA):} To enable enhanced security of the AWS account, it is possible
@@ -402,11 +430,22 @@ Figure \ref{fig:iamidentities} shows the overview of AWS IAM concepts in AWS inf
 AWS
 which
 allows to rent virtual machine to run computer
-applications. Amazon EC2 avoids upfront hardware setup investment, enabling faster development and deployment of applications. Amazon EC2 enables launching as few or as many virtual servers as needed, managing storage, and configuring security and networking. Amazon EC2 enables scaling uo or down based on the changes in the requirements or reduction in the need to forecast traffic, and spikes in popularity \cite{29}.
+applications.
+Amazon EC2 avoids upfront hardware setup investment, enabling faster development and deployment of applications.
+Amazon EC2 enables launching as few or as many virtual servers as needed, managing storage, and configuring security and networking.
+Amazon EC2 enables scaling up or down based on the
+changes in the requirements or reduction in the need to forecast traffic, and spikes in popularity \cite{29}.
 
 \par Amazon EC2 provides virtual server that are used for
-running applications on the AWS infrastructure. This
-virtual server is called an EC2 instance and they come in different configurations of storage, memory, CPU, and networking resources to suit user needs. EC2 instances can be used for any computing task, for example as a web server. An AWS user can create, launch, and terminate an instance based on the need, paying by the second for active servers and hence the term elastic. In order to provide high level of redundancy and optimize latency, Amazon EC2 provides users with control over the geographical location of instances. Placing all of the instances into the same AZ will likely give us the best latency between them. When an EC2 instance is provisioned, by default each instance is assigned automatically a DNS name and a public and private IPV4 address \cite{30}.
+running applications on the AWS infrastructure.
+This
+virtual server is called an EC2 instance, and they come
+in different configurations of storage, memory, CPU, and networking resources to suit user needs.
+EC2 instances can be used for any computing task, for example as a web server.
+An AWS user can create, launch, and terminate an instance based on the need, paying by the second for active servers and hence the term elastic.
+In order to provide high level of redundancy and optimize latency, Amazon EC2 provides users with control over the geographical location of instances.
+Placing all the instances into the same AZ will likely give us the best latency between them.
+When an EC2 instance is provisioned, by default each instance is assigned automatically a DNS name and a public and private IPV4 address \cite{30}.
 
 
 \textbf{Features of EC2}
@@ -416,7 +455,7 @@ virtual server is called an EC2 instance and they come in different configuratio
     It is possible to run many servers in
     parallel
     with these instances.
-    Amazon EC2, user can decrease or increase the
+    Amazon EC2, users can decrease or increase the
     automation as per their needs \cite{31}.
 \end{itemize}
 
@@ -474,10 +513,11 @@ supported image provided by AWS. An AMI provides the necessary information requi
 
 \par Figure \ref{fig:ami} shows the lifecycle of AMI. The
 Amazon Machine Image (AMI) is stored in an Amazon S3
-bucket after it is created. This image is then registered and can then be used to launch a new instance. An AMI can be
+bucket after it is created.
+This image is then registered and can then be used to launch a new instance. An AMI can be
 copied to the same as well as to different AWS regions.
-The AMI can be deregistered, if it is no longer required.
-Upon deregistration a new instances cannot be launched
+The AMI can be deregistered if it is no longer required.
+Upon deregistration a new instance cannot be launched
 using the AMI, but the existing instances using AMI will
 not be affected \cite{32}.
 
@@ -544,7 +584,15 @@ flexibility in choosing the ideal combination of resources for your database \ci
 The cost is dependent on various parameters such as instance hours, the number of input and output transactions, storage capacity, size of backup storage, or amount of Internet data transfer.
 Different applications use different instance types.
 The database instance is a fundamental element of the
-Amazon RDS. A database engine works in each database instance with function parameters and specific properties that determine and control the properties of the databases. Database instances can be created, configured, and deleted using the AWS CLI, AWS management console, or RDS API. Computing and storage and capacity, database engine, and other parameters such as backup, version and update settings, or master user access data must be specified for each database instance. Depending on the type of database engine the number of databases per instance varies for example, with Microsoft SQL Server, up to 100 databases are possible, Oracle allows one database per instance, MySQL, MariaDB, Amazon Aurora, and PostgreSQL have no software limitations on the maximum number of databases \cite{37}.
+Amazon RDS. A database engine works in each database
+instance with function parameters and specific properties
+that determine and control the properties of the
+databases.
+Database instances can be created, configured,
+and deleted using the AWS CLI, AWS management console, or
+RDS API. Computing and storage and capacity, database
+engine, and other parameters such as backup, version and update settings, or master user access data must be specified for each database instance.
+Depending on the type of database engine the number of databases per instance varies for example, with Microsoft SQL Server, up to 100 databases are possible, while Oracle allows one database per instance, MySQL, MariaDB, Amazon Aurora, and PostgreSQL have no software limitations on the maximum number of databases \cite{37}.
 
 \par Security of Amazon RDS and the stored or transmitted data is implemented at various levels.
 AWS IAM controls which application or which user has access to which database resources and functions.
@@ -569,7 +617,8 @@ The connections are encrypted and secured using Transport Layer Security (TLS) /
 \begin{itemize}
     \item \textbf{Automatic backups:} Amazon RDS provisions creation and saving automatic backups of RDS DB instance.
     It
-    provides users the capability choose a retention period and restore databases to any time during that period.
+    provides users the capability to choose a retention
+    period and restore databases to any time during that period.
     Users can also take snapshots of instances manually and these snapshots remains until manually deleted \cite{37}.
 \end{itemize}
 \begin{itemize}
@@ -598,18 +647,26 @@ The connections are encrypted and secured using Transport Layer Security (TLS) /
 \par Amazon \gls{s3} is a high-speed, scalable, object
 storage
 service
-in cloud that offers data availability, security and high performance.
+in cloud that offers data availability, security, and
+high performance.
 Amazon S3 enables backup and archiving of data and
 applications in AWS. It can store any type of object,
 which allows uses like storage for Internet applications, data archives, backups, disaster recovery, hybrid cloud storage, IoT devices, and data lakes for analytics \cite{39}.
 
 \par Storing, organizing, and retrieving data in Amazon S3 primarily focuses on two key components: objects and buckets that work together to create the storage system.
 The Amazon S3 object storage data model is a flat structure.
-The bucket stores the objects, once the bucket is created.
-There is no real hierarchy of sub buckets or subfolders but a logical hierarchy can be inferred using key name prefixes and delimiters.
+The bucket stores the objects once the bucket is created.
+There is no real hierarchy of sub buckets or subfolders,
+but a logical hierarchy can be inferred using key name prefixes and delimiters.
 The objects are data files which include photos,
-documents, and videos. Each object in the S3 environment
-is identified by a unique key that differentiates it from other objects. The buckets serve as the fundamental storage containers for objects. While creating the bucket AWS provides users the ability to choose the AWS region. Even though a bucket is associated with a specified region, the name of the bucket acts as a global identifier, thus the name of the bucket must be unique among all the buckets across the world. The figure \ref{fig:s3} show Amazon S3, buckets and objects \cite{40}.
+documents, and videos.
+Each object in the S3 environment
+is identified by a unique key that differentiates it from other objects.
+The buckets serve as the fundamental storage containers for objects.
+While creating the bucket AWS provides users the ability to choose the AWS region.
+Even though a bucket is associated with a specified region, the name of the bucket acts as a global identifier, thus the name of the bucket must be unique among all the buckets across the world.
+Figure \ref{fig:s3} show Amazon S3, buckets, and objects
+\cite{40}.
 
 \par Amazon S3 offers features to organize and manage data to operate cost-effectively, support specific use cases,
 increase security, and meet compliance requirements.
@@ -700,7 +757,7 @@ of the compute resources, including capacity provisioning, code monitoring, serv
 \par With Lambda, it is possible to run code for virtually any type of application or backend service by supplying the code in one of the languages that Lambda supports.
 The code is organized into Lambda functions.
 From a few requests per day to hundreds or thousands of
-request per second, lambda runs the function only when
+requests per second, lambda runs the function only when
 needed and scales automatically.
 Lambda functions are invoked using the Lambda API or as a response to an event from other AWS services.
 There is no charge when the code is not running, users pay only for the compute time that Lambda consumes
@@ -719,8 +776,10 @@ provides a distinctive architectural property by enabling many instances of the 
 
 \par AWS Lambda invokes the function in an execution environment.
 The execution environment provides an isolated and secure runtime environment and manages the resources required to run the function.
-The support for any external extensions associated with the function or function's runtime is provided by execution environment.
-The runtime of function and each external extension are
+The support for any external extensions associated with
+the function or function's runtime is provided the by
+execution environment.
+The runtime of the function and each external extension are
 processes that run within the execution environment
 \cite{46}.
 
@@ -740,8 +799,8 @@ environment:
 \begin{itemize}
     \item \textbf{Shutdown phase}: The shutdown phase is triggered if the Lambda function does not receive any invocations
     for a period of time.
-    During the shutdown  phase, the runtime is shutdown
-    by Lambda, it send an alert to each extension for
+    During the shut down  phase, the runtime is shutdown
+    by Lambda, it sends an alert to each extension for
     stopping cleanly, and finally removed the environment \cite{46}.
 \end{itemize}
 
@@ -758,10 +817,10 @@ environment:
 
 \par \gls{csp} leverage virtualization technologies combined with self-service capabilities for computing resources via the Internet.
 In these service provider environments, in order to maximize the efficiencies of virtualization, virtual machines must be located on the same physical server.
-Companies are looking to expand there on-premises
+Companies are looking to expand their on-premises
 infrastructure towards cloud computing horizons, but most
 of the companies cannot afford the risk of compromising the
-security of companies data and applications.
+security of sensitive data and applications.
 Based on a survey conducted by IDC as seen in the figure \ref{fig:securitychallenges}, of 263 IT executives and their line-of-business, security is ranked first as the greatest issue or challenge of cloud computing \cite{47}.
 This concerns the individuals and corporations about maintaining compliance integrity and security in cloud computing environment.
 A bigger concern, thought, is the companies that are

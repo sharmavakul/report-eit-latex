@@ -28,7 +28,8 @@ There is a glaring need for a tool that provides a comprehensive and structured 
 \par Cloud computing has become a
 popular subject in computer science and software
 engineering in recent years.
-With the low maintenance costs, flexibility, ease of deployment, cost-effective scalability, and overall aid in efficiency, businesses and IT leaders all over the world are replacing legacy, classic on-premises data center technology with cloud-based solutions.
+With low maintenance costs, flexibility, ease of
+deployment, cost-effective scalability, and overall aid in efficiency, businesses, and IT leaders all over the world are replacing legacy, classic on-premises data center technology with cloud-based solutions.
 As cloud computing offers beneficial characteristics like
 on-demand provisioning and billing against the actual
 consumption of computing resources, enterprises leverage
@@ -60,12 +61,14 @@ an anticipated cost.
 The term \textit{as a service} refers to the way the IT assets are consumed and shows the major difference between traditional IT and cloud computing.
 In traditional IT, a company consumes IT assets such as system software, hardware, applications, and tools.
 The company purchases these IT assets and maintains them within the company’s on-premises data center.
-In cloud computing, these IT assets are owned, managed and maintained by the cloud service providers, the enterprise can use only the infrastructure needed to create the development environment, scale the environment up or down as long as they need, and then stop when finished, paying only for the resources used. This helps enterprises to match the current world demand and reduces expenses \cite{3}.
+In cloud computing, these IT assets are owned, managed,
+and maintained by the cloud service providers, the enterprise can use only the infrastructure needed to create the development environment, scale the environment up or down as long as they need, and then stop when finished, paying only for the resources used. This helps enterprises to match the current world demand and reduces expenses \cite{3}.
 
 \par Though cloud migration may seem intimidating at
 first, if the preparation is done correctly, it will lead to a smooth migration.
 While cloud migration brings greater opportunities, it introduces its own challenges.
-These challenges are associated with security controls that the enterprise built for their on-premises environment.
+These challenges are associated with security controls
+that the enterprise built for its on-premises environment.
 Security control needs to rebuild, making use of the cloud services to replace traditional on-premises security measures.
 When migrating to the cloud for the first time, the required expertise might not be available within the organization.
 Another biggest challenge of migrating the application to the cloud is to protect sensitive business data against attacks.
@@ -78,13 +81,16 @@ responsibilities between the customer and the cloud
 service providers.
 The security team of the customer maintains the
 responsibilities for security as they move applications,
-containers, data, and workloads to the cloud, while the cloud service provider takes some responsibility, but not all, thus reduces the workload for the customer.
+containers, data, and workloads to the cloud, while the
+cloud service provider takes some responsibility, but not
+all, thus reducing the workload for the customer.
 However, this notion of shared responsibility can be misunderstood and can result in the assumption of the cloud
 workloads, as well as any data, applications, or activity associated with them are fully protected by the cloud provider \cite{5}.
 
 
 
-\par FlexBooker, an online booking software was hacked on December 23, 2021 \cite{6}\cite{7}.
+\par FlexBooker, an online booking software was hacked on
+December 23, 2021, \cite{6}\cite{7}.
 This hacking resulted in the looting of approximately 3
 million
 users personal information such
@@ -109,18 +115,20 @@ The reason is simple, these frameworks are not
 derived from vulnerability data or actual exploits \cite{10}.
 
 \par This research work aims at identifying the competency of a security framework named \textit{Prowler}.
-It runs security checks and performs assessments of the different security vulnerabilities such as misconfiguration,
+It runs security checks and performs assessments of different security vulnerabilities such as misconfiguration,
 server-side request forgery, etc.
 This thesis focuses on different AWS services such as
-\gls{ec2}, \gls{rds}Relational Database Services (RDS),
-\gls{iam}, Lambda, and \gls{s3}. The
+\gls{ec2}, \gls{rds},
+\gls{iam}, Lambda, and \gls{s3}.
+The
 framework assesses different vulnerabilities that occur on the mentioned AWS services.
 
 
 
 \section{Goals}
 \par In this regard, the goal of this thesis is to acquaint users with different security vulnerabilities in AWS
-services. These security vulnerabilities are assessed using an assessment tool called \textit{Prowler}. The
+services.
+These security vulnerabilities are assessed using an assessment tool called \textit{Prowler}. The
 efficiency of assessment done using Prowler is determined using 2 approaches. In the first approach, test scenarios
 are developed to verify the assessment results for each check in Prowler. For the second approach, an open-source
 application is used and an assessment of the security vulnerabilities within the AWS account is done.
@@ -148,7 +156,9 @@ By using Prowler, it is possible to identify such security vulnerabilities and t
 \par This thesis is organized as follows:
 \par \textbf{Chapter 2 (Related Work)}: This chapter briefs about:
 \begin{itemize}
-    \item Cloud computing: The basics of cloud computing, its types and the different types of cloud services namely IaaS, PaaS and SaaS.
+    \item Cloud computing: The basics of cloud computing,
+    its types, and the different types of cloud services
+    namely IaaS, PaaS, and SaaS.
 \end{itemize}
 \begin{itemize}
     \item Amazon Web Services (AWS): A detailed
@@ -156,12 +166,13 @@ By using Prowler, it is possible to identify such security vulnerabilities and t
     services such as RDS, Lambda, S3, etc.
 \end{itemize}
 \begin{itemize}
-    \item Security framework: Information about security framework basics and an open source security assessment tool, Prowler is described.
+    \item Security framework: Information about security
+    framework basics and an open-source security assessment tool, Prowler is described.
 \end{itemize}
 
 \par \textbf{Chapter 3 (Problem Statement)}: In this chapter, different security vulnerabilities identified in five
-AWS services are highlighted. A detailed information about each of the identified security vulnerabilities is also
-provided in this chapter.
+AWS services are highlighted.
+A piece of detailed information about each of the identified security vulnerabilities is also provided in this chapter.
 \par \textbf{Chapter 4 (Methodology)}: This chapter describes the approaches to determine the efficiency of prowler.
 \begin{itemize}
     \item Using Test Driven Approach: The manual approach of developing test cases to determine the efficiency of Prowler.
@@ -170,14 +181,15 @@ provided in this chapter.
     \item Using Open-Source Application: Evaluate the efficiency of Prowler by deploying an open-source
     application on AWS.
 \end{itemize}
-\par In the end, another open-source tool ScoutSuite is described and AWS account is assessed using ScoutSuite.
+\par In the end, another open-source tool ScoutSuite is
+described, and an AWS account is assessed using ScoutSuite.
 
 \par \textbf{Chapter 5 (Evaluation)}: This chapter provides
 \begin{itemize}
     \item The result of the assessment performed using the two approaches mentioned in chapter 4.
 \end{itemize}
 \begin{itemize}
-    \item Comparision between the assessment of the open-source application using Prowler and ScoutSuite.
+    \item Comparison between the assessment of the open-source application using Prowler and ScoutSuite.
 \end{itemize}
 \par \textbf{Chapter 6 (Conclusion and Future Work)} concludes this thesis by summarizing the work done, results obtained, open topics, and future work.
 
