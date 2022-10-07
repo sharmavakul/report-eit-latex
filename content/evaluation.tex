@@ -50,7 +50,8 @@ The efficiency calculation is done programmatically.
     \hline
     Account password contains at least one number & IAM & Check18\\
     \hline
-    Account password fulfill minimum password length criteria & IAM & Check19\\
+    Account passwords fulfill minimum password length
+    criteria & IAM & Check19\\
     \hline
     Prevents password reuse & IAM & Check110\\
     \hline
@@ -127,12 +128,12 @@ The Password expiration requires an administrator reset feature prevents the use
 This causes an issue on the user’s productivity and increases the workload on the administrator but ensures account safety.
 If the account user is given administrative permission, this avoids the impact on the user’s productivity, but at the same time increases the risk that the user can cause.
 This user can reset passwords for another user, revoke or grant unrestricted access to resources, files or directories and can even delete other user resources or accounts.
-By enabling this features all the users to reset there
+By enabling this feature all the users to reset their
 own account password.
 If the user is granted an administrative role, the user would not just be able to change the password for his own account but would be able to manage other user accounts as well.
 Assigning excessive privilege to a user can lead to 
 deadly sin such as siphoning important information to the
-competitors, data destruction, etc \cite{89}.
+competitors, data destruction, etc. \cite{89}.
 
 \par Like IAM, looking at the graph for EC2 it can be determined that out of the 4 identified security vulnerabilities, 3 of those security vulnerabilities are assessed using Prowler.
  The unassessed security vulnerability using Prowler is the Denial of wallet.
@@ -198,7 +199,8 @@ In order to deal with these issues, the AWS account must be assessed using the a
 
 \par The assessment of AWS account against security vulnerabilities using Prowler is started via the command line by executing the command \textit{./prowler}.
 After the assessment AWS account finishes, the assessment report is generated.
-Prowler supports the generation of assessment reports in multiple formats such as text, CSV, JSON, JSON-ASFF, JUnit-XML, and HTML. The generated assessment report provides a detailed description of the security vulnerability assessed, check in Prowler that assesses the security vulnerability, the result of the assessment, region, associated AWS service, etc \cite{49}.
+Prowler supports the generation of assessment reports in
+multiple formats such as text, CSV, JSON, JSON-ASFF, JUnit-XML, and HTML. The generated assessment report provides a detailed description of the security vulnerability assessed, check in Prowler that assesses the security vulnerability, the result of the assessment, region, associated AWS service, etc. \cite{49}.
 
 
 \par Similarly, the assessment using ScoutSuite is
@@ -208,7 +210,7 @@ When the assessment
 of the AWS account finishes, the assessment report is generated in PDF format.
 The assessment report provides a descriptive view of the 
 different AWS services, the resources leveraged by each 
-service, the rules available for each service, etc
+service, the rules available for each service, etc.
 \cite{88}.
 
 
@@ -269,9 +271,11 @@ After the assessment of the AWS account finishes, the following observation were
 \par Based on the number of security vulnerabilities assessed, the efficiency of each tool can be evaluated.
 To calculate the efficiency of each tool, the standard mathematical formula that evaluated the ratio of the output to input is used.
 This formula expresses the result as a percentage \cite{98}.
-\[ efficiency = (\# security
-vulnerabilities assessed/\# security
-vulnerabilities identified) * 100 \]
+
+\[ efficiency = (X/Y) * 100\]
+\[  X: Number of security vulnerabilities assessed \]
+
+\[  Y: Number of security vulnerabilities identified \]
 
 Using this formula, the overall percentage efficiency of Prowler is calculated to be 84 \% and the overall efficiency of ScoutSuite is calculated to be 65 \%.
 
@@ -282,7 +286,7 @@ It is a highly reliable and light piece of software with considerable documentat
 
 \par In the previous sections of this chapter, the analysis was more manual.
 In the first approach, the test cases were developed for the different checks in Prowler and the efficiency was evaluated.
-In the second approach, an open source application was
+In the second approach, an open-source application was
 deployed
 on the AWS infrastructure.
 After the application

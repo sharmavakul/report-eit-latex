@@ -110,16 +110,18 @@ based on literature, the \gls{owasp} vulnerability list
     While user data is an efficient way to automate the launch of scripts at instance launch, EC2 user data is a
     significant place where secrets can be unnecessarily exposed.
     For example, if password need to be used as part of
-    a script we might be tempted to store it as plaintext in the script that we input to the user data.
+    a script, the user might be tempted to store it as
+    plaintext in the script that we input to the user data.
     If the secrets are stored as plain text, then any user with ec2:DescribeInstanceAttribute permission will be able to view the secrets \cite{59}.
 
     Another example is when an instance pulls an application from a private Git repository.
     As the repository is
     private it can be accessed using the SSH key.
-    Often this key is hard-coded in the user data.
+    Often this key is hard coded in the user data.
     Attacker can get
     access to the private source code of the application if the attacker gets access to the instance user data.
-    The attacker can access the user data if he is able to query the IMDS from the EC2 instance, e.g using an SSRF
+    The attacker can access the user data if he is able
+    to query the IMDS from the EC2 instance, e.g. using an SSRF
     vulnerability.
     The attacker can read the user data directly from the
     AWS \gls{api} ,if the attacker has valid AWS
@@ -176,7 +178,8 @@ based on literature, the \gls{owasp} vulnerability list
 
     Subnets are segments of a VPC's IP address range that users designate to group the resources based on operational and security needs.
     A collection of subnets created by the user and is then designated for the DB instances is called a DB subnet group.
-    Each DB subnet group has subnets in at least two Availability Zones in a given AWS Region.
+    Each DB subnet group has subnets in at least two
+    Availability Zones in each AWS Region.
     When a DB instance is created in a VPC, a DB subnet group for the DB instance is chosen by the user.
     From the DB subnet group, Amazon RDS chooses an IP address within that subnet and a subnet to associate with the DB instance.
     The Availability Zone that contains the subnet is
@@ -221,18 +224,24 @@ based on literature, the \gls{owasp} vulnerability list
     \item \textbf{Insecure Management of Secrets:} \par Secrets management refers to the methods and tools for managing digital authentication credentials, such as passwords, tokens, and APIs keys for use in applications, privileged accounts, services, and other sensitive parts of the IT ecosystem.
     The terms secrets management and secrets are more commonly referred in IT with regard to DevOps processes, environments, and tools.
     \gls{devops} is a combination of a cultural philosophy,
-    practices, tools, and mindsets enabling organizations to deliver sofware and applications reliably and faster.
+    practices, tools, and mindsets enabling organizations to deliver software and applications reliably and faster.
     This show how DevOps is gaining more popularity and considered as a go-to model for rapid application delivery.
     When the product deadline is nearing, programmers
-    often feel pressurized to meet the demands and in
-    their haste leave sensitive pieces of code embedded in files, code, and applications. This may result in compromising organization’s security, for example, database credentials, IAM permissions, API keys, etc \cite{70}.
+    often feel pressurized to meet the demands and, in
+    their haste, leave sensitive pieces of code embedded
+    in files, code, and applications.
+    This may result in compromising organization’s
+    security, for example, database credentials, IAM permissions, API keys, etc. \cite{70}.
 
     Unlike insider threats, where the attacker intentionally misuses his privilege due to a personal grudge or some
     other issue, the secrets are sometimes hardcoded
     within the source code in plain text littered throughout configuration management tools and configuration files.
     Due to all these issues, there is a increasing  need
     for the organizations to centralize the auditing,
-    storage, provisioning, rotation, and management of secrets in order to restrict the access to secrets and prevent thesecrets from compromising the organisation or leaking. There are services that share the same secrets, thus making identifying the source of compromise or leak challenging \cite{70}.
+    storage, provisioning, rotation, and management of
+    secrets in order to restrict the access to secrets
+    and prevent the secrets from compromising the organization or leaking.
+    There are services that share the same secrets, thus making identifying the source of compromise or leak challenging \cite{70}.
 \end{itemize}
 
 \begin{itemize}
@@ -249,7 +258,8 @@ based on literature, the \gls{owasp} vulnerability list
     Attacker injects a malware in the libraries and wait for the version to be used by the developer in his code.
     \cite{71}.
 
-    Lambda does not allow installating external libraries during the runtime, thus they must be shipped with Lambda function.
+    Lambda does not allow installing external libraries
+    during the runtime, thus they must be shipped with Lambda function.
     This leads to the risk of using an outdated version of libraries as one would need to update the package and re-upload it to Lambda.
     In case a vulnerability is found inside a library and a patch is released, this might not be installed by the
     user who does not have a proper patching policy, thus
@@ -291,7 +301,8 @@ assessment tools in the next chapter.
     \hline
     Account password contains at least one number \\
     \hline
-    Account password fulfill minimum password length criteria\\
+    Account passwords fulfill minimum password length
+    criteria\\
     \hline
     Prevents password reuse \\
     \hline

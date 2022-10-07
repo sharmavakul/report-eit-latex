@@ -226,7 +226,8 @@ its original rights \cite{77}.
 \par \par In this approach, an open-source web
 application developed in Angular.js, and Java Spring boot
 are used \cite{78}.
-An information system to store data of their employees is used by every organisation regardless it is private or government.
+An information system to store data of their employees is
+used by every organization regardless it is private or government.
 The employee management system is intended to organize
 \gls{hr}
 and other departments' work processes.
@@ -246,7 +247,8 @@ In case an employee leaves the organization, the employee information can be del
     \label{fig:infrastructure_architecture}
 \end{figure}
 
-\par The architectural view of the open source application infrastructure is shown in the figure
+\par The architectural view of the open-source
+application infrastructure is shown in the figure
 \ref{fig:infrastructure_architecture}.
 The application employs AWS services namely IAM, RDS, S3, EC2, and Lambda.
 Below is a detailed explanation that helps to understand the role of each AWS service.
@@ -259,8 +261,7 @@ using Prowler and ScoutSuite \cite{79}.
 
 \par To perform these operations, the user needs to be assigned the required permissions.
 Based on the leave privilege principle the user should only be assigned the permission needed to perform the task.
-If a user does not need an access right, then the user
-must should not be assigned such access right \cite{80}.
+If a user does not need an access right, then the user should not be assigned such access right \cite{80}.
 AWS IAM service assigns the required permission to the user.
 To create and write to the s3 bucket, the user is
 assigned \textit{s3:CreateBucket} and \textit{s3:PutObject} permission \cite{81}.
@@ -283,7 +284,8 @@ then automatically tested and pushed out for delivery and
 deployment \cite{85}.
 
 \par The required application package, Jar in case of spring boot application, and modules in case of angular.js application are stored in S3 buckets.
-For the application to be accessed by the HR\/employer, static web hosting is enabled for the bucket containing angular.js application files.
+For the application to be accessed by the HR or employer,
+static web hosting is enabled for the bucket containing angular.js application files.
 
 
 \hfill \break
@@ -372,7 +374,7 @@ After the EC2 instance is connected, it must be configured.
 Configuring the environment can be done by running the
 \textit{aws configure} command.
 During configuration, it prompts for users access-key,
-secret.key, output format and the region.
+secret-key, output format and the region.
 The user used to configure the environment must
 be assigned the
 ReadOnlyAccess and SecurityAudit AWS Managed Policies
