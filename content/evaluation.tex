@@ -334,135 +334,51 @@ required permission, the organization decides to
 use Prowler and ScoutSuite as the assessment tools to perform the assessment of the organization’s cloud infrastructure.
 To perform the assessment using Prowler and ScoutSuite additional managed policies namely \textit{SecurityAudit} and \textit{ViewOnlyAccess} are assigned to the audit-user.
 
-\par The audit-user reviews the account and identifies a misconfiguration that would have been introduced while the audit-user account was configured.
-The audit-user account was granted \textit{AmazonS3FullAccess} to the S3 bucket instead of read-only permission.
+\par The assessment is started using Prowler and ScoutSuite via the command line by executing the command \textit{./prowler} and \textit{scout aws} respectively.
+Once the assessment finishes the assessment report gets generated.
+
+\par The assessment report was analyzed, and the
+following security vulnerabilities were identified.
+
+\par Starting with IAM, it was found that the password policy was not configured correctly.
+Users could set up their account passwords without a number and a special character.
+This is a violation of the standard strong password policy and introduces security vulnerabilities.
+On analyzing the assessment report, it was found that
+these security vulnerabilities are assessed by both
+assessment tools.
+
+\par In addition to the above-mentioned security vulnerabilities, it was also found that a security vulnerability that allows the user to change their account password even upon expiration was identified.
+This security vulnerability could not be assessed by both security assessment tools.
+
+\par On further analyzing the assessment report for the
+two security tools a security vulnerability related to
+excessive privilege was introduced during the migration
+activity.
+The audit-user was assigned a managed policy that allows full access to S3 buckets instead of read-only access.
 Assigning full access to the S3 bucket for the audit-user account led to the deviation from the least privilege principle.
-It grants the user full access to the S3 buckets.
-Taking advantage of this permission, the user can change the block public access setting, disable encryption of the bucket, and perform several other hazardous operations on the S3 buckets using this permission.
+Taking advantage of this privilege, the user could change the block public access setting, disable encryption of the bucket, and perform several other hazardous operations on the S3 buckets using this permission.
+This security vulnerability is identified by both the assessment tools and highlighted in their assessment report.
 
-\par After reviewing the account, the audit-user starts the assessment of the cloud infrastructure using the two tools.
-The audit-user configures the AWS cloud environment with the credentials and starts the assessment by running the commands \textit{./prowler} and \textit{scout aws} to perform the assessment using Prowler and scout aws respectively.
+\par Another security vulnerability was identified by both Prowler and ScoutSuite in S3. One of the S3 buckets used to store objects was found to be publicly accessible.
+If an S3 bucket is publicly accessible, everyone can list or access the files stored in the S3 bucket without authentication.
 
-\par Once the assessment of the cloud infrastructure using
-the two tools finishes, the assessment reports were generated.
-Upon analyzing the assessment report several security vulnerabilities in the cloud infrastructure were identified.
-
-\par The organization leverages two S3 buckets for storing the application files.
-One of the S3 buckets during the assessment was found to be publicly accessible.
-Additionally, it was found that both buckets were not encrypted and did not have bucket logging enabled.
-
-\par The organization data and information were stored in AWS RDS. The RDS instance was configured on a single availability zone.
-Hence in case of loss of availability, the failover to another instance would not possible.
-
-\par The infrastructure had a lambda function.
-This lambda function had a policy attached to it that allowed access to any AWS account.
+\par An AWS RDS database instance used by the organization to store the data and information was identified.
+The database instance was set up with a default retention period of only 1 day.
+This could lead to the loss of the organization’s data and information stored in that AWS RDS database instance.
+This security vulnerability is identified by both the assessment tool.
 
 
-\par In addition to identifying the above security
-vulnerabilities, the AWS account was assessed against the
-security
-vulnerabilities identified for this research work.
-The table \ref{tab:comparisionresultprowlervsscoutsuite}
-below lists the different the security
-vulnerabilities that were assessed using each tool
-individually.
+\par A security vulnerability was found in Lambda.
+The AWS infrastructure had a Lambda function which had a policy attached to it that allowed public access to any AWS account.
+This security vulnerability was only assessed by Prowler.
+ScoutSuite does not provide rules to assess such security vulnerabilities.
 
-\begin{longtable}{|p{8cm}|p{2.4cm}|p{2cm}|p{2cm}|}
-    \hline
-    \textbf{Security Vulnerabilities} & \textbf{Service} & \textbf{Prowler} & \textbf{ScoutSuite}\\
-    \hline
-    Avoid using root user account & IAM & {{\color{green}\checkmark}} & {{\color{green}\checkmark}} \\
-    \hline
-    All IAM users have MFA enabled & IAM & {{\color{green}\checkmark}} & {{\color{green}\checkmark}}\\
-    \hline
-    Disable unused credentials & IAM & {{\color{green}\checkmark}} & {{\color{green}\checkmark}}\\
-    \hline
-    Access key rotation & IAM & {{\color{green}\checkmark}} & {{\color{green}\checkmark}}\\
-    \hline
-    Account password contains at least one uppercase letter & IAM & {{\color{green}\checkmark}} & {{\color{green}\checkmark}}\\
-    \hline
-    Account password contains at least one lowercase letter & IAM & {{\color{green}\checkmark}} & {{\color{green}\checkmark}}\\
-    \hline
-    Account password contains at least one symbol & IAM & {{\color{green}\checkmark}} & {{\color{green}\checkmark}}\\
-    \hline
-    Account password contains at least one number & IAM & {{\color{green}\checkmark}} & {{\color{green}\checkmark}}\\
-    \hline
-    Account password fulfill minimum password length criteria & IAM & {{\color{green}\checkmark}} & {{\color{green}\checkmark}}\\
-    \hline
-    Prevents password reuse & IAM & {{\color{green}\checkmark}} & {{\color{green}\checkmark}}\\
-    \hline
-    Expiry password after 90 days & IAM & {{\color{green}\checkmark}} & {{\color{green}\checkmark}}\\
-    \hline
-    Administrator reset for expired password account & IAM &  &\\
-    \hline
-    Enable users to change their own account password & IAM & &\\
-    \hline
-    Insider Threat & IAM & {{\color{green}\checkmark}} & {{\color{green}\checkmark}}\\
-    \hline
-    Verify if root accounthas an access key & IAM & {{\color{green}\checkmark}} & {{\color{green}\checkmark}}\\
-    \hline
-    Malicious AMI used to create EC2 instances & EC2 & {{\color{green}\checkmark}} & {{\color{green}\checkmark}}\\
-    \hline
-    User data public exposure & EC2 & {{\color{green}\checkmark}} & {{\color{green}\checkmark}}\\
-    \hline
-    Server-Side Request Forgery & EC2 & {{\color{green}\checkmark}} & \\
-    \hline
-    Denial of Wallet & EC2, Lambda & &\\
-    \hline
-    S3 buckets publicly exposed & S3 &  {{\color{green}\checkmark}} & {{\color{green}\checkmark}}\\
-    \hline
-    S3 buckets uneccrypted & S3 & {{\color{green}\checkmark}} & {{\color{green}\checkmark}}\\
-    \hline
-    S3 bucket public write access (GhostWriter) & S3 & {{\color{green}\checkmark}} & {{\color{green}\checkmark}}\\
-    \hline
-    RDS instances publicly accessible & RDS & {{\color{green}\checkmark}} & {{\color{green}\checkmark}}\\
-    \hline
-    RDS Instance unencrypted & RDS & {{\color{green}\checkmark}} & {{\color{green}\checkmark}}\\
-    \hline
-    Resources running in an AWS classic resource & RDS & &\\
-    \hline
-    Default data retention for AWS RDS & RDS & {{\color{green}\checkmark}} & {{\color{green}\checkmark}}\\
-    \hline
-    Lambda functions have a public resource-based policy & Lambda & {{\color{green}\checkmark}} & \\
-    \hline
-    AWS account publicly accessible & Lambda & {{\color{green}\checkmark}} & \\
-    \hline
-    Public lambda function URL & Lambda & {{\color{green}\checkmark}} &\\
-    \hline
-    Public lambda function URL Cors & Lambda & {{\color{green}\checkmark}} & \\
-    \hline
-    Insecure Management of Secrets & Lambda & {{\color{green}\checkmark}} &\\
-    \hline
-    Poisoning the Well & Lambda & & \\
-    \hline
-    \caption{Prowler vs ScoutSuite security vulnerability assessment}
-    \label{tab:comparisionresultprowlervsscoutsuite}
-\end{longtable}
+\par By looking at the above-highlighted security vulnerabilities it is easy to understand if an organization migrates its enterprise infrastructure to the cloud, security vulnerabilities get introduced.
+The cloud infrastructure must be assessed using assessment tools such as Prowler to identify such security vulnerabilities.
+Early identification of security vulnerabilities can ensure the safety of enterprise data and information and ensures a better customer experience.
 
 
-\par Looking at the assessment results in the table \ref{tab:comparisionresultprowlervsscoutsuite}, it
-is possible to determine how efficient individual security
-tools
-are in performing the security assessment of the security vulnerabilities associated with the different AWS services.
 
-\par Starting with IAM, it can be inferred that both Prowler and ScoutSuite are equally efficient in performing the assessment of identified security vulnerabilities.
-The two security vulnerabilities that were left unassessed by both tools occurs due to excessive privilege issue.
-There are no checks in Prowler, and there are no rules in ScoutSuite to perform the security assessment of those security vulnerabilities.
 
-\par For EC2, it can be seen that Prowler does not
-contain a check to assess Denial of Wallet security
-vulnerability, on the other hand, there are no rules in
-ScoutSuite to assess Server-Side Request Forgery and
-Denial of Wallet security vulnerabilities.
 
-\par The table shows that both tools were able to perform
-the assessment of all the identified security vulnerabilities in S3 and thus no security vulnerability is left unassessed.
 
-\par Based on the assessment report for RDS, it is seen that both the tools cannot perform the assessment of the RDS instance running on AWS classic resource.
-
-\par ScoutSuite does not provide rules to access AWS
-Lambda \cite{86}, thus assessing the Lambda function is
-not possible using ScoutSuite.
-From the table
-\ref{tab:comparisionresultprowlervsscoutsuite}, it can be
-seen that Poisoning of Well is not assessed using Prowler.
