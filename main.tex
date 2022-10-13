@@ -43,6 +43,14 @@
 \usepackage[acronym,indexonlyfirst,nomain]{glossaries}
 \usepackage{datatool}
 
+\usepackage{afterpage}
+
+\newcommand\blankpage{%
+    \null
+    \thispagestyle{empty}%
+    \addtocounter{page}{-1}%
+    \newpage}
+
 \setacronymstyle{long-short}
 \makenoidxglossaries
 %%%
@@ -124,7 +132,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % INSERT YOUR CONTENT HERE:
-\clearpage
+\afterpage{\blankpage}
+\cleardoublepage
 \section*{Declaration}
 \text
 I hereby declare that the work presented in this thesis work is entirely written by myself and that I have not used any other references and sources other than the listed ones.
@@ -136,7 +145,7 @@ quotations that are from other sources.\\
 \hfill \break
 \raggedright{Vakul Sharma}
 
-
+\afterpage{\blankpage}
 \cleardoublepage
 
 \section*{Abstract}
@@ -175,6 +184,7 @@ Prowler, a market-leading security tool performs the assessment of security vuln
 It helps organizations to implement practices that ensure a secure and protected environment in place.
 At the end of this thesis work, the efficiency of Prowler is evaluated and compared against other security tools.
 
+\afterpage{\blankpage}
 \cleardoublepage
 
 \section*{Acknowledgement}
@@ -187,6 +197,7 @@ I would like to extend my thanks to my family members,
 for their enthusiastic encouragement, and to all my
 friends for their motivation.
 
+\afterpage{\blankpage}
 \cleardoublepage
 
 \tableofcontents
@@ -203,19 +214,20 @@ friends for their motivation.
 \input{content/methodology}
 \input{content/evaluation}
 \input{content/conclusion_and_future_work}
+\clearpage
 \addcontentsline{toc}{chapter}{List of Figures}
 \listoffigures
+\pagebreak
 \addcontentsline{toc}{chapter}{List of Tables}
 \listoftables
+\pagebreak
 \addcontentsline{toc}{chapter}{List of Listings}
 \lstlistoflistings
-
 \addcontentsline{toc}{chapter}{List of Abbreviations}
 \glsaddall
-
+\pagebreak
 \printnoidxglossary[type=\acronymtype,style=long,
     title=List of Abbreviations,nonumberlist]
-
 \addcontentsline{toc}{chapter}{References}
 \bibliographystyle{ieeetr}
 \bibliography{bibliography}
