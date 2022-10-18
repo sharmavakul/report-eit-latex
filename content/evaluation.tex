@@ -124,7 +124,7 @@ Prowler are \textit{Password expiration requires
 administrator reset} and \textit{Enabling account users
 to set new password}.
 These security vulnerabilities are caused due to excessive privilege.
-The Password expiration requires an administrator reset feature prevents the user from updating their password after the account password has expired and thus requires administrative access.
+The Password expiration requires an administrator reset, this feature prevents the user from resetting or updating the password for their account after the account password gets expired.
 This causes an issue on the user’s productivity and increases the workload on the administrator but ensures account safety.
 If the account user is given administrative permission, this avoids the impact on the user’s productivity, but at the same time increases the risk that the user can cause.
 This user can reset passwords for another user, revoke or grant unrestricted access to resources, files or directories and can even delete other user resources or accounts.
@@ -191,16 +191,22 @@ This section shows the assessment of security vulnerability performed using two 
 \par The employee management web application \cite{78}
 leverages different AWS services namely IAM, EC2, S3, RDS, and Lambda for its deployment on AWS cloud infrastructure as shown in the figure \ref{fig:infrastructure_architecture}.
 Once the application is deployed on the AWS cloud, the application functionality is verified.
-The application provides different functions such as adding, updating and deleting the organization’s employee information.
+The application provides different functions such as
+adding, updating and deleting the company's
+employees data and information.
 As the application deployment takes place, there could be a chance of introduction of security vulnerability due to misconfiguration or security flaws within the application.
 In order to deal with these issues, the AWS account must be assessed using the assessment tools against any security vulnerability that might have been introduced while deploying the application on the AWS infrastructure.
 
 \par To assess the AWS account against any security vulnerabilities two security assessment tools namely Prowler and ScoutSuite were introduced in chapter 4.
 
 \par The assessment of AWS account against security vulnerabilities using Prowler is started via the command line by executing the command \textit{./prowler}.
-After the assessment AWS account finishes, the assessment report is generated.
+The assessment report gets generated once the assessment
+of the cloud infrastructure against the security
+vulnerabilities finishes.
 Prowler supports the generation of assessment reports in
-multiple formats such as text, CSV, JSON, JSON-ASFF, JUnit-XML, and HTML. The generated assessment report provides a detailed description of the security vulnerability assessed, check in Prowler that assesses the security vulnerability, the result of the assessment, region, associated AWS service, etc. \cite{49}.
+multiple formats such as text, JUnit-XML, etc.
+The
+generated assessment report provides a detailed description of the security vulnerability assessed, check in Prowler that assesses the security vulnerability, the result of the assessment, region, associated AWS service, etc. \cite{49}.
 
 
 \par Similarly, the assessment using ScoutSuite is
@@ -217,7 +223,8 @@ service, the rules available for each service, etc.
 \par A total of 32 security vulnerabilities are identified in five AWS services based on literatures, the Open Web Application Security Project (OWASP) vulnerability list \cite{51}, Cybersecurity \& Infrastructure Security Agency (CISA) \cite{52}, International Data Corporation (IDC) \cite{53} as shown in the table \ref{tab:securityvulnerabilitiesandresources}.
 After the assessment of the AWS account finishes, the following observation were determined:
 \begin{itemize}
-    \item Prowler was able to perform the assessment of 27 security vulnerabilities out of the 32 identified security vulnerabilities.
+    \item Prowler was able to perform the assessment of
+    27 security vulnerabilities.
     There were 5 security vulnerabilities that could not be assessed using Prowler, as Prowler does not provide checks to assess those 5 security vulnerabilities.
 \end{itemize}
 \begin{itemize}
@@ -331,7 +338,9 @@ of policies assigned to the audit-user.
 
 \par Once the audit-user account is provisioned with the
 required permission, the organization decides to
-use Prowler and ScoutSuite as the assessment tools to perform the assessment of the organization’s cloud infrastructure.
+use Prowler and ScoutSuite as the assessment tools to
+perform the assessment of the enterprise cloud
+infrastructure.
 To perform the assessment using Prowler and ScoutSuite additional managed policies namely \textit{SecurityAudit} and \textit{ViewOnlyAccess} are assigned to the audit-user.
 
 \par The assessment is started using Prowler and ScoutSuite via the command line by executing the command \textit{./prowler} and \textit{scout aws} respectively.

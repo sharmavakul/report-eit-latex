@@ -17,8 +17,12 @@ It is because cloud computing encompasses several different services and systems
 Delivery of computing services such as servers, databases, storage, etc.
 over the internet is defined as cloud computing \cite{11}.
 
-Cloud computing enables the use of off-site systems which helps the computers to store, manage, process, and
-communicate information.
+Cloud computing enables the use of off-site systems.
+This
+off-site system helps the computers to store the
+information, additionally the system also helps in
+processing, communicating, and
+manage information.
 These services are not posted on-premises by the
 organization rather they are accessible over the internet.
 These systems can store anything from software programs
@@ -26,8 +30,10 @@ to email servers, data storage, etc. \cite{12}.
 
 \subsection{Types of cloud computing:}
 
-\par There are different cloud providers that offer cloud services namely Amazon Web Services (AWS), the cloud computing service of Amazon.com, Microsoft Corporation’s cloud segment contains Azure, Google Cloud Platform (GCP), part of Alphabet Inc, etc.
-Each of the cloud platforms is unique in its own way and offers a plethora of options for organizations to select from based on their specific requirements.
+\par Cloud based services are offered to the individuals,
+organization, government, etc.
+by several cloud service providers for example AWS, Oracle, Azure, IBM Cloud, GCP, etc.
+The cloud service provider offers companies many resources. The companies can choose these resources that match their requirements.
 When considering the services offered by these clouds,
 Google Cloud offers up to 60+ services, whereas Azure
 offers around 100+ services.
@@ -141,8 +147,7 @@ Another name given to these applications are
 on-demand
 software, Web-based software, or hosted software and run
 on the provider's servers.
-The provider takes all the responsibilities of managing
-the application that includes performance, availability, and security.
+The responsibilities of managing the application that includes high availability, performance and security is taken care by the sloud service provider.
 SaaS offers a subscription-based model
 which
 means users pay recurring monthly or annual fees for
@@ -175,14 +180,17 @@ including database, computing, application
 development, security, infrastructure management, analytics, migration, etc.
 that help the
 organization to scale and grow.
-For example, AWS provides a wide range of databases that are
-designed specifically for specific applications.
+For example, there is a wide range of database engines that are provided by AWS. These database engines are designed to perform specific tasks and are responsible to function for a specified set of applications.
 AWS combines the offerings of the three cloud services 
 namely PaaS, IaaS, and SaaS \cite{17}.
 
-\par AWS was launched in 2006 and was one of the first
-cloud service providers to introduce a pay-as-you-go cloud computing model.
-It offers various tools and solutions for developers \cite{18}.
+\par AWS was launched in 2006 and was one of the first cloud service providers.
+AWS was introduced with the concept of a pay-as-you-go model.
+This model enables its users to pay only for the resources that they need for their application to function.
+Thus offering the development team members various set
+of tools
+and
+solution \cite{18}.
 
 \par AWS cloud infrastructure is a highly secure,
 reliable, and extensive cloud platform \cite{19}.
@@ -246,9 +254,9 @@ information, we can cache a copy of the relevant information in Tokyo. Amazon Cl
 information, APIs to clients, or applications across the world. AWS CloudFront uses edge locations for accelerating
 communication with customers \cite{23}.
 
-\subsection{Services}
+\subsection{AWS Services}
 
-\textbf{AWS Identity and Access Management (IAM)}
+\textbf{AWS Identity and access management service (IAM)}
 
 \par Amazon \gls{iam} is a web service that helps to
 securely
@@ -282,9 +290,8 @@ everyday tasks \cite{25}.
 \par An IAM user represents an entity within the AWS account.
 This entity corresponds to an application or a person and has specific permissions.
 Users have their own set of authentication parameters such as access key, secret key, or password that is required to access the AWS account through CLI or AWS console.
-An IAM user does not always represent an actual individual.
-Each IAM user is associated with only one AWS account
-\cite{27}.
+An IAM user does not always represent an actual
+individual \cite{27}.
 \hfill \break
 
 \textbf{IAM Group}
@@ -297,6 +304,7 @@ If a new user joins the organization and should have administrator privileges, j
 Similarly, if a user changes a job role within the organization, instead of editing that user’s permissions, it is possible to simply remove them from the old user groups and add them to the new user groups \cite{27}.
 \hfill \break
 
+\clearpage
 
 \textbf{Roles}
 \par An IAM role is not associated with a specific person,
@@ -309,7 +317,7 @@ through the AWS API operation or by calling the AWS
 or by using a custom URL.
 There are no standard long-term credentials such as passwords or access keys associated with a role.
 A role provides a temporary security credential for the role session when it is assumed.
-It is possible to use roles to delegate access to users, services, or applications that don't have access to your AWS resources. For example, it is required to grant users within an AWS account access to resources the users usually don’t have or grant users in one AWS account access to resources in another account \cite{27}.
+It is possible to use roles to delegate access to users, services, or applications that don't have access to your AWS resources \cite{27}.
 
 \hfill \break
 \textbf{Policy}
@@ -318,7 +326,12 @@ It is possible to use roles to delegate access to users, services, or applicatio
 The IAM policies are attached to AWS resources or IAM identities (users, groups, or roles) and define their permission.
 These policies are evaluated when a principal such as a role or a user makes a request.
 Most policies in AWS are stored as JSON documents.
-IAM policies define permissions which specify who has access to the resources and what operation they can perform.
+AWS IAM policies define policies and permissions.
+These permissions and policies are used to
+specify which AWS user has access to the different services
+and resources and what
+operations can these AWS users perform on the different
+resources.
 For example, if there exists a policy that allows the
 \textit{GetUser} action, then if this policy is assigned to the
 user, the user would be able to fetch the information either by using the AWS API or the AWS CLI or the AWS Management Console \cite{14}.
@@ -331,8 +344,11 @@ user, the user would be able to fetch the information either by using the AWS AP
     (users, groups, and roles) can perform, under what conditions, and on which resources \cite{27}.
     The Identity-based policies can be further categorized as:
     \begin{itemize}
-        \item Managed policies: Standalone identity-based policies that are attached to multiple users, groups, and
-        roles in an AWS account \cite{27}.
+        \item Managed policies: Standalone identity-based
+        policies that are attached to multiple users,
+        or multiple groups or multiple roles in an AWS
+        account
+        \cite{27}.
     \end{itemize}
     \begin{itemize}
         \item Inline policies:  Policies that are added directly to a single identity such as user, group, or role.
@@ -408,29 +424,24 @@ Figure \ref{fig:iamidentities} shows the overview of AWS IAM concepts in AWS inf
     two-factor authentication to the root account as well as to the individual users’ account. This ensures the AWS user along with providing the username and password for the account also provides a code from a configured device \cite{27}.
 \end{itemize}
 \begin{itemize}
-    \item \textbf{Identity federation:} Identity federation is a system of trust between two parties used for the purpose of authenticating the users and sharing the information that is required for granting access to the resources.
-    Users who have their password in the organization's
-    corporate network or elsewhere such as in the
-    internet identity provider are allowed to log in to the AWS console by the identity federation.
-    For example, consider a scenario where there is a user who has logged into his google account and would like to use the AWS account, then identity federation helps AWS IAM to trust the authentication method.
-    This authentication enables temporary access to the user’s AWS account \cite{27}.
-\end{itemize}
-\begin{itemize}
     \item \textbf{Password policy:} Password is used to authenticate a user’s account and a strict password policy
     can make it
-    even more secure. IAM password policy allows for password rotation and resetting the password remotely. It is
+    even more secure.
+    IAM password policy allows its users to reset and
+    rotate the password remotely for their account.
+    It is
     possible to set rules such as a password must contain a number, special characters, or special symbols \cite{27}.
 \end{itemize}
 
 
-\textbf{Amazon Elastic Compute Cloud (EC2)}
+\textbf{AWS Elastic Compute Cloud Service (EC2)}
 
 \par Amazon \gls{ec2} is one of the core services offered by
 AWS
 which
 allows to rent virtual machine to run computer
 applications.
-Amazon EC2 avoids upfront hardware setup investment, enabling faster development and deployment of applications.
+Amazon EC2 enables faster deployment and development of applications, thus avoiding the upfront setup cost for the hardware.
 Amazon EC2 enables launching as few or as many virtual servers as needed, managing storage, and configuring security and networking.
 Amazon EC2 enables scaling up or down based on the
 changes in the requirements or reduction in the need to forecast traffic, and spikes in popularity \cite{29}.
@@ -446,11 +457,9 @@ In order to provide high level of redundancy and optimize latency, Amazon EC2 pr
 Placing all the instances into the same AZ will likely give us the best latency between them.
 When an EC2 instance is provisioned, by default each instance is assigned automatically a DNS name and a public and private IPV4 address \cite{30}.
 
-\clearpage
 \textbf{Features of EC2}
 \begin{itemize}
     \item \textbf{Elastic Web-Scale Computing:} Amazon EC2 enables users to expand the capacity as per their needs within minutes, not hours or days.
-    Users can simultaneously commission one, hundreds, or even thousands of server instances.
     It is possible to run many servers in
     parallel
     with these instances.
@@ -529,33 +538,39 @@ made public when the access doesn’t need to be restricted \cite{33}.
 
 \hfill \break
 
-\textbf{Instance metadata and user data}
+\textbf{Instance user data}
 \par Instance metadata is the data associated with your EC2 instance.
-The \gls{imds} used instance metadata to configure and
+The metadata service uses instance metadata to
+configure
+and
 manage
 the
 running instance.
 IMDS can be accessed by each EC2 instance.
-The instance metadata is divided into different categories such as events, hostnames, and security
-groups. Instance metadata service contains information
+The instance metadata is divided into different
+categories.
+These categories are basically security
+groups, events,
+and hostnames.
+Instance metadata service contains information
 about the running EC2 instance and can be used to capture the temporary API credentials for accessing the AWS APIs \cite{34}.
 
 \par Instance metadata can be used to access user data that is specified when launching the instance. For example, it
 is possible to specify parameters for configuring the instance or include a simple script. It is also possible to
 build generic AMIs and use user data to modify the configuration files supplied at launch time.
 When more than one instance is launched at the same time,
-the user data is available to all instances.
+the user data and metadata is made available to all
+instances launched at that time.
 Each instance has a unique number called the ami-launch-index number.
 This number allows for writing code that controls what to
-do.
-For example, the first host might elect itself as the original node in a cluster \cite{34}.
+do \cite{34}.
 
 
 \hfill \break
 
-\textbf{Amazon Relational Database Service (RDS)}
+\textbf{AWS RDS (Relational Database Service)}
 
-\par Amazon \gls{rds} is a set of managed services that
+\par The \gls{rds} is a set of managed services that
 make it
 easy
 to
@@ -567,7 +582,8 @@ Performing management tasks such as data patching, migration, recovery, and back
 Amazon RDS provides its users access to the functionality of a familiar MariaDB, MySQL, SQL Server, Oracle, or PostgreSQL database.
 Maintenance and deployment of relational databases in the cloud are facilitated by Amazon RDS.
 Figure \ref{fig:rds} shows the different database
-services offered by Amazon RDS. Amazon RDS manages common database administration tasks and provides cost-efficient, resizable capacity for an industry-standard relational database.
+services offered by Amazon RDS.
+Amazon RDS manages common database administration tasks and provides cost-efficient, resizable capacity.
 Based of various database use cases, Amazon RDS provides users an opportunity to choose an instance type that meets their needs.
 The database instance varies with respect to the memory,
 CPU, network capacity, and storage, thus providing
@@ -575,7 +591,7 @@ flexibility in choosing the ideal combination of resources for your database \ci
 \begin{figure}
     \centering
     \includegraphics[width=\textwidth]{rds.png}
-    \caption{Relational Database Service}{\cite{36}}
+    \caption{Database Service in AWS cloud}{\cite{36}}
     \label{fig:rds}
 \end{figure}
 
@@ -640,8 +656,8 @@ The connections are encrypted and secured using Transport Layer Security (TLS) /
 \end{itemize}
 
 
-\clearpage
-\textbf{Amazon Simple Storage Service (S3)}
+
+\textbf{AWS S3 (Simple Storage Service)}
 
 \par Amazon \gls{s3} is a high-speed, scalable, object
 storage
@@ -656,13 +672,12 @@ which allows uses like storage for Internet applications, data archives, backups
 The Amazon S3 object storage data model is a flat structure.
 The bucket stores the objects once the bucket is created.
 There is no real hierarchy of sub buckets or subfolders,
-but a logical hierarchy can be inferred using key name prefixes and delimiters.
+but a logical hierarchy.
 The objects are data files which include photos,
 documents, and videos.
 Each object in the S3 environment
 is identified by a unique key that differentiates it from other objects.
 The buckets serve as the fundamental storage containers for objects.
-While creating the bucket AWS provides users the ability to choose the AWS region.
 Even though a bucket is associated with a specified region, the name of the bucket acts as a global identifier, thus the name of the bucket must be unique among all the buckets across the world.
 Figure \ref{fig:s3} show Amazon S3, buckets, and objects
 \cite{40}.
@@ -679,7 +694,7 @@ version ID of \textit{null}. If an object is modified, such as \textit{CopyObjec
 \begin{figure}
     \centering
     \includegraphics[width=\textwidth]{s3.png}
-    \caption{Amazon Simple Storage Service}{\cite{42}}
+    \caption{AWS S3 (Simple Storage Service)}{\cite{42}}
     \label{fig:s3}
 \end{figure}
 
@@ -747,7 +762,7 @@ different settings for blocking public access \cite{23}.
     \label{tab:blockpublicaccesssettings}
 \end{longtable}
 
-\clearpage
+
 \textbf{Lambda:}
 \par AWS Lambda is a serverless computing service that lets the users run code without provisioning or managing servers.
 Lambda uses a highly available compute infrastructure to run the code and performs all the administrative tasks of the compute resources, including capacity provisioning, code monitoring, server, and operating system maintenance, automatic scaling, and logging \cite{45}.
@@ -768,9 +783,10 @@ When using Lambda, users are responsible only for their code.
 Lambda manages the compute fleet of resources that offers a balance of memory, CPU, network, and other resources to run the code.
 Because these resources are managed by Lambda, users cannot customize the operating system or login to compute instances on provided runtimes.
 Lambda performs administrative and operational activities on behalf of users, including managing capacity, monitoring, and logging the Lambda functions.
-AWS manages the entire infrastructure layer of AWS Lambda
-and thus saves user time on operational tasks. AWS Lambda
-provides a distinctive architectural property by enabling many instances of the same function, or of different functions from the same AWS account, to execute concurrently. This makes AWS Lambda a good fit for deploying highly scalable cloud computing solutions \cite{46}.
+The infrastructure layer of lambda in AWS is entirely managed by AWS and due to this reason, the operational time of the user can be saved.
+AWS Lambda
+provides a distinctive architectural property by enabling
+many instances of the same function, or of different functions from the same AWS account, to execute concurrently \cite{46}.
 
 \par AWS Lambda invokes the function in an execution environment.
 The execution environment provides an isolated and secure runtime environment and manages the resources required to run the function.
@@ -790,15 +806,21 @@ environment:
     initialization code \cite{46}.
 \end{itemize}
 \begin{itemize}
-    \item \textbf{Invoke phase}: During this phase, Lambda invokes the function handler. After the function runs to
-    completion, Lambda prepares to handle another
-    function invocation \cite{46}.
+    \item \textbf{Invoke phase}: During this phase, Lambda invokes the function handler.
+    Once the function starts its execution, AWS Lambda
+    starts
+    preparing to perform the invocation of another
+    function \cite{46}.
 \end{itemize}
 \begin{itemize}
-    \item \textbf{Shutdown phase}: The shutdown phase is triggered if the Lambda function does not receive any invocations
-    for a period of time.
-    During the shut down  phase, the runtime is shutdown
-    by Lambda, it sends an alert to each extension for
+    \item \textbf{Shutdown phase}: The shutdown phase gets
+    triggered when Lambda function has waited for a
+    period of time and does not receive any
+    other function invocations.
+    The runtime is shutdown
+    by Lambda during the shutdown phase. At the same time
+    Lambda also sends an alert to
+    each extension for
     stopping cleanly, and finally removed the environment \cite{46}.
 \end{itemize}
 
@@ -825,16 +847,30 @@ A bigger concern, thought, is the companies that are
 still moving to cloud computing while being unaware of the involved in putting sensitive data and critical applications in the cloud.
 
 \par Information security management encompasses many areas from encryption and perimeter protection to application security and disaster recovery.
-Security in IT is made more complex by compliance regulations, such as PCI, DSS, HIPAA, Sarbanes-Oxley, and global standards, such as GDPR. While most compliance experts and CEOs understand the value of cybersecurity measures, IT standards and security frameworks can make safeguarding organizations feel daunting.
-Knowledge of standards, regulations, and frameworks is
-essential for all infosec and cybersecurity professionals
-\cite{48}.
+Security in IT is made more complex by compliance regulations, such as PCI, DSS, HIPAA, Sarbanes-Oxley, and global standards, such as GDPR.
+While most compliance experts and CEOs understand the value of cybersecurity measures, IT standards and security frameworks can make safeguarding organizations feel daunting.
+The knowledge associated with standards, frameworks and
+regulations is highly important for all infosec and the IT
+security engineers whi are responsible for the security
+in cloud environment \cite{48}.
 
-\par A security framework is a compilation of international cybersecurity procedures and policies and state-mandated for maintaining and establishing security controls to protect critical infrastructure from cybersecurity risks.
-These security frameworks are a blueprint for reducing vulnerabilities and managing risk by helping IT security professionals keep their organizations compliant and insulated from cyber threats.
-The frameworks are used by Information security professionals to prioritize and define the tasks required to manage enterprise security.
-It is possible for organizations to customize frameworks
-to solve specific information security problems, such as
+\par A security framework is a compilation of
+international cybersecurity procedures and policies and
+state-mandated for maintaining and establishing security
+controls to protect the cloud infrastructure environment
+from
+any
+attacks or risks.
+These security frameworks help IT, security
+professionals, by keeping their organizations insulated from any security attacks or cyber threats, and thus they are a blueprint for managing risks and reducing the vulnerabilities in the cloud.
+To manage and prioritize the required security in the cloud
+infrastructure the
+security
+frameworks are used by the Information security engineers
+and professionals.
+These frameworks can be customized by the companies to
+perform the required security tasks that the
+organization wishes to perform, such as
 industry-specific requirements or different regulatory compliance goals \cite{48}.
 
 \subsection{Prowler}
@@ -844,7 +880,8 @@ The thesis work focuses on the most popular AWS services,
 IAM,
 EC2, Lambda, S3, and RDS.
 The introduced framework indicates to which security vulnerabilities the application is vulnerable and which security issues must be addressed to resolve the security vulnerability.
-Prowler contains a set of controls, mapped against known security vulnerabilities, which can determine whether a given AWS cloud setup is vulnerable to these security vulnerabilities.
+To determine if the cloud infrastructure possesses security vulnerabilities, Prowler contains a set of checks and controls.
+These checks are mapped against known security vulnerabilities.
 It aims to provide more in-depth security for AWS RDS,
 EC2, IAM, S3, and Lambda resources and protects them
 against security vulnerabilities.\\
@@ -872,8 +909,7 @@ sequentially \cite{50}.\\
 \hfill \break
 \par Prowler is written in bash, and it uses AWS-CLI
 underneath.
-It works with multiple operating systems such
-as macOS, Linux, or Windows with Cygwin or virtualization.
+Prowler is also capable of supporting several OS such as Windows with virtualization or Cygwin, macOS or Linux.
 To use Prowler, though, an EC2 instance with the necessary security permissions can be provisioned, Fargate or any other container, CloudShell, Codebuild, and Cloud9.
 Prowler can also be deployed directly in AWS using the AWS
 CLI and other components such as Python pip,

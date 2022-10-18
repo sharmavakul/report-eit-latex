@@ -147,7 +147,9 @@ Upon enabling the resource, the method associated with the resource is determine
 
 \subsection{Using Open-Source Application}
 
-\par The term open source refers to something that can be modified and shared among people because its design is publicly accessible.
+\par The term open source refers to something that can be
+modified and shared among people.
+This is because it is accessible to everyone publicly.
 The open-source software application is an application that is distributed with its source code, making it available
 for use, modification, enhancement, and distribution with
 its original rights \cite{77}.
@@ -157,9 +159,8 @@ application developed in Angular.js, and Java Spring boot
 are used \cite{78}.
 An information system to store data of their employees is
 used by every organization regardless it is private or government.
-The employee management system is intended to organize
-\gls{hr}
-and other departments' work processes.
+This application is used to organize the tasks and
+activities related to \gls{hr} and several other departments.
 It is an application-based system that is used by employers to monitor and manage employees from different work locations.
 The employee management system provides features that include the ability to add, update, and delete employee information.
 The application interface also provides a feature to list all the employees within the organization.
@@ -213,10 +214,14 @@ To create and execute the lambda function, AWSLambdaFullAccess is added to the u
 With the help of \gls{ci}/\gls{cd}, the application code is
 deployed
 in the AWS cloud.
-CI/CD combines the practices of continuous integration and continuous delivery.
-It helps the developers to make changes to code that are
-then automatically tested and pushed out for delivery and
-deployment \cite{85}.
+It helps the development team members to continuously
+make changes to their code.
+This code is than
+automatically tested and after the testing is performed
+the code gets pushed for building using the associated
+build tools such as Maven and finally gets deployed to
+the cloud infrastructure environment
+\cite{85}.
 
 \par The required application package, Jar in case of spring boot application, and modules in case of angular.js application are stored in S3 buckets.
 For the application to be accessed by the HR or employer,
@@ -248,7 +253,9 @@ using the command \textit{java -jar applicationname.jar}
 \par Lambda
 
 \par Lambda services execute code without provisioning servers.
-The application infrastructure contains a lambda function that makes an API call to the RDS database.
+The infrastructure contains a lambda function of the
+application that makes
+an API call to the RDS database.
 The function retrieves the information of employees within the organization.
 The database details are hardcoded as a connection string within the lambda function.
 Upon successful validation of the database details, the request is made to fetch the employee’s information.
@@ -267,8 +274,8 @@ This ensures complying with the leave privilege principle \cite{80}.
 \par To ensure the safety of the infrastructure, a security assessment needs to be performed to identify any security vulnerabilities that might have been introduced while setting up the infrastructure.
 This is performed by making use of security assessment tools such as Prowler.
 The assessment starts by executing the command \textit{./prowler}.
-Once the assessment completes, the assessment report is generated.
-This report provides details about the security vulnerabilities associated with different AWS services within the infrastructure.
+This assessment report that is created provides details
+about the security vulnerabilities associated with different AWS services within the infrastructure.
 
 Figure \ref{fig:prowlerassessmentreport} shows the snippet of the assessment report generated using Prowler.
 
@@ -276,8 +283,12 @@ Figure \ref{fig:prowlerassessmentreport} shows the snippet of the assessment rep
 \hfill \break
 \section{ScoutSuite}
 
-\par ScoutSuite is open-source tools used by external and
-internal security analysts to perform the assessment of cloud environments.
+\par ScoutSuite is open-source tools.
+This tool is used
+to perform the assessment of the cloud infrastructure
+environment against security vulnerabilities by external
+and
+internal security analysts.
 It is used by external and internal security analysts to assess cloud environments.
 To collect configuration data from high security risk areas for manual audit by researchers Scout Suite uses the API exposed by the cloud service provider.
 Based on configuration gathered data, it shows security

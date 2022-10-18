@@ -2,7 +2,7 @@
 %! Date = 25.09.2022
 % !TeX spellcheck = en_EN
 
-\chapter{Conclusion and Future Work}
+\chapter{Conclusion of Thesis Work and Future Tasks}
 
 \par This chapter summarizes the thesis work and contribution, the overall evaluation results, and possible aspects of future work.
 
@@ -13,14 +13,21 @@ It also aimed at investigating the efficiency of a security framework called Pro
 
 
 \par Based on literatures, the \gls{owasp} vulnerability list \cite{51}, \gls{cisa} \cite{52}, \gls{idc} \cite{53} different security vulnerabilities in five AWS services were identified.
-After identifying the different security vulnerabilities, the AWS cloud environment was assessed using Prowler to perform the assessment of these security vulnerabilities.
+After identifying the different security vulnerabilities,
+the AWS cloud environment was assessed using Prowler
+against the security vulnerabilities that might exist in
+AWS cloud infrastructure.
 
 
 \par As part of this research work, the efficiency of Prowler was determined using two approaches.
 The first approach was a test-driven manual approach, and the second approach used an open-source web application to determine the efficiency of Prowler.
 Based on the number of security vulnerabilities assessed using Prowler, the efficiency of Prowler was calculated.
 In both approaches, the efficiency of Prowler was
-calculated to be greater than 80 \% with respect to the identified security vulnerabilities.
+calculated to be greater than 80 \% with respect to the
+several
+security vulnerabilities that were identified in
+different AWS services as part of
+this research work.
 
 
 \par Apart from these two approaches, a use case of
@@ -34,7 +41,9 @@ vulnerabilities using ScoutSuite.
 In the end, the assessment performed using Prowler and
 ScoutSuite was compared.
 
-\par Based on this research work, it can be concluded that Prowler is highly efficient in performing the security assessment of the identified security vulnerabilities.
+\par Based on this research work, it can be concluded
+that Prowler was highly efficient in performing the
+security assessment of the security vulnerabilities.
 It provides several checks for assessing different AWS services against security vulnerabilities.
 Prowler generates the assessment result in multiple formats such as CSV, HTML, and JSON which enables integration with other tools, for example, Splunk.
 It’s auditing, assessment, forensics readiness, and hardening capabilities make the AWS cloud infrastructure highly reliable and less vulnerable to incidents.

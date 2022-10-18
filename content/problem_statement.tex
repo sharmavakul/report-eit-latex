@@ -67,7 +67,8 @@ based on literature, the \gls{owasp} vulnerability list
 
 \begin{itemize}
     \item \textbf{Misconfiguration:} Management of configuration is the most important part of network management.
-    Bad or Incorrect configuration can have dramatic effects on the security and safety of users, applications, and the overall system. Most data breaches and cyber-attacks in cloud infrastructure are due to misconfiguration vulnerabilities and human errors \cite{44}.
+    Bad or Incorrect configuration can have dramatic effects on the security and safety of users, applications, and the overall system.
+    Due to human errors and misconfigurations vulnerabilities, most security attacks and data breaches occur in the cloud infrastructure \cite{44}.
 
     Various misconfiguration vulnerabilities exist in cloud environments.
     A few examples of misconfiguration are: Not
@@ -181,12 +182,16 @@ based on literature, the \gls{owasp} vulnerability list
     Each DB subnet group has subnets in at least two
     Availability Zones in each AWS Region.
     When a DB instance is created in a VPC, a DB subnet group for the DB instance is chosen by the user.
-    From the DB subnet group, Amazon RDS chooses an IP address within that subnet and a subnet to associate with the DB instance.
+    Amazon RDS from the DB subnet group, chooses a subnet
+    and an IP address that lies in the subnet.
     The Availability Zone that contains the subnet is
     used by the DB. The subnets in a DB subnet group can
     be either private or public and it depends on the
     configuration that users set for their network ACLs
-    and routing tables. For a DB instance to be publicly accessible, all the subnets in its DB subnet group must be public. If a subnet changes from public to private, it can affect DB instance availability \cite{67}. If an AWS account is Provisioned with public-facing RDS database instances it allows unauthorized access for anyone who establishes a connection to the database, thus introducing security risks \cite{68}.
+    and routing tables.
+    If all the subnets associated with the same subnet group are public, then the DB instance to which these subnets belong is publicly accessible.
+    If a subnet changes from public to private, it can affect DB instance availability \cite{67}.
+    If an AWS account is Provisioned with public-facing RDS database instances it allows unauthorized access for anyone who establishes a connection to the database, thus introducing security risks \cite{68}.
 \end{itemize}
 
 \begin{itemize}
@@ -201,7 +206,7 @@ based on literature, the \gls{owasp} vulnerability list
 \begin{itemize}
     \item \textbf{Default data retention:} Amazon RDS provides a feature to create and save automated backups of your DB
     instance.
-    RDS backs up the entire DB instance by creating a storage volume snapshot of the DB instance.
+    The backup of the database instance is created entirely by the AWS RDS as a storage volume snapshot.
     This
     backup is saved according to the retention period specified.
     AWS has a default RDS backup retention for the
@@ -223,9 +228,9 @@ based on literature, the \gls{owasp} vulnerability list
 \begin{itemize}
     \item \textbf{Insecure Management of Secrets:} \par Secrets management refers to the methods and tools for managing digital authentication credentials, such as passwords, tokens, and APIs keys for use in applications, privileged accounts, services, and other sensitive parts of the IT ecosystem.
     The terms secrets management and secrets are more commonly referred in IT with regard to DevOps processes, environments, and tools.
-    \gls{devops} is a combination of a cultural philosophy,
+    DevOps is a combination of a cultural philosophy,
     practices, tools, and mindsets enabling organizations to deliver software and applications reliably and faster.
-    This show how DevOps is gaining more popularity and considered as a go-to model for rapid application delivery.
+    These factors indicate the increasing popularity of DevOps as the most favored method for the fast delivery of applications.
     When the product deadline is nearing, programmers
     often feel pressurized to meet the demands and, in
     their haste, leave sensitive pieces of code embedded
@@ -267,7 +272,6 @@ based on literature, the \gls{owasp} vulnerability list
 
     Although libraries can be susceptible to poisoning, it is not very likely this attack will be executed.
     If a Lambda function uses an out-of-date library, an attacker would still require access to the script or the input data triggering the function.
-    As for impact, this depends on the permissions of the Lambda function.
     If the function has an over-permissive IAM Role, much can go wrong.
     If it is really strict and only allows minimal actions on minimal resources, the possibilities for an attacker are highly restricted.
     This makes the likelihood of the attack Neutral and the impact Medium. \cite{64}.
